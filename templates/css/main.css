@@ -7,7 +7,17 @@ nav, h2, a {
 }
 
 
-/* Navigation */
+/* Global furniture */
+h1 {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: no-repeat url("../img/logo.gif");
+	min-height: 133px;
+	min-width: 142px;
+	
+}
+
 .nav-account li, .nav-main li, .nav-footer li {
 	margin: 0;
 	border: 0;
