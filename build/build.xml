@@ -533,11 +533,12 @@
           <arg value="-classpath" />
           <arg value="${dir.build.tools}" />
            <arg value="FindAttribute" />
-           <arg value="${file.root.page}" />
+           <arg value="${dir.source}/${file.root.page}" />
            <arg value="${build.jstoken}" />
            <arg value="script" />
            <arg value="src" />
          </exec>
+         <echo message="Working on ${scriptsToConcat}"/>
 
     <!-- Concatenate scripts to intermediate/js/libs/libs.js -->
     <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
