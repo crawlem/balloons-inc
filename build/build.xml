@@ -1033,7 +1033,7 @@
                             </not>
                             <then>
                                 <copy todir="${dir.publish}/${relative.image.dir}">
-                                    <dirset dir="${dir.source}/${relative.image.dir}"/>
+                                    <dirset dir="${relative.image.dir}"/>
                                 </copy>
                             </then>
                         </if>
