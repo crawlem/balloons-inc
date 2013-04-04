@@ -1,0 +1,218 @@
+/* Generic styles */
+body {
+	font-size: 1.1em;
+	font-family: Myriad Pro, Arial, sans-serif;
+}
+
+nav, h2, a {
+	color: #f36;
+}
+
+.selected {
+	color: #aaa;
+}
+
+.nav-footer a {
+	color: #000;
+}
+
+
+/* Global furniture */
+#container {
+	max-width: 980px;
+	margin: auto;
+}
+
+h1 {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: no-repeat url("../img/binc_logo.png");
+	min-height: 137px;
+	min-width: 141px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+nav ul, footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-align: right;
+}
+
+nav li, nav a, footer li, footer a {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	display: inline;
+}
+
+.nav-social li {
+	padding-left: 20px;
+}
+
+.nav-main, .nav-footer {
+	padding: 10px 0 0 0;
+	border-top: 1px solid #f36;
+}
+
+.nav-account {
+	margin: -132px 0 20px 0;
+}
+
+.nav-account li:first-child a {
+	margin-right: 25px;
+	background: no-repeat url('../img/binc_shoppingcart.png');
+	padding-left: 45px;
+}
+
+.nav-main {
+	margin-top: 132px;
+}
+
+nav a, footer a {
+	text-decoration: none;
+}
+
+.nav-main a {
+	margin-left: 25px;
+}
+
+.nav-footer {
+	margin-top: 10px;
+}
+
+.nav-footer a {
+	padding: 2px;
+}
+
+.nav-footer li:last-child {
+	border-left: 1px solid #000;
+	padding-left: 5px;
+	margin-left: 5px;
+}
+
+.nav-account li:last-child {
+	border-left: 1px solid #f36;
+	padding-left: 5px;
+	margin-left: 5px;
+}
+
+.nav-footer li:first-child {
+	float: left;
+}
+
+
+
+/* Content area */
+.bi-home {
+	margin: 10px 30px;
+}
+
+.bi-home .content {
+	margin: 80px 0;
+	overflow: auto;
+	width: 100%;
+}
+
+.bi-home .content p {
+	width: 85%;
+	float: left;
+}
+
+.bi-home .content p:last-child {
+	min-height: 86px;
+	min-width: 91px;
+	width: 10%;
+	float: right;
+}
+
+.step {
+	color: #f36;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: auto;
+	width: 100%;
+}
+
+.step li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-align: center;
+}
+
+.step li + li {
+	padding-left: 40px;
+	background: url('../img/binc_spacer.png') no-repeat left 32px;
+}
+
+.step span {
+	display: block;
+	padding: 81px 0 0 0;
+	min-width: 89px;
+	min-height: 81px;
+}
+
+.step .s1 {
+	background: no-repeat url('../img/binc_one_red.png');
+}
+
+.step .s1.selected {
+	background: no-repeat url('../img/binc_one_grey.png');
+}
+
+.step .s2 {
+	background: no-repeat url('../img/binc_two_red.png');
+}
+
+.step .s2.selected {
+	background: no-repeat url('../img/binc_two_grey.png');
+}
+
+.step .s3 {
+	background: no-repeat url('../img/binc_three_red.png');
+}
+
+.step .s3.selected {
+	background: no-repeat url('../img/binc_three_grey.png');
+}
+
+.step .s4 {
+	background: no-repeat url('../img/binc_four_red.png');
+}
+
+.step .s4.selected {
+	background: no-repeat url('../img/binc_four_grey.png');
+}
+
+.step .content ul {
+	margin: 30px 0 0 0;
+	padding: 0;
+	border: 0;
+}
+
+.bi-shop .content ul li {
+	list-style-type: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+	border: 0;
+}
+
+.content form {
+	color: #f36;
+}
+
+.bi-flower .content ul {
+	width: 6em;
+}
+
+.bi-flower .content ul input {
+	float: right;
+}
