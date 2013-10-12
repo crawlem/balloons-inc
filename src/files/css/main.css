@@ -1,6 +1,6 @@
 /* Generic styles */
 body {
-	font-size: 1em;
+	font-size: 1.1em;
 	font-family: Myriad Pro, Arial, sans-serif;
 }
 
@@ -51,7 +51,7 @@ nav li, nav a, footer li, footer a {
 }
 
 .nav-social li {
-	padding-left: 5px;
+	padding-left: 20px;
 }
 
 .nav-main, .nav-footer {
@@ -82,9 +82,7 @@ nav a, footer a {
 }
 
 .nav-footer {
-	color: #AAA;
 	margin-top: 10px;
-	font-size: .8em;
 }
 
 .nav-footer a {
@@ -209,7 +207,6 @@ nav a, footer a {
 
 .content form {
 	color: #f36;
-	font-size: 1.3em;
 }
 
 .bi-flower .content ul {
