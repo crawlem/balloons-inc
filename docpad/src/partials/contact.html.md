@@ -1,7 +1,7 @@
 Whatever your balloon needs, I'd love to help:
 
 Call: 07919178308  
-Email: rich@balloonsinc.co.uk
+Email: [rich@balloonsinc.co.uk](mailto:rich@balloonsinc.co.uk)
 
 Find me on:
 

@@ -4,7 +4,7 @@
 $bg-colour: #eee;
 $bg-hi-colour: rgba(255, 255, 255, 0.5);
 $fg-colour: #000;
-$logo-colour: #db415d;
+$logo-colour: #ff3365;
 
 /*----Grid------------*/
 $grid-width: 799px;
@@ -49,6 +49,7 @@ body {
 	color: $fg-colour;
 	line-height: 1.5em;
 	text-align: center;
+	@include box-reset;
 }
 
 header {
@@ -87,10 +88,8 @@ h2 {
 	padding: $grid-gutter;
 }
 
-.content {
-	p {
-		margin: $grid-gutter 0;
-	}
+.content p, .contact-text p {
+	margin: $grid-gutter 0;
 }
 
 footer {

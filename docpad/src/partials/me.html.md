@@ -1,1 +1,1 @@
-I am married with two kids and I live in Exeter. When I'm not balloon modeling, I help run a local dads toddler group. I'm the treasurer for the PTA at Stoke Hill Infant School, I work for a local church and I cook.
+I am married with two kids and I live in Exeter. When I'm not balloon modeling, I help run a local dads' toddler group. I'm the treasurer for the PTA at Stoke Hill Infant School, I work for a local church and I cook.
