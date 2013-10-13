@@ -1,0 +1,160 @@
+/* VARIABLES
+=================================================*/
+/*----Colours------------*/
+$bg-colour: #eee;
+$bg-hi-colour: rgba(255, 255, 255, 0.5);
+$fg-colour: #000;
+$logo-colour: #db415d;
+
+/*----Grid------------*/
+$grid-width: 799px;
+$grid-gutter: 10px;
+$grid-margin: 0px;
+
+
+
+
+/* MIXINS
+=================================================*/
+@mixin box-reset {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+@mixin list-reset {
+	list-style: none;
+	@include box-reset;
+}
+
+@mixin bg-panel {
+	background-color: $bg-hi-colour;
+}
+
+
+
+
+
+/* SITE CSS
+=================================================*/
+/*----Reset------------*/
+header,footer,h1,h2,p {
+	@include box-reset;
+}
+
+/*----Global page------------*/
+body {
+	font-family: Arial, sans-serif;
+	background: $bg-colour url('../images/cloth_alike.png');
+	color: $fg-colour;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+header {
+	img {
+		float: left;
+	}
+
+	h1 {
+		height: 102px;
+		text-indent: -5000px;
+		background: url('../images/binc_heading.png') right no-repeat;
+	}
+}
+
+h2 {
+	color: $logo-colour;
+	margin: $grid-gutter*2 0;
+}
+
+.container {
+	width: $grid-width;
+	margin: auto;
+
+	h1 {
+		@include box-reset;
+		color: $logo-colour;
+	}
+}
+
+.highlight {
+	color: $logo-colour;
+}
+
+.panel {
+	@include bg-panel;
+	padding: $grid-gutter;
+}
+
+.content {
+	p {
+		margin: $grid-gutter 0;
+	}
+}
+
+footer {
+	@include bg-panel;
+	border-top: 2px solid $logo-colour;
+	height: 160px;
+	font-size: .8em;
+	margin-top: $grid-gutter;
+	padding-top: $grid-gutter;
+
+	.copyright {
+		float: left;
+	}
+
+	.footer-links {
+		float: right;
+
+		ul {
+			@include list-reset;
+
+			li {
+				display: inline-block;
+
+				&:after {
+					content: " | ";
+				}
+
+				&:last-child:after {
+					content: " ";
+				}
+
+				a {
+					text-decoration: none;
+					color: $fg-colour;
+
+					&:hover {
+						text-decoration: underline;
+					}
+
+					&:active {
+						color: $logo-colour;
+					}
+
+					&:visited {
+						color: $fg-colour;
+					}
+				}
+			}
+		}
+	}
+}
+
+.content-img {
+	display: block;
+	border: $grid-gutter solid #fff;
+	border-radius: $grid-gutter;
+	margin-top: $grid-gutter;
+}
+
+/*----Home page------------*/
+.home .content {
+	font-weight: bold;
+}
+
+.home .me, .home .contact-text, .home .contact-form {
+	text-align: left;
+}

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<div class="content">
+	<img src="images/binc_crab.png" width="779" height="348" alt="Crab" class="content-img">
+	<%-@content%>
+</div>
+
+<h2>What I offer</h2>
+<div class="panel offer">
+	<ol>
+		<li><%-@partial("hire.html")%></li>
+		<li><%-@partial("order.html")%></li>
+		<li><%-@partial("book.html")%></li>
+	</ol>
+</div>
+
+<h2>A bit about me</h2>
+<div class="panel me"><%-@partial("me.html")%></div>
+
+<h2>Get in touch</h2>
+<div class="contact-text">
+	<%-@partial("contact.html")%>
+</div>
+<div class="contact-form">
+	<form action="#" method="post">
+		<div class="field">
+			<label for="fld-name" class="required">Name</label>
+			<input name="name" id="fld-name" required>
+		</div>
+		<div class="field">
+			<label for="fld-email" class="required">Email</label>
+			<input name="email" type="email" id="fld-email" required>
+		</div>
+		<div class="field">
+			<label for="fld-message" class="required">Message</label>
+			<textarea name="name" id="fld-message" required></textarea>
+		</div>
+	</form>
+</div>
