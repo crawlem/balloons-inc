@@ -6,7 +6,7 @@ layout: default
 	<%-@content%>
 </div>
 
-<h2>What I offer</h2>
+<h2><span class="heading heading-offer">what I offer</span></h2>
 <div class="panel offer">
 	<ol>
 		<li><%-@partial("hire.html")%></li>
@@ -15,26 +15,35 @@ layout: default
 	</ol>
 </div>
 
-<h2>A bit about me</h2>
+<h2><span class="heading heading-me">a bit about me</span></h2>
 <div class="panel me"><%-@partial("me.html")%></div>
 
-<h2>Get in touch</h2>
-<div class="contact-text">
-	<%-@partial("contact.html")%>
-</div>
-<div class="contact-form">
-	<form action="#" method="post">
-		<div class="field">
-			<label for="fld-name" class="required">Name</label>
-			<input name="name" id="fld-name" required>
-		</div>
-		<div class="field">
-			<label for="fld-email" class="required">Email</label>
-			<input name="email" type="email" id="fld-email" required>
-		</div>
-		<div class="field">
-			<label for="fld-message" class="required">Message</label>
-			<textarea name="name" id="fld-message" required></textarea>
-		</div>
-	</form>
+<h2><span class="heading heading-contact">get in touch</span></h2>
+<div class="contact">
+	<div class="contact-text">
+		<%-@partial("contact.html")%>
+	</div>
+	<div class="contact-form">
+		<form action="#" method="post">
+			<div class="field">
+				<label for="fld-name" class="required">Name</label>
+				<input name="name" id="fld-name" required>
+			</div>
+			<div class="field">
+				<label for="fld-email" class="required">Email</label>
+				<input name="email" type="email" id="fld-email" required>
+			</div>
+			<div class="field">
+				<label for="fld-phone">Phone</label>
+				<input name="phone" id="fld-phone">
+			</div>
+			<div class="field">
+				<label for="fld-message" class="required">Message</label>
+				<textarea name="name" id="fld-message" required></textarea>
+			</div>
+			<div class="buttons">
+				<button type="submit">Send</button>
+			</div>
+		</form>
+	</div>
 </div>

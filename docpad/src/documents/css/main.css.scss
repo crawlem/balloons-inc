@@ -67,6 +67,33 @@ header {
 h2 {
 	color: $logo-colour;
 	margin: $grid-gutter*2 0;
+	position: relative;
+	overflow: hidden;
+	line-height: 1.5em;
+}
+
+.heading {
+	display: inline-block;
+	position: relative;
+
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		height: .75em;
+		border-bottom: 2px solid $logo-colour;
+		top: 0;
+		width: $grid-width/2;
+	}
+
+	&:before {
+		right: 100%;
+		margin-right: $grid-gutter;
+	}
+
+	&:after {
+		left: 100%;
+		margin-left: $grid-gutter;
+	}
 }
 
 .container {
@@ -79,17 +106,13 @@ h2 {
 	}
 }
 
-.highlight {
-	color: $logo-colour;
-}
-
 .panel {
 	@include bg-panel;
 	padding: $grid-gutter;
 }
 
 .content p, .contact-text p {
-	margin: $grid-gutter 0;
+	margin: $grid-gutter;
 }
 
 footer {
@@ -149,11 +172,34 @@ footer {
 	margin-top: $grid-gutter;
 }
 
+button {
+	text-transform: uppercase;
+}
+
 /*----Home page------------*/
 .home .content {
 	font-weight: bold;
 }
 
-.home .me, .home .contact-text, .home .contact-form {
+.home .me, .home .contact {
 	text-align: left;
+}
+
+.home .offer em {
+	color: $logo-colour;
+	font-style: normal;
+	@include box-reset;
+}
+
+.home .contact {
+	overflow: hidden;
+}
+
+.home .contact-text {
+	float: left;
+	width: 31%;
+}
+
+.home .contact-form {
+	margin-left: 40%;
 }

@@ -1,5 +1,5 @@
 ---
 layout: default
 ---
-<h2><%=@document.title%></h2>
+<h2><span class="heading"><%=@document.title%></span></h2>
 <%-@content%>

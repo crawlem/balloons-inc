@@ -15,7 +15,7 @@
 <body id="<%=@document.id%>"<%-if @document.layout != "default" then ' class="' + @document.layout + '"'%>>
 	<div class="container">
 		<header>
-			<h1><img src="images/binc_logo.png" width="105" height="100" alt="Logo"><%= @site.title %></h1>
+			<h1><a href="index.html"><img src="images/binc_logo.png" width="105" height="100" alt="Logo"><%= @site.title %></a></h1>
 		</header>
 		<%-@content%>
 	</div>
