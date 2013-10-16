@@ -108,7 +108,7 @@ h2 {
 
 .container {
 	width: $grid-width;
-	margin: auto;
+	margin: $grid-gutter auto;
 
 	h1 {
 		@include box-reset;
@@ -130,8 +130,6 @@ footer {
 	border-top: 2px solid $logo-colour;
 	height: 160px;
 	font-size: .8em;
-	margin-top: $grid-gutter;
-	padding-top: $grid-gutter;
 
 	.copyright {
 		float: left;
@@ -213,6 +211,7 @@ input:not([type='image']), textarea {
 
 	.me {
 		overflow: hidden;
+		position: relative;
 
 		.heading {
 			background-image: url('../images/binc_aboutme.png');
@@ -223,8 +222,33 @@ input:not([type='image']), textarea {
 			text-align: left;
 			font-size: .9em;
 			float: left;
-			width: 40%;
+			width: 350px;
 			margin-top: 40px;
+			position: relative;
+		
+			img {
+				@include box-reset;
+				width: 36px;
+				float: left;
+			}
+
+			img:last-child {
+				position: absolute;
+				bottom: 0;
+				right: $grid-gutter;
+			}
+		}
+
+		.speech {
+			display: inline-block;
+			position: absolute;
+			margin-top: 80px;
+			left: 370px;
+			width: 0; 
+			height: 0; 
+			border-top: 40px solid transparent;
+			border-bottom: 40px solid transparent;
+			border-left: 110px solid $bg-hi-colour;
 		}
 
 		img {
@@ -247,6 +271,11 @@ input:not([type='image']), textarea {
 			.contact-text {
 				float: left;
 				width: 31%;
+
+				a, .tel {
+					color: $logo-colour;
+					text-decoration: none;
+				}
 
 				ul {
 					@include list-reset;
@@ -288,7 +317,7 @@ input:not([type='image']), textarea {
 		}
 
 		.panel {
-			margin-top: 50px;
+			margin-top: 70px;
 			padding-top: 20px;
 
 			em {

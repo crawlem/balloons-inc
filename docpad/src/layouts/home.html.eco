@@ -20,8 +20,11 @@ layout: default
 <section class="me">
 	<h2><span class="heading">a bit about me</span></h2>
 	<div class="panel">
-		<%-@partial("me.html")%>
+		<img src="images/binc_quotation1.png" width="36" height="35" alt="">
+		<span class="bio"><%-@partial("me.html")%></span>
+		<img src="images/binc_quotation2.png" width="36" height="35" alt="">
 	</div>
+	<span class="speech"></span>
 	<img src="images/binc_me.png" width="303" height="222" alt="Me">
 </section>
 
