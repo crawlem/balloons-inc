@@ -2,7 +2,7 @@
 layout: default
 ---
 <section class="content">
-	<img src="images/binc_crab.png" width="779" height="348" alt="Crab" class="content-img">
+	<img src="images/binc_crab.jpg" width="779" height="348" alt="Crab" class="content-img">
 	<%-@content%>
 </section>
 
