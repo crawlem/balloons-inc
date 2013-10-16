@@ -1,49 +1,58 @@
 ---
 layout: default
 ---
-<div class="content">
+<section class="content">
 	<img src="images/binc_crab.png" width="779" height="348" alt="Crab" class="content-img">
 	<%-@content%>
-</div>
+</section>
 
-<h2><span class="heading heading-offer">what I offer</span></h2>
-<div class="panel offer">
-	<ol>
-		<li><%-@partial("hire.html")%></li>
-		<li><%-@partial("order.html")%></li>
-		<li><%-@partial("book.html")%></li>
-	</ol>
-</div>
-
-<h2><span class="heading heading-me">a bit about me</span></h2>
-<div class="panel me"><%-@partial("me.html")%></div>
-
-<h2><span class="heading heading-contact">get in touch</span></h2>
-<div class="contact">
-	<div class="contact-text">
-		<%-@partial("contact.html")%>
+<section class="offer">
+	<h2><span class="heading">what I offer</span></h2>
+	<div class="panel">
+		<ol>
+			<li><span></span><%-@partial("hire.html")%></li>
+			<li><span></span><%-@partial("order.html")%></li>
+			<li><span></span><%-@partial("book.html")%></li>
+		</ol>
 	</div>
-	<div class="contact-form">
-		<form action="#" method="post">
-			<div class="field">
-				<label for="fld-name" class="required">Name</label>
-				<input name="name" id="fld-name" required>
-			</div>
-			<div class="field">
-				<label for="fld-email" class="required">Email</label>
-				<input name="email" type="email" id="fld-email" required>
-			</div>
-			<div class="field">
-				<label for="fld-phone">Phone</label>
-				<input name="phone" id="fld-phone">
-			</div>
-			<div class="field">
-				<label for="fld-message" class="required">Message</label>
-				<textarea name="name" id="fld-message" required></textarea>
-			</div>
-			<div class="buttons">
-				<button type="submit">Send</button>
-			</div>
-		</form>
+</section>
+
+<section class="me">
+	<h2><span class="heading">a bit about me</span></h2>
+	<div class="panel">
+		<%-@partial("me.html")%>
 	</div>
-</div>
+	<img src="images/binc_me.png" width="303" height="222" alt="Me">
+</section>
+
+<section class="contact">
+	<h2><span class="heading">get in touch</span></h2>
+	<div class="contact-wrapper">
+		<div class="contact-text">
+			<%-@partial("contact.html")%>
+		</div>
+		<div class="contact-form">
+			<form action="#" method="post">
+				<div class="field">
+					<label for="fld-name" class="required">Name</label>
+					<input name="name" id="fld-name" required>
+				</div>
+				<div class="field field-inline">
+					<label for="fld-email" class="required">Email</label>
+					<input name="email" type="email" id="fld-email" required>
+				</div>
+				<div class="field field-inline">
+					<label for="fld-phone">Phone</label>
+					<input name="phone" id="fld-phone">
+				</div>
+				<div class="field">
+					<label for="fld-message" class="required">Message</label>
+					<textarea name="name" id="fld-message" required></textarea>
+				</div>
+				<div class="buttons">
+					<input type="image" src="images/binc_sendbutton.png" width="135" height="37">
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

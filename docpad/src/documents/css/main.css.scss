@@ -4,7 +4,7 @@
 $bg-colour: #eee;
 $bg-hi-colour: rgba(255, 255, 255, 0.5);
 $fg-colour: #000;
-$logo-colour: #ff3365;
+$logo-colour: #ff3066;
 
 /*----Grid------------*/
 $grid-width: 799px;
@@ -31,6 +31,11 @@ $grid-margin: 0px;
 	background-color: $bg-hi-colour;
 }
 
+@mixin img-border {
+	border: $grid-gutter solid #fff;
+	border-radius: $grid-gutter;
+}
+
 
 
 
@@ -38,14 +43,14 @@ $grid-margin: 0px;
 /* SITE CSS
 =================================================*/
 /*----Reset------------*/
-header,footer,h1,h2,p {
+header,footer,h1,h2,p,input,textarea {
 	@include box-reset;
 }
 
 /*----Global page------------*/
 body {
 	font-family: Arial, sans-serif;
-	background: $bg-colour url('../images/cloth_alike.png');
+	background: $bg-colour url('../images/ticks.png');
 	color: $fg-colour;
 	line-height: 1.5em;
 	text-align: center;
@@ -66,7 +71,7 @@ header {
 
 h2 {
 	color: $logo-colour;
-	margin: $grid-gutter*2 0;
+	margin: $grid-gutter*4 0;
 	position: relative;
 	overflow: hidden;
 	line-height: 1.5em;
@@ -75,11 +80,15 @@ h2 {
 .heading {
 	display: inline-block;
 	position: relative;
+	text-indent: -5000px;
+	font-size: 1.5em;
+	background-repeat: no-repeat;
+	height: 45px;
 
 	&:before, &:after {
 		content: "";
 		position: absolute;
-		height: .75em;
+		height: .6em;
 		border-bottom: 2px solid $logo-colour;
 		top: 0;
 		width: $grid-width/2;
@@ -112,7 +121,7 @@ h2 {
 }
 
 .content p, .contact-text p {
-	margin: $grid-gutter;
+	margin: $grid-gutter*2 $grid-gutter;
 }
 
 footer {
@@ -167,39 +176,163 @@ footer {
 
 .content-img {
 	display: block;
-	border: $grid-gutter solid #fff;
-	border-radius: $grid-gutter;
 	margin-top: $grid-gutter;
+	@include img-border;
 }
 
-button {
+label {
+	@include box-reset;
+	display: block;
 	text-transform: uppercase;
+	font-size: .8em;
+}
+
+.required:after {
+	content: "*";
+	color: $logo-colour;
+}
+
+.field-inline {
+	display: inline-block;
+	margin-right: $grid-gutter;
+}
+
+input:not([type='image']), textarea {
+	border: 1px solid $logo-colour;
+	border-radius: 2px;
+	padding: $grid-gutter/2;
+	width: 215px;
 }
 
 /*----Home page------------*/
-.home .content {
-	font-weight: bold;
-}
+.home {
+	.content {
+		font-weight: bold;
+	}
 
-.home .me, .home .contact {
-	text-align: left;
-}
+	.me {
+		overflow: hidden;
 
-.home .offer em {
-	color: $logo-colour;
-	font-style: normal;
-	@include box-reset;
-}
+		.heading {
+			background-image: url('../images/binc_aboutme.png');
+			width: 229px;
+		}
 
-.home .contact {
-	overflow: hidden;
-}
+		.panel {
+			text-align: left;
+			font-size: .9em;
+			float: left;
+			width: 40%;
+			margin-top: 40px;
+		}
 
-.home .contact-text {
-	float: left;
-	width: 31%;
-}
+		img {
+			float: right;
+			@include img-border;
+		}
+	}
 
-.home .contact-form {
-	margin-left: 40%;
+	.contact {
+		.heading {
+			background-image: url('../images/binc_getintouch.png');
+			width: 202px;
+		}
+
+		.contact-wrapper {
+			overflow: hidden;
+			text-align: left;
+			font-size: .9em;
+
+			.contact-text {
+				float: left;
+				width: 31%;
+
+				ul {
+					@include list-reset;
+					margin-left: $grid-gutter;
+
+					li {
+						display: block;
+						margin-bottom: $grid-gutter;
+
+						a {
+							display: inline-block;
+							height: 37px;
+							padding: 5px 0 0 47px;
+							text-decoration: none;
+							color: $fg-colour;
+						}
+
+						.link-fb {
+							background: url('../images/binc_fb.png') no-repeat;
+						}
+
+						.link-twitter {
+							background: url('../images/binc_twitter.png') no-repeat;
+						}
+					}
+				}
+			}
+
+			.contact-form {
+				margin-left: 40%;
+			}
+		}
+	}
+
+	.offer {
+		.heading {
+			background-image: url('../images/binc_whatioffer.png');
+			width: 189px;
+		}
+
+		.panel {
+			margin-top: 50px;
+			padding-top: 20px;
+
+			em {
+				color: $logo-colour;
+				font-style: normal;
+				@include box-reset;
+			}
+
+			ol {
+				@include list-reset;
+				display: inline-block;
+				margin-top: $grid-gutter*4;
+
+				li {
+					display: inline-block;
+					width: 28%;
+					font-size: .8em;
+					position: relative;
+
+					span {
+						position: absolute;
+						top: -100px;
+						left: 50px;
+						width: 106px;
+						height: 99px;
+						background-image: url('../images/binc_order.png');
+					}
+				}
+
+				li:first-child {
+					float: left;
+
+					span {
+						background-image: url('../images/binc_hire.png');
+					}
+				}
+
+				li:last-child {
+					float: right;
+
+					span {
+						background-image: url('../images/binc_book.png');
+					}
+				}
+			}
+		}
+	}
 }

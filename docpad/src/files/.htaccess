@@ -372,7 +372,7 @@ FileETag None
 # ----------------------------------------------------------------------
 
 # Option 1:
-# Rewrite "www.example.com -> example.com".
+# Rewrite "www.balloonsinc.co.uk -> balloonsinc.co.uk".
 
 #<IfModule mod_rewrite.c>
 #  RewriteCond %{HTTPS} !=on
