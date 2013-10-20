@@ -53,7 +53,7 @@ layout: default
 					<textarea name="name" id="fld-message" required></textarea>
 				</div>
 				<div class="buttons">
-					<input type="image" src="images/binc_sendbutton.png" width="135" height="37">
+					<input type="image" src="images/binc_sendbutton.png" width="139" height="38">
 				</div>
 			</form>
 		</div>

@@ -22,12 +22,12 @@
 	<footer>
 		<div class="container">
 			<div class="copyright">&copy; balloonsinc <%= @formatDate(@site.date, 'YYYY') %></div>
-			<div class="footer-links">
+			<!--<div class="footer-links">
 				<ul>
 					<li><a href="terms.html">terms &amp; conditions</a></li>
 					<li><a href="privacy.html">privacy &amp; cookies</a></li>
 				</ul>
-			</div>
+			</div>-->
 		</div>
 	</footer>
 	<script>

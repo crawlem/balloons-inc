@@ -58,21 +58,25 @@ body {
 }
 
 header {
+	margin-top: $grid-gutter*2;
+
 	img {
 		@include box-reset;
 		float: left;
+		margin-top: 5px;
 	}
 
 	h1 {
 		height: 102px;
 		text-indent: -5000px;
 		background: url('../images/binc_heading.png') right no-repeat;
+		overflow: hidden;
 	}
 }
 
 h2 {
 	color: $logo-colour;
-	margin: $grid-gutter*4 0;
+	margin: $grid-gutter*5 0;
 	position: relative;
 	overflow: hidden;
 	line-height: 1.5em;
@@ -128,8 +132,9 @@ h2 {
 footer {
 	@include bg-panel;
 	border-top: 2px solid $logo-colour;
-	height: 160px;
+	padding-bottom: $grid-gutter*4;
 	font-size: .8em;
+	overflow: hidden;
 
 	.copyright {
 		float: left;
@@ -175,7 +180,7 @@ footer {
 
 .content-img {
 	display: block;
-	margin-top: $grid-gutter;
+	margin-top: $grid-gutter+$grid-gutter/2;
 	@include img-border;
 }
 
@@ -191,6 +196,10 @@ label {
 	color: $logo-colour;
 }
 
+.field, .field-inline {
+	margin-bottom: $grid-gutter/2;
+}
+
 .field-inline {
 	display: inline-block;
 	margin-right: $grid-gutter;
@@ -201,6 +210,11 @@ input:not([type='image']), textarea {
 	border-radius: 2px;
 	padding: $grid-gutter/2;
 	width: 215px;
+}
+
+textarea {
+	width: 455px;
+	height: 90px;
 }
 
 /*----Home page------------*/
@@ -225,30 +239,38 @@ input:not([type='image']), textarea {
 			width: 350px;
 			margin-top: 40px;
 			position: relative;
+			padding: $grid-gutter*2+$grid-gutter/2 $grid-gutter*2 $grid-gutter*2+$grid-gutter/2 $grid-gutter*2;
 		
-			img {
+			img:first-child {
 				@include box-reset;
-				width: 36px;
-				float: left;
+				position: absolute;
+				top: $grid-gutter/2;
+				left: $grid-gutter+2px;
 			}
 
 			img:last-child {
+				@include box-reset;
 				position: absolute;
-				bottom: 0;
-				right: $grid-gutter;
+				bottom: $grid-gutter/2;
+				right: $grid-gutter+2px;
+			}
+
+			.bio {
+				display: inline-block;
+				margin: 0 35px 0 36px;
 			}
 		}
 
 		.speech {
 			display: inline-block;
 			position: absolute;
-			margin-top: 80px;
-			left: 370px;
+			margin-top: 150px;
+			left: 390px;
 			width: 0; 
 			height: 0; 
-			border-top: 40px solid transparent;
-			border-bottom: 40px solid transparent;
-			border-left: 110px solid $bg-hi-colour;
+			border-top: 20px solid transparent;
+			border-bottom: 20px solid transparent;
+			border-left: 50px solid $bg-hi-colour;
 		}
 
 		img {
@@ -258,6 +280,8 @@ input:not([type='image']), textarea {
 	}
 
 	.contact {
+		padding-bottom: $grid-gutter*5;
+
 		.heading {
 			background-image: url('../images/binc_getintouch.png');
 			width: 202px;
@@ -271,6 +295,10 @@ input:not([type='image']), textarea {
 			.contact-text {
 				float: left;
 				width: 31%;
+
+				p {
+					margin-top: 0;
+				}
 
 				a, .tel {
 					color: $logo-colour;
