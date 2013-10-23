@@ -178,10 +178,10 @@ footer {
 	}
 }
 
-.content-img {
-	display: block;
-	margin-top: $grid-gutter+$grid-gutter/2;
+.content-img-wrapper {
 	@include img-border;
+	margin-top: $grid-gutter+$grid-gutter/2;
+	height: 348px;
 }
 
 label {
