@@ -3,11 +3,18 @@ $(document).ready(function() {
     var duration = 500;
     var interval = 5000;
 
-    var images = ['binc_monkey', 'binc_rose', 'binc_crab', 'binc_horse', 'binc_fish', 'binc_pig', 'binc_frog', 'binc_lion'];
+    var images = ['binc_crab', 'binc_monkey', 'binc_rose', 'binc_horse', 'binc_fish', 'binc_pig', 'binc_frog', 'binc_lion'];
+    preloadImg(images);
     switchImg();
 
+    function preloadImg(imgArray) {
+    	$(imgArray).each(function(){
+	        $('<img/>')[0].src = "images/carousel/" + this + ".jpg"; // Alternatively you could use: (new Image()).src = this;
+    	});
+    }
+
     function switchImg() {
-	    $(".content-img")
+	    $(".home .content-img")
 	        .attr("src", "images/carousel/" + (images[i<7?++i:(i=1,i)]) + ".jpg")
 	        .css("opacity", 0)
 	        .prependTo(".content-img-wrapper")
@@ -26,6 +33,7 @@ $(document).ready(function() {
 	        .done(function () {
 	            $(this).remove();
 	            setTimeout(switchImg, interval);
-	        });
+	        })
+	    ;
     }
 });
