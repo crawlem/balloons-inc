@@ -43,7 +43,7 @@ $grid-margin: 0px;
 /* SITE CSS
 =================================================*/
 /*----Reset------------*/
-header,footer,h1,h2,p,input,textarea {
+header,footer,h1,h2,p,input,textarea,img {
 	@include box-reset;
 }
 
