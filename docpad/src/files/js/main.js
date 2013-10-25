@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     var images = ['binc_crab', 'binc_monkey', 'binc_rose', 'binc_horse', 'binc_fish', 'binc_pig', 'binc_frog', 'binc_lion'];
     preloadImg(images);
-    switchImg();
+    setTimeout(switchImg, interval);
 
     function preloadImg(imgArray) {
     	$(imgArray).each(function(){
