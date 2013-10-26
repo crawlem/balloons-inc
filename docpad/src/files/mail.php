@@ -6,11 +6,11 @@
 	<title>Balloons Inc. | Thank You</title>
 	
 	<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">-->
-	<meta name="description" content="<%=@document.description%>">
-	<meta name="keywords" content="<%=@document.keywords%>">
-	<meta name="author" content="<%=@site.author%>">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Mark Crawley">
 
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/825672f.css">
 </head>
 <body class="mail">
 	<div class="container">

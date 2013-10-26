@@ -5,6 +5,7 @@ $bg-colour: #eee;
 $bg-hi-colour: rgba(255, 255, 255, 0.5);
 $fg-colour: #000;
 $logo-colour: #ff3066;
+$form-error-colour: rgba(255, 0, 0, 0.1);
 
 /*----Grid------------*/
 $grid-width: 799px;
@@ -210,11 +211,25 @@ input:not([type='image']), textarea {
 	border-radius: 2px;
 	padding: $grid-gutter/2;
 	width: 215px;
+	background-color: $bg-hi-colour;
 }
 
 textarea {
 	width: 455px;
 	height: 90px;
+}
+
+input.error, textarea.error {
+	background-color: $form-error-colour;
+}
+
+label.error {
+	text-transform: none;
+}
+
+div.error {
+	display: none;
+	font-weight: bold;
 }
 
 /*----Home page------------*/

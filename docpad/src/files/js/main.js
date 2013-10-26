@@ -7,6 +7,36 @@ $(document).ready(function() {
     preloadImg(images);
     setTimeout(switchImg, interval);
 
+    // Contact form validation
+    jQuery.validator.messages.required = "";
+    jQuery.validator.messages.email = "";
+    $(".contact-form form").validate({
+		rules :{
+		    name: {
+		        required: true
+		    },
+		    email: {
+		    	required: true,
+		    	email: true
+		    },
+		    message: {
+		    	required: true
+		    }
+		},
+		invalidHandler: function(e, validator) {
+			var errors = validator.numberOfInvalids();
+			if (errors) {
+				var message = errors == 1
+					? 'You missed 1 field. It has been highlighted below.'
+					: 'You missed ' + errors + ' fields.  They have been highlighted below.';
+				$("div.error").html(message);
+				$("div.error").show();
+			} else {
+				$("div.error").hide();
+			}
+		}
+    });
+
     function preloadImg(imgArray) {
     	$(imgArray).each(function(){
 	        $('<img/>')[0].src = "images/carousel/" + this + ".jpg"; // Alternatively you could use: (new Image()).src = this;

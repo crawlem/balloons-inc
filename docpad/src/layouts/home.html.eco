@@ -35,6 +35,7 @@ layout: default
 			<%-@partial("contact.html")%>
 		</div>
 		<div class="contact-form">
+			<div class="error"></div>
 			<form action="mail.php" method="post">
 				<div class="field">
 					<label for="fld-name" class="required">Name</label>
