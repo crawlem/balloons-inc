@@ -1,1 +1,1 @@
-I am married with two kids and I live in Exeter. When I'm not balloon modeling, I help run a local dads' toddler group. I'm the treasurer for the PTA at Stoke Hill Infant School, I work for a local church and I cook.
+Rich Oster is a balloon artist based in Exeter. When not balloon modelling, he helps to run a local toddler group. Married with two kids, Rich is the PTA treasurer at an infant school. He also works for a local church and loves to cook.

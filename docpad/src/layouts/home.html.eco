@@ -7,7 +7,7 @@ layout: default
 </section>
 
 <section class="offer">
-	<h2><span class="heading">what I offer</span></h2>
+	<h2><span class="heading">balloon model services</span></h2>
 	<div class="panel">
 		<ol>
 			<li><span></span><%-@partial("hire.html")%></li>
@@ -18,7 +18,7 @@ layout: default
 </section>
 
 <section class="me">
-	<h2><span class="heading">a bit about me</span></h2>
+	<h2><span class="heading">behind the balloons</span></h2>
 	<div class="panel">
 		<img src="images/binc_quotation1.png" width="36" height="35" alt="">
 		<span class="bio"><%-@partial("me.html")%></span>

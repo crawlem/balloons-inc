@@ -1,2 +1,1 @@
-**_Hire_ my balloon skills.**
-Whatever the event, I can come along to provide your guests with my balloon creations, dazzling them as I go.
+Incredible balloon skills to bring excitement to your party. Whatever the occasion, we make dazzling models for your guests. Memorable entertainment for any age.
