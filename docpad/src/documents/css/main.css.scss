@@ -53,6 +53,7 @@ body {
 	font-family: Arial, sans-serif;
 	background: $bg-colour url('../images/squairy_light.png');
 	color: $fg-colour;
+	font-size: 16px;
 	line-height: 1.5em;
 	text-align: center;
 	@include box-reset;
@@ -133,9 +134,10 @@ h2 {
 footer {
 	@include bg-panel;
 	border-top: 2px solid $logo-colour;
-	padding-bottom: $grid-gutter*4;
+	padding: $grid-gutter $grid-gutter $grid-gutter*4 $grid-gutter;
 	font-size: .8em;
 	overflow: hidden;
+	width: 100%;
 
 	.copyright {
 		float: left;
@@ -198,19 +200,19 @@ label {
 }
 
 .field, .field-inline {
-	margin-bottom: $grid-gutter/2;
+	margin: $grid-gutter 0;
 }
 
 .field-inline {
 	display: inline-block;
-	margin-right: $grid-gutter;
+	margin-right: $grid-gutter*2;
 }
 
 input:not([type='image']), textarea {
 	border: 1px solid $logo-colour;
 	border-radius: 2px;
 	padding: $grid-gutter/2;
-	width: 215px;
+	width: 205px;
 	background-color: $bg-hi-colour;
 }
 

@@ -5,7 +5,7 @@
 	
 	<title><%=@site.title%> | <%=@document.title%></title>
 	
-	<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">-->
+	<meta name="viewport" content="width=960,initial-scale=1">
 	<meta name="description" content="<%=@document.description%>">
 	<meta name="keywords" content="<%=@document.keywords%>">
 	<meta name="author" content="<%=@site.author%>">
@@ -20,7 +20,7 @@
 		<%-@content%>
 	</div>
 	<footer>
-		<div class="container">
+		<!-- <div class="container"> -->
 			<div class="copyright">&copy; balloonsinc <%= @formatDate(@site.date, 'YYYY') %></div>
 			<!--<div class="footer-links">
 				<ul>
@@ -28,7 +28,7 @@
 					<li><a href="privacy.html">privacy &amp; cookies</a></li>
 				</ul>
 			</div>-->
-		</div>
+		<!-- </div> -->
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
