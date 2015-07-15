@@ -1,0 +1,363 @@
+// VARIABLES
+// =================================================
+// ----Colours------------
+$bg-colour: #fff;
+$bg-hi-colour: rgba(255, 255, 255, 0.5);
+$bg-lo-colour: rgba(64, 63, 63, 1);
+$bg-lo-colour-opaque: rgba(64, 63, 63, 0.8);
+$fg-colour: #000;
+$logo-colour: #dc4141;
+$form-error-colour: rgba(255, 0, 0, 0.1);
+
+// ----Grid------------
+$grid-gutter-small: 5px;
+$grid-gutter-medium: 10px;
+$grid-gutter-large: 20px;
+$stripe-height: 3px;
+$header-height: 60px;
+$max-width: 1600px;
+
+// ----Carousel---------
+$carousel-height-small: 210px;
+$carousel-height-medium: 300px;
+$carousel-height-large: 400px;
+$carousel-height-super: 500px;
+
+
+// FUNCTIONS
+// =================================================
+@function sum($a, $b) {
+	@return $a + $b
+}
+
+
+// MIXINS
+// =================================================
+@mixin box-reset {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+@mixin hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin vendor-prefix($attr, $val) {
+	-webkit-#{$attr}: #{$val};
+	-moz-#{$attr}: #{$val};
+	-ms-#{$attr}: #{$val};
+	-o-#{$attr}: #{$val};
+	#{$attr}: #{$val};
+}
+
+@mixin display-flex {
+	display: -webkit-box;
+	display: -mox-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+
+// SITE CSS - COMMON
+// =================================================
+body {
+	font-family: Arial,sans-serif;
+	color: $fg-colour;
+	line-height: 1.5em;
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: $max-width;
+	margin: auto;
+}
+
+header {
+	width: 100%;
+	max-width: $max-width;
+	height: $header-height;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: $bg-lo-colour-opaque;
+	border-bottom: $stripe-height solid $logo-colour;
+	@include vendor-prefix(transition, height 0.3s)
+}
+
+header h1 {
+	@include box-reset;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+header h1 a {
+	@include hide-text;
+	width: sum(60px, $grid-gutter-small);
+	height: 60px;
+	display: inline-block;
+	background-image: url('../img/logo.png');
+	background-position: $grid-gutter-small;
+	background-repeat: no-repeat;
+}
+
+nav ul {
+	list-style: none;
+	@include display-flex;
+	@include vendor-prefix(justify-content, flex-end);
+}
+
+nav li {
+	margin-right: 5vw;
+	height: 28px;
+}
+
+nav li a {
+	display: table-cell;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $bg-colour;
+	vertical-align: middle;
+	height: 28px;
+}
+
+nav li:nth-child(5),
+nav li:nth-child(6) {
+	@include hide-text;
+	width: 28px;
+	background-image: url('../img/facebook.png');
+}
+
+nav li:nth-child(6) {
+	background-image: url('../img/twitter.png');
+	margin-right: $grid-gutter-small;
+}
+
+.carousel {
+	width: 100%;
+	height: $carousel-height-small;
+	background-image: url('../img/carousel/1_large.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel h2,
+.carousel p {
+	display: none;
+}
+
+.home section {
+	height: $carousel-height-small/2;
+}
+
+.home .content {
+	margin: auto;
+	width: 75%;
+	text-align: center;
+	@include display-flex;
+	@include vendor-prefix(justify-content, center);
+	@include vendor-prefix(align-items, center);
+}
+
+section h1 {
+	display: none;
+}
+
+.services ul {
+	@include box-reset;
+	height: 100%;
+	margin-right: -$grid-gutter-small;
+	list-style: none;
+	@include display-flex;
+	@include vendor-prefix(flex-wrap, wrap);
+	@include vendor-prefix(justify-content, space-between);
+	@include vendor-prefix(align-items, stretch);
+}
+
+.services li {
+	background-color: $logo-colour;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	@include vendor-prefix(flex-grow, 1);
+	@include vendor-prefix(flex-shrink, 1);
+	@include vendor-prefix(flex-basis, 300px);
+}
+
+.services li a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	padding: $grid-gutter-small;
+}
+
+.services li h2 {
+	@include box-reset;
+	text-transform: uppercase;
+	color: $bg-colour;
+	font-size: 1.5em;
+	position: relative;
+	top: 50%;
+	@include vendor-prefix(transform, translateY(-50%));
+}
+
+.services li p {
+	display: none;
+	color: $bg-colour;
+	font-size: .8em;
+}
+
+footer {
+	font-size: .9em;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 $grid-gutter-small;
+	border-top: $stripe-height solid $logo-colour;
+	background-color: $bg-lo-colour;
+	color: #a8a6a6;
+}
+
+
+// SITE CSS - MEDIUM
+// =================================================
+@media screen and (min-width: 481px) {
+	header h1 a {
+		background-position: $grid-gutter-medium;
+		width: sum(60px, $grid-gutter-medium);
+	}
+
+	nav li:nth-child(6) {
+		margin-right: $grid-gutter-medium;
+	}
+
+	.carousel {
+		height: $carousel-height-medium;
+	}
+
+	.home section {
+		height: $carousel-height-medium/2;
+	}
+
+	.services li a {
+		padding: $grid-gutter-medium;
+	}
+
+	section h1 {
+		overflow: visible;
+	}
+
+	section h1:before, 
+	section h1:after {
+	    background-color: $logo-colour;
+	    content: "";
+	    display: inline-block;
+	    height: 1px;
+	    position: relative;
+	    vertical-align: middle;
+	    width: 50%;
+	}
+
+	section h1:before {
+	    right: 0.5em;
+	    margin-left: -50%;
+	}
+
+	section h1:after {
+	    left: 0.5em;
+	    margin-right: -50%;
+	}
+
+	footer {
+		padding: 0 $grid-gutter-medium;
+	}
+}
+
+
+// SITE CSS - WIDER
+// =================================================
+@media screen and (min-width: 600px) {
+	.carousel {
+		height: $carousel-height-large;
+	}
+
+	.home section {
+		height: $carousel-height-large/2;
+	}
+
+	.carousel h2 {
+		@include hide-text;
+		@include box-reset;
+		display: block;
+		position: absolute;
+		top: $header-height+$grid-gutter-large;
+		width: 100%;
+		height: 73px;
+		background-repeat: no-repeat;
+		background-image: url('../img/heading.png');
+		background-position: center top;
+		background-size: 600px 100%;
+	}
+
+	.carousel p {
+		display: inline-block;
+		color: #fff;
+		font-size: .9em;
+		position: absolute;
+		top: $header-height+$grid-gutter-large+73px;
+		padding: $grid-gutter-large;
+		text-align: center;
+	}
+}
+
+
+// SITE CSS - LARGE
+// =================================================
+@media screen and (min-width: 768px) {
+	header h1 a {
+		background-position: $grid-gutter-large;
+		width: sum(60px, $grid-gutter-large);
+	}
+
+	nav li:nth-child(6) {
+		margin-right: $grid-gutter-large;
+	}
+
+	.carousel h2 {
+		background-position: right top;
+		right: $grid-gutter-large;
+	}
+
+	.carousel p {
+		text-align: right;
+		margin-left: 50%;
+	}
+
+	.services li a {
+		padding: $grid-gutter-large;
+	}
+
+	footer {
+		padding: 0 $grid-gutter-large;
+	}
+}
+
+
+// SITE CSS - SUPER WIDE
+// =================================================
+@media screen and (min-width: 980px) {
+	.carousel {
+		height: $carousel-height-super;
+	}
+
+	.home section {
+		height: $carousel-height-super/2;
+	}
+}

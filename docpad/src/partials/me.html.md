@@ -1,1 +1,0 @@
-Rich Oster is a balloon artist based in Exeter. When not balloon modelling, he helps to run a local toddler group. Married with two kids, Rich is the PTA treasurer at an infant school. He also works for a local church and loves to cook.

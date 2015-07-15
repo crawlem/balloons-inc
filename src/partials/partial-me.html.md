@@ -1,0 +1,1 @@
+Rich is Exeter's premium balloon artist, injecting colour and fun into parties and events all over the city and beyond.

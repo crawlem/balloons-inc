@@ -1,38 +1,54 @@
 ---
 layout: default
 ---
+
 <section class="content">
-	<div class="content-img-wrapper"><img src="images/carousel/binc_crab.jpg" width="779" height="348" alt="Crab" class="content-img"></div>
 	<%-@content%>
 </section>
 
-<section class="offer">
-	<h2><span class="heading">balloon model services</span></h2>
-	<div class="panel">
-		<ol>
-			<li><span></span><%-@partial("hire.html")%></li>
-			<li><span></span><%-@partial("order.html")%></li>
-			<li><span></span><%-@partial("book.html")%></li>
-		</ol>
-	</div>
+<section class="services">
+	<h1>Balloon Model Services</h1>
+	<ul>
+		<li>
+			<a href="hire.html">
+				<%-@partial("partial-hire.html")%>
+			</a>
+		</li>
+		<li>
+			<a href="learn.html">
+				<h2>Learn</h2>
+				<%-@partial("partial-order.html")%>
+			</a>
+		</li>
+		<li>
+			<a href="book.html">
+				<h2>Book</h2>
+				<%-@partial("partial-book.html")%>
+			</a>
+		</li>
+	</ul>
 </section>
 
-<section class="me">
-	<h2><span class="heading">behind the balloons</span></h2>
+<section class="social">
+	<h1>Test</h1>
+</section>
+
+<!-- <section class="me">
+	<h1>Behind the Balloons</h1>
 	<div class="panel">
-		<img src="images/binc_quotation1.png" width="36" height="35" alt="">
-		<span class="bio"><%-@partial("me.html")%></span>
-		<img src="images/binc_quotation2.png" width="36" height="35" alt="">
+		<img src="img/quote1.png" width="36" height="35" alt="">
+		<span class="bio"><%-@partial("partial-me.html")%></span>
+		<img src="img/quote2.png" width="36" height="35" alt="">
 	</div>
 	<span class="speech"></span>
-	<img src="images/binc_me.jpg" width="303" height="222" alt="Me">
-</section>
+	<img src="img/me.jpg" width="303" height="222" alt="Me">
+</section> -->
 
-<section class="contact">
-	<h2><span class="heading">get in touch</span></h2>
+<!-- <section class="contact">
+	<h1>Get in Touch</h1>
 	<div class="contact-wrapper">
 		<div class="contact-text">
-			<%-@partial("contact.html")%>
+			<%-@partial("partial-contact.html")%>
 		</div>
 		<div class="contact-form">
 			<div class="error"></div>
@@ -54,9 +70,9 @@ layout: default
 					<textarea name="message" id="fld-message" required></textarea>
 				</div>
 				<div class="buttons">
-					<input type="image" src="images/binc_sendbutton.png" width="139" height="38">
+					<input type="image" src="img/send.png" width="139" height="38">
 				</div>
 			</form>
 		</div>
 	</div>
-</section>
+</section> -->
