@@ -1,7 +1,11 @@
 ---
 title: Hire
 layout: text
+ignored: false
+
 isPage: true
+pageOrder: 2
+isMainMenu: true
 ---
 Make your event one that will be remembered by hiring Rich’s balloon twisting skills.
 

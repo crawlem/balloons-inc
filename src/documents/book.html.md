@@ -1,7 +1,11 @@
 ---
 title: Book
 layout: text
+ignored: false
+
 isPage: true
+pageOrder: 4
+isMainMenu: true
 ---
 The Balloons Inc. stall will make any event, truly an occasion to remember. From cute balloon animals to extravagant balloon hats, the high quality balloon modelling enhances the whole atmosphere of events and celebrations adding vibrancy, with a riot of colours and shapes.
 

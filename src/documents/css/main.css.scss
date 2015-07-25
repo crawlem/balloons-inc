@@ -80,9 +80,10 @@ header {
 			width: sum(60px, $grid-gutter-small);
 			height: 60px;
 			display: inline-block;
-			background-image: url('../img/logo.png');
-			background-position: $grid-gutter-small;
-			background-repeat: no-repeat;
+			// background-image: url('../img/logo.png');
+			// background-position: $grid-gutter-small;
+			// background-repeat: no-repeat;
+			background: url('../img/logo.png') no-repeat $grid-gutter-small;
 		}
 	}
 }
@@ -138,11 +139,14 @@ nav {
 .carousel {
 	width: 100%;
 	height: 0;
+	// min-height: $header-height*4;
 	padding-top: 66.66%;
-	background-repeat: no-repeat;
-	background-position: center bottom;
+	// background-repeat: no-repeat;
+	// background-position: center bottom;
+	// background-image: url('../img/carousel/carousel-1.jpg');
+	// background-repeat: no-repeat;
+	background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
 	background-size: cover;
-	background-image: url('../img/carousel/carousel-1.jpg');
 	overflow: hidden;
 	position: relative;
 
@@ -204,9 +208,10 @@ nav {
 		}
 
 		li {
-			background-color: $logo-colour;
+			// background-color: $logo-colour;
+			// background-position: center;
+			background: $logo-colour center;
 			background-size: cover;
-			background-position: center;
 			height: $section-height;
 			max-height: $section-max-height;
 			text-align: center;
@@ -266,9 +271,14 @@ nav {
 
 footer {
 	font-size: .9em;
+	font-weight: 300;
 	padding: $grid-gutter-small $grid-gutter-small $footer-trail $grid-gutter-small;
 	background-color: $bg-lo-colour;
 	color: $fg-lo-colour;
+
+	strong {
+		font-weight: 400;
+	}
 
 	a,
 	a:active,
@@ -349,9 +359,10 @@ footer {
 			@include box-reset;
 			display: block;
 			height: 51px;
-			background-repeat: no-repeat;
-			background-image: url('../img/heading.png');
-			background-position: center top;
+			// background-repeat: no-repeat;
+			// background-image: url('../img/heading.png');
+			// background-position: center top;
+			background: url('../img/heading.png') no-repeat center top;
 			background-size: 419px 100%;
 		}
 
@@ -370,9 +381,10 @@ footer {
 	}
 
 	.testimonial {
-		background-repeat: no-repeat;
-		background-position: center right;
-		background-image: url('../img/crab.png');
+		// background-repeat: no-repeat;
+		// background-position: center right;
+		// background-image: url('../img/crab.png');
+		background: url('../img/crab.png') no-repeat center right;
 		-webkit-justify-content: flex-end;
 		-ms-flex-pack: end;
 		justify-content: flex-end;
@@ -437,8 +449,8 @@ footer {
 		}
 
 		article {
-			-webkit-flex-basis: 75%;
-			-ms-flex-preferred-size: 75%;
+			-webkit-flex-basis: 65%;
+			-ms-flex-preferred-size: 65%;
 			flex-basis: 65%;
 		}
 	}

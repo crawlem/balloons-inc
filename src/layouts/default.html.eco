@@ -24,10 +24,11 @@
 						<li><a href="sitemap.html">&#9776;</a></li>
 						<li>
 							<ul>
-								<li><a href="hire.html">Hire</a></li>
-								<li><a href="learn.html">Learn</a></li>
-								<li><a href="book.html">Book</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<% for page in @getCollection("mainMenu").findAll().toJSON(): %>
+							        <li<%= if page.id is @document.id then ' class="current"' %>>
+							            <a href="<%= page.url %>"><%= page.title %></a>
+							        </li>
+							    <% end %>
 							</ul>
 						</li>
 						<li><a href="https://twitter.com/balloonsinc">Twitter</a></li>
@@ -49,14 +50,16 @@
 
 			<section class="testimonial">
 				<h1>Testimonials</h1>
-				<p>"I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat"</p>
+				<p>"I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat."</p>
 			</section>
 
 			<footer>
 				<ul>
-					<li><a href="sitemap.html">Sitemap</a></li>
-					<li><a href="privacy.html">Privacy &amp; Cookies</a></li>
-					<li><a href="terms.html">Terms</a></li>
+					<% for page in @getCollection("footerMenu").findAll().toJSON(): %>
+				        <li<%= if page.id is @document.id then ' class="current"' %>>
+				            <a href="<%= page.url %>"><%= page.title %></a>
+				        </li>
+				    <% end %>
 					<li><strong>&copy; balloonsinc <%= @formatDate(@site.date, 'YYYY') %></strong></li>
 				</ul>
 			</footer>
