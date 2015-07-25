@@ -1,0 +1,15 @@
+---
+title: Sitemap
+layout: text
+---
+<p>Each page available on this website is listed below.</p>
+
+<ul>
+    <% for page in @getCollection("html").findAll({isPage:true}).toJSON(): %>
+        <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+            <a href="<%= page.url %>">
+                <%= page.title %>
+            </a>
+        </li>
+    <% end %>
+</ul>
