@@ -19,6 +19,9 @@ docpadConfig = {
 
         formatDate: (date,format='LLLL') -> return moment(date).format(format)
 
+        getUrl: (url) ->
+            return url.replace /^\//g, ""
+
     collections:
         pages: ->
             @getCollection("html").findAllLive({ignored: false, isPage: true}, [{pageOrder: 1}])
