@@ -14,6 +14,7 @@
     "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-ruby": "~2.0.2",
     "docpad-plugin-sass": "~2.7.4",
+    "docpad-plugin-sitemap": "~2.2.0",
     "moment": "~2.3.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",

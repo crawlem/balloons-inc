@@ -1,26 +1,24 @@
-// var $window = $(window);
-// var nav = $('body');
-// $window.scroll(function(){
-// 	if ($window.scrollTop() >= 50) {
-//        nav.addClass('scrolled');
-//     }
-//     else {
-//        nav.removeClass('scrolled');
-//     }
-// });
-
 $(document).ready(function() {
-	var i = 0;
-    var duration = 500;
-    var interval = 5000;
+	// TODO Add burger menu href event handler
 
-    var images = ['carousel-crab', 'carousel-monkey', 'carousel-rose', 'carousel-horse', 'carousel-pig', 'carousel-frog', 'carousel-lion'];
+	// Setup carousel rotation
+	var i = 0;
+    var duration = 1000;
+    var interval = 6000;
+
+    var images = 'carousel-1 carousel-2 carousel-3 carousel-4 carousel-5';
+	var arr = images.split(' ');
+	// Preload the images for best performance
+	$(arr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
+
+	// Start the rotation
     setTimeout(switchImg, interval);   
 
     function switchImg() {
-	    $('header .carousel')
-	    	.removeClass('carousel-crab carousel-monkey carousel-rose carousel-lion carousel-horse carousel-pig carousel-frog carousel-lion')
-	        .addClass(images[i<7?++i:(i=1,i)])
+	    $('.carousel')
+	    	// .removeClass(images)
+	        // .addClass(arr[i<4?++i:(i=0,i)])
+	        .css('background-image', 'url("img/carousel/' + arr[i<4?++i:(i=0,i)] + '.jpg")')
 	        .css('opacity', 0.5)
 	        .animate({
 	            opacity: 0.7

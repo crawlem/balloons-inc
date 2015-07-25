@@ -1,0 +1,1 @@
+**Bring the buzz of the Balloons Inc. stall to your event. Rich will pitch up to your school fete, community event or festival, and sell balloons direct to the crowd.**

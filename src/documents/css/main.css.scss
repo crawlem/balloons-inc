@@ -1,11 +1,12 @@
 // VARIABLES
 // =================================================
-// ----Colours------------
+// ----Colours---------
 $bg-colour: #fff;
 $bg-hi-colour: rgba(255, 255, 255, 0.5);
 $bg-lo-colour: rgba(64, 63, 63, 1);
 $bg-lo-colour-opaque: rgba(64, 63, 63, 0.8);
 $fg-colour: #000;
+$fg-lo-colour: #a8a6a6;
 $logo-colour: #dc4141;
 $form-error-colour: rgba(255, 0, 0, 0.1);
 
@@ -13,15 +14,14 @@ $form-error-colour: rgba(255, 0, 0, 0.1);
 $grid-gutter-small: 5px;
 $grid-gutter-medium: 10px;
 $grid-gutter-large: 20px;
-$stripe-height: 3px;
 $header-height: 60px;
 $max-width: 1600px;
+$footer-trail: 2em;
 
-// ----Carousel---------
-$carousel-height-small: 210px;
-$carousel-height-medium: 300px;
-$carousel-height-large: 400px;
-$carousel-height-super: 500px;
+// ---Content----------
+$carousel-height: 40vh;
+$section-height: 30vh;
+$section-max-height: 12em;
 
 
 // FUNCTIONS
@@ -45,27 +45,11 @@ $carousel-height-super: 500px;
 	overflow: hidden;
 }
 
-@mixin vendor-prefix($attr, $val) {
-	-webkit-#{$attr}: #{$val};
-	-moz-#{$attr}: #{$val};
-	-ms-#{$attr}: #{$val};
-	-o-#{$attr}: #{$val};
-	#{$attr}: #{$val};
-}
-
-@mixin display-flex {
-	display: -webkit-box;
-	display: -mox-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-}
-
 
 // SITE CSS - COMMON
 // =================================================
 body {
-	font-family: Arial,sans-serif;
+	font-family: 'Lato', sans-serif;
 	color: $fg-colour;
 	line-height: 1.5em;
 	overflow-x: hidden;
@@ -84,145 +68,227 @@ header {
 	top: 0;
 	z-index: 999;
 	background-color: $bg-lo-colour-opaque;
-	border-bottom: $stripe-height solid $logo-colour;
-	@include vendor-prefix(transition, height 0.3s)
+
+	h1 {
+		@include box-reset;
+		position: absolute;
+		top: 0;
+		left: 0;
+	
+		a {
+			@include hide-text;
+			width: sum(60px, $grid-gutter-small);
+			height: 60px;
+			display: inline-block;
+			background-image: url('../img/logo.png');
+			background-position: $grid-gutter-small;
+			background-repeat: no-repeat;
+		}
+	}
 }
 
-header h1 {
-	@include box-reset;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+nav {
+	ul {
+		list-style: none;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
 
-header h1 a {
-	@include hide-text;
-	width: sum(60px, $grid-gutter-small);
-	height: 60px;
-	display: inline-block;
-	background-image: url('../img/logo.png');
-	background-position: $grid-gutter-small;
-	background-repeat: no-repeat;
-}
+		li {
+			display: none;
+			margin-right: 4vw;
+			height: 28px;
 
-nav ul {
-	list-style: none;
-	@include display-flex;
-	@include vendor-prefix(justify-content, flex-end);
-}
+			a {
+				display: table-cell;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				color: $bg-colour;
+				vertical-align: middle;
+				height: 28px;
+			}
+		}
+	}
+	
+	> ul > li {
+		&:first-child {
+			font-size: 28px;
+			display: inline-block;
+		}
 
-nav li {
-	margin-right: 5vw;
-	height: 28px;
-}
+		&:nth-last-child(-n+2) {
+			display: inline-block;
+			@include hide-text;
+			width: 28px;
+			background-image: url('../img/twitter.png');
+		}
 
-nav li a {
-	display: table-cell;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: $bg-colour;
-	vertical-align: middle;
-	height: 28px;
-}
-
-nav li:nth-child(5),
-nav li:nth-child(6) {
-	@include hide-text;
-	width: 28px;
-	background-image: url('../img/facebook.png');
-}
-
-nav li:nth-child(6) {
-	background-image: url('../img/twitter.png');
-	margin-right: $grid-gutter-small;
+		&:last-child {
+			display: inline-block;
+			background-image: url('../img/facebook.png');
+			margin-right: $grid-gutter-small;
+		}
+	}
 }
 
 .carousel {
 	width: 100%;
-	height: $carousel-height-small;
-	background-image: url('../img/carousel/1_large.jpg');
+	height: 0;
+	padding-top: 66.66%;
 	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: 100%;
+	background-position: center bottom;
+	background-size: cover;
+	background-image: url('../img/carousel/carousel-1.jpg');
 	overflow: hidden;
 	position: relative;
+
+	h2,
+	p {
+		display: none;
+	}
 }
 
-.carousel h2,
-.carousel p {
-	display: none;
-}
-
-.home section {
-	height: $carousel-height-small/2;
-}
-
-.home .content {
-	margin: auto;
-	width: 75%;
+.content,
+.testimonial {
+	min-height: $section-height;
+	max-height: $section-max-height;
 	text-align: center;
-	@include display-flex;
-	@include vendor-prefix(justify-content, center);
-	@include vendor-prefix(align-items, center);
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	h1 {
+		display: none;
+	}
+
+	p {
+		width: 75%;
+	}
 }
 
-section h1 {
-	display: none;
-}
-
-.services ul {
-	@include box-reset;
-	height: 100%;
-	margin-right: -$grid-gutter-small;
-	list-style: none;
-	@include display-flex;
-	@include vendor-prefix(flex-wrap, wrap);
-	@include vendor-prefix(justify-content, space-between);
-	@include vendor-prefix(align-items, stretch);
-}
-
-.services li {
+.testimonial p {
+	color: $bg-colour;
 	background-color: $logo-colour;
-	height: 100%;
-	position: relative;
-	text-align: center;
-	@include vendor-prefix(flex-grow, 1);
-	@include vendor-prefix(flex-shrink, 1);
-	@include vendor-prefix(flex-basis, 300px);
+	padding: $grid-gutter-medium;
+	text-align: left;
 }
 
-.services li a {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	text-decoration: none;
-	padding: $grid-gutter-small;
+.home {
+	.services {
+		min-height: $section-height;
+		max-height: $section-max-height;
+
+		h1 {
+			display: none;
+		}
+
+		ul {
+			@include box-reset;
+			height: 100%;
+			list-style: none;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			-webkit-align-items: stretch;
+			-ms-flex-align: stretch;
+			align-items: stretch;
+		}
+
+		li {
+			background-color: $logo-colour;
+			background-size: cover;
+			background-position: center;
+			height: $section-height;
+			max-height: $section-max-height;
+			text-align: center;
+			-webkit-flex: 1 1 200px;
+			-ms-flex: 1 1 200px;
+			flex: 1 1 200px;
+			
+			a {
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				text-decoration: none;
+			}
+
+			h2 {
+				@include box-reset;
+				text-transform: uppercase;
+				color: $bg-colour;
+				font-size: 1.5em;
+				position: relative;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+
+			&:nth-child(1) {
+				background-image: url('../img/hire.jpg');
+
+				a {
+					background-color: $bg-lo-colour-opaque;
+				}
+			}
+		}
+	}
 }
 
-.services li h2 {
-	@include box-reset;
-	text-transform: uppercase;
-	color: $bg-colour;
-	font-size: 1.5em;
-	position: relative;
-	top: 50%;
-	@include vendor-prefix(transform, translateY(-50%));
-}
+.text main {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin: $grid-gutter-small;
 
-.services li p {
-	display: none;
-	color: $bg-colour;
-	font-size: .8em;
+	section h2 {
+		color: $logo-colour;
+		font-size: 3em;
+	}
 }
 
 footer {
 	font-size: .9em;
-	height: 60px;
-	line-height: 60px;
-	padding: 0 $grid-gutter-small;
-	border-top: $stripe-height solid $logo-colour;
+	padding: $grid-gutter-small $grid-gutter-small $footer-trail $grid-gutter-small;
 	background-color: $bg-lo-colour;
-	color: #a8a6a6;
+	color: $fg-lo-colour;
+
+	a,
+	a:active,
+	a:visited {
+		color: $fg-lo-colour;
+		text-decoration: none;
+	}
+
+	ul {
+		@include box-reset;
+		list-style: none;
+
+		li {
+			display: block;
+		}
+	}
 }
 
 
@@ -234,49 +300,16 @@ footer {
 		width: sum(60px, $grid-gutter-medium);
 	}
 
-	nav li:nth-child(6) {
-		margin-right: $grid-gutter-medium;
-	}
-
-	.carousel {
-		height: $carousel-height-medium;
-	}
-
-	.home section {
-		height: $carousel-height-medium/2;
-	}
-
-	.services li a {
-		padding: $grid-gutter-medium;
-	}
-
-	section h1 {
-		overflow: visible;
-	}
-
-	section h1:before, 
-	section h1:after {
-	    background-color: $logo-colour;
-	    content: "";
-	    display: inline-block;
-	    height: 1px;
-	    position: relative;
-	    vertical-align: middle;
-	    width: 50%;
-	}
-
-	section h1:before {
-	    right: 0.5em;
-	    margin-left: -50%;
-	}
-
-	section h1:after {
-	    left: 0.5em;
-	    margin-right: -50%;
+	nav {
+		> ul > li {
+			&:last-child {
+				margin-right: $grid-gutter-medium;
+			}
+		}
 	}
 
 	footer {
-		padding: 0 $grid-gutter-medium;
+		padding: $grid-gutter-medium $grid-gutter-medium $footer-trail $grid-gutter-medium;
 	}
 }
 
@@ -284,36 +317,89 @@ footer {
 // SITE CSS - WIDER
 // =================================================
 @media screen and (min-width: 600px) {
+	nav {
+		ul li {
+			display: inline-block;
+		}
+
+		> ul > li {
+			&:first-child {
+				display: none;
+			}
+		}
+
+		> ul > li > ul > li {
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
 	.carousel {
-		height: $carousel-height-large;
+		padding-top: 0;
+		height: $carousel-height;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+
+		h2 {
+			@include hide-text;
+			@include box-reset;
+			display: block;
+			height: 51px;
+			background-repeat: no-repeat;
+			background-image: url('../img/heading.png');
+			background-position: center top;
+			background-size: 419px 100%;
+		}
+
+		p {
+			display: inline-block;
+			color: #fff;
+			font-size: .9em;
+			text-align: center;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		}
 	}
 
-	.home section {
-		height: $carousel-height-large/2;
+	.text main,
+	.carousel-content {
+		margin: $grid-gutter-medium;
 	}
 
-	.carousel h2 {
-		@include hide-text;
-		@include box-reset;
-		display: block;
-		position: absolute;
-		top: $header-height+$grid-gutter-large;
-		width: 100%;
-		height: 73px;
+	.testimonial {
 		background-repeat: no-repeat;
-		background-image: url('../img/heading.png');
-		background-position: center top;
-		background-size: 600px 100%;
-	}
+		background-position: center right;
+		background-image: url('../img/crab.png');
+		-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
 
-	.carousel p {
-		display: inline-block;
-		color: #fff;
-		font-size: .9em;
-		position: absolute;
-		top: $header-height+$grid-gutter-large+73px;
-		padding: $grid-gutter-large;
-		text-align: center;
+		p {
+			margin-left: $grid-gutter-medium;
+			margin-right: 319px + $grid-gutter-medium;
+			padding: $grid-gutter-medium;
+			max-width: 600px;
+			position: relative;
+
+			&:after {
+				content: "";
+				display: block; /* reduce the damage in FF3.0 */
+				position: absolute;
+				bottom: 10px;
+				right: -50px;
+				width: 0;
+				border-width: 10px 0 10px 50px;
+				border-color: transparent $logo-colour;
+				border-style: solid;
+			}
+		}
 	}
 }
 
@@ -326,38 +412,47 @@ footer {
 		width: sum(60px, $grid-gutter-large);
 	}
 
-	nav li:nth-child(6) {
+	nav > ul > li:last-child {
 		margin-right: $grid-gutter-large;
 	}
 
-	.carousel h2 {
-		background-position: right top;
-		right: $grid-gutter-large;
+	.text main,
+	.carousel-content {
+		margin: $grid-gutter-large;
 	}
 
-	.carousel p {
-		text-align: right;
-		margin-left: 50%;
+	.carousel {
+		h2 {
+			background-position: right top;
+		}
+
+		p {
+			margin-left: 60%;
+			text-align: right;
+		}
 	}
 
-	.services li a {
+	.text main {
+		section {
+			-webkit-flex-basis: 25%;
+			-ms-flex-preferred-size: 25%;
+			flex-basis: 25%;
+			text-align: center;
+		}
+
+		article {
+			-webkit-flex-basis: 75%;
+			-ms-flex-preferred-size: 75%;
+			flex-basis: 65%;
+		}
+	}
+
+	.testimonial p {
+		margin-left: $grid-gutter-large;
 		padding: $grid-gutter-large;
 	}
 
 	footer {
-		padding: 0 $grid-gutter-large;
-	}
-}
-
-
-// SITE CSS - SUPER WIDE
-// =================================================
-@media screen and (min-width: 980px) {
-	.carousel {
-		height: $carousel-height-super;
-	}
-
-	.home section {
-		height: $carousel-height-super/2;
+		padding: $grid-gutter-large $grid-gutter-large $footer-trail $grid-gutter-large;
 	}
 }

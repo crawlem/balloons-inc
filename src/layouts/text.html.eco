@@ -1,5 +1,11 @@
 ---
 layout: default
 ---
-<h2><span class="heading"><%=@document.title%></span></h2>
-<%-@content%>
+<section class="text-heading">
+	<h2><%=@document.title%></h2>
+	<%-@partial("strapline-" + @document.name)%>
+</section>
+
+<article>
+	<%-@content%>
+</article>

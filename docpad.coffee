@@ -7,7 +7,7 @@ moment.lang('en')  # set locale
 
 # Define the DocPad Configuration
 docpadConfig = {
-	port: 80
+	#port: 80
 	
 	templateData:
         site:
