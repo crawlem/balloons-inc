@@ -99,7 +99,7 @@ nav {
 		justify-content: flex-end;
 
 		li {
-			display: none;
+			display: inline-block;
 			margin-right: 4vw;
 			height: 28px;
 
@@ -115,23 +115,38 @@ nav {
 		}
 	}
 	
-	> ul > li {
-		&:first-child {
-			font-size: 28px;
-			display: inline-block;
-		}
+	> ul {
+		> li {
+			&:first-child {
+				font-size: 28px;
+				margin-right: 0;
+			}
 
-		&:nth-last-child(-n+2) {
-			display: inline-block;
-			@include hide-text;
-			width: 28px;
-			background-image: url('../img/twitter.png');
-		}
+			&:nth-last-child(-n+2) {
+				@include hide-text;
+				width: 28px;
+				background-image: url('../img/twitter.png');
+			}
 
-		&:last-child {
-			display: inline-block;
-			background-image: url('../img/facebook.png');
-			margin-right: $grid-gutter-small;
+			&:last-child {
+				background-image: url('../img/facebook.png');
+				margin-right: $grid-gutter-small;
+			}
+
+			> ul {
+				display: none;
+				position: absolute;
+				top: $header-height;
+				right: $grid-gutter-small+56px;
+				background-color: $bg-lo-colour-opaque;
+				margin: 0;
+				padding: .5em;
+
+				> li {
+					margin: 0;
+					display: block;
+				}
+			}
 		}
 	}
 }
@@ -306,12 +321,8 @@ footer {
 		width: sum(60px, $grid-gutter-medium);
 	}
 
-	nav {
-		> ul > li {
-			&:last-child {
-				margin-right: $grid-gutter-medium;
-			}
-		}
+	nav > ul > li:last-child {
+		margin-right: $grid-gutter-medium;
 	}
 
 	footer {
@@ -324,19 +335,25 @@ footer {
 // =================================================
 @media screen and (min-width: 600px) {
 	nav {
-		ul li {
-			display: inline-block;
-		}
-
 		> ul > li {
 			&:first-child {
 				display: none;
 			}
-		}
 
-		> ul > li > ul > li {
-			&:last-child {
-				margin-right: 0;
+			> ul {
+				display: inline-block;
+				position: static;
+				background-color: transparent;
+				padding: 0;
+
+				> li {
+					display: inline-block;
+					margin-right: 4vw;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
 			}
 		}
 	}

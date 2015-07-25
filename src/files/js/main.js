@@ -1,5 +1,9 @@
 $(document).ready(function() {
-	// TODO Add burger menu href event handler
+	// Add burger menu href event handler
+	$('.burger').click(function(){
+		$('header nav ul > li > ul').toggle();
+		return false;
+	});
 
 	// Setup carousel rotation
 	var i = 0;

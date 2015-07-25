@@ -21,7 +21,7 @@
 				<h1><a href="index.html"><%= @site.title %></a></h1>
 				<nav>
 					<ul>
-						<li><a href="sitemap.html">&#9776;</a></li>
+						<li class="burger"><a href="sitemap.html">&#9776;</a></li>
 						<li>
 							<ul>
 								<% for page in @getCollection("mainMenu").findAll().toJSON(): %>
