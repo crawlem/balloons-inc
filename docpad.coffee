@@ -11,13 +11,21 @@ docpadConfig = {
 	
 	templateData:
         site:
-            url: "http://balloonsinc.co.uk/"
+            url: "http://balloonsinc.co.uk"
             title: "Balloons Inc."
             author: "Mark Crawley"
             copyright: "balloonsinc"
             ga: "UA-39475717-1"
 
         formatDate: (date,format='LLLL') -> return moment(date).format(format)
+
+    collections:
+        pages: ->
+            @getCollection("html").findAllLive({isPage: true})
+
+    plugins:
+        sitemap:
+            collectionName: 'pages'
 }
 
 # Export the DocPad Configuration

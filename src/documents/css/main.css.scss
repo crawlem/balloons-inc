@@ -185,16 +185,12 @@ nav {
 
 .home {
 	.services {
-		min-height: $section-height;
-		max-height: $section-max-height;
-
 		h1 {
 			display: none;
 		}
 
 		ul {
 			@include box-reset;
-			height: 100%;
 			list-style: none;
 			display: -webkit-flex;
 			display: -ms-flexbox;
