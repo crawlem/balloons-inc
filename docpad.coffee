@@ -9,11 +9,12 @@ moment.lang('en')  # set locale
 docpadConfig = {
     environments:
         development:
-            maxAge: false
             port: 9778
         production:
             hostname: process.env.OPENSHIFT_NODEJS_IP
-            port: process.env.OPENSHIFT_NODEJS_PORT
+            port: process.env.OPENSHIFT_NODEJS_PORT || 8080
+
+    env: "production"
 	
 	templateData:
         site:
