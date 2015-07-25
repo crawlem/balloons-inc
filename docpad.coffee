@@ -7,7 +7,13 @@ moment.lang('en')  # set locale
 
 # Define the DocPad Configuration
 docpadConfig = {
-	port: 8080
+    environments:
+        development:
+            maxAge: false
+            port: 9778
+        production:
+            hostname: process.env.OPENSHIFT_NODEJS_IP
+            port: process.env.OPENSHIFT_NODEJS_PORT
 	
 	templateData:
         site:
