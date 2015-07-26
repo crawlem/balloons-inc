@@ -2,6 +2,7 @@
 title: Book
 layout: text
 ignored: false
+outFilename: book.html
 
 isPage: true
 pageOrder: 4
@@ -11,7 +12,7 @@ testimonials: true
 ---
 The Balloons Inc. stall will make any event, truly an occasion to remember. From cute balloon animals to extravagant balloon hats, the high quality balloon modelling enhances the whole atmosphere of events and celebrations adding vibrancy, with a riot of colours and shapes.
 
-Having the Balloon stall at your event will not only create a buzz of colour and excitement, it’s also a great way to raise some extra money for you charity.
+Having the Balloon stall at your event will not only create a buzz of colour and excitement, it’s also a great way to raise some extra money for your charity.
 
 ### Balloons Inc. Stall Rates
 

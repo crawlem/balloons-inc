@@ -2,6 +2,7 @@
 title: Terms & Conditions
 layout: text
 ignored: false
+outFilename: terms.html
 
 isPage: true
 pageOrder: 8

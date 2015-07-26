@@ -1,4 +1,5 @@
 ---
+outFilename: layout-contact.html
 layout: text
 ---
 <%-@content%>

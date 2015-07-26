@@ -2,6 +2,7 @@
 title: Home
 layout: home
 ignored: false
+outFilename: index.html
 
 isPage: true
 pageOrder: 1

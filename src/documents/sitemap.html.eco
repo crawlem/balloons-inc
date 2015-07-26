@@ -2,6 +2,7 @@
 title: Sitemap
 layout: text
 ignored: false
+outFilename: sitemap.html
 
 isFooterMenu: true
 pageOrder: 6

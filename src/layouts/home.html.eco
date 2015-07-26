@@ -1,4 +1,5 @@
 ---
+outFilename: layout-home.html
 layout: default
 ---
 <section class="content">

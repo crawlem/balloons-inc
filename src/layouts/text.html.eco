@@ -1,4 +1,5 @@
 ---
+outFilename: layout-text.html
 layout: default
 ---
 <section class="text-heading">

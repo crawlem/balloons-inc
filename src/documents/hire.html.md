@@ -2,6 +2,7 @@
 title: Hire
 layout: text
 ignored: false
+outFilename: hire.html
 
 isPage: true
 pageOrder: 2

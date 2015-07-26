@@ -1,7 +1,8 @@
 ---
 title: Thank You
-layout: layout-thanks
+layout: thanks
 ignored: false
+outFilename: thanks.html
 
 isPage: false
 
