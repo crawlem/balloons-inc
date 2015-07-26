@@ -1,0 +1,4 @@
+---
+layout: text
+---
+<div class="message"><%-@partial("form-thanks.html")%></div>

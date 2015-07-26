@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	// Add burger menu href event handler
 	$('.burger').click(function(){
-		$('header nav ul > li > ul').toggle();
+		$('header nav ul > li > ul').toggleClass('toggle');
 		return false;
 	});
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
 	// Preload the images for best performance
 	$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
 
-	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved it!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!';
+	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!';
 	var tArr = testimonials.split('|');
 
 	// Start the rotation

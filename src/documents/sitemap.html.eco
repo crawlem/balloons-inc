@@ -5,6 +5,8 @@ ignored: false
 
 isFooterMenu: true
 pageOrder: 6
+
+testimonials: false
 ---
 <p>Each page available on this website is listed below.</p>
 

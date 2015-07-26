@@ -20,8 +20,9 @@
 			<header>
 				<h1><a href="index.html"><%= @site.title %></a></h1>
 				<nav>
+					<h2>Main Menu</h2>
 					<ul>
-						<li class="burger"><a href="sitemap.html">&#9776;</a></li>
+						<li class="burger"><a href="sitemap.html"><abbr title="All menu items">&#9776;</abbr></a></li>
 						<li>
 							<ul>
 								<% for page in @getCollection("mainMenu").findAll().toJSON(): %>
@@ -39,7 +40,7 @@
 
 			<div class="carousel">
 				<div class="carousel-content">
-					<h2><%=@site.title%></h2>
+					<h2>About <%=@site.title%></h2>
 					<%-@partial("strapline-index.html")%>
 				</div>
 			</div>
@@ -48,10 +49,12 @@
 				<%-@content%>
 			</main>
 
-			<section class="testimonial">
-				<h1>Testimonials</h1>
-				<p>"I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat."</p>
-			</section>
+			<% if @document.testimonials == true: %>
+				<section class="testimonial">
+					<h1>Testimonials</h1>
+					<p>"I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat."</p>
+				</section>
+			<% end %>
 
 			<footer>
 				<ul>

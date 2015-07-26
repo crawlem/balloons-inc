@@ -80,15 +80,20 @@ header {
 			width: sum(60px, $grid-gutter-small);
 			height: 60px;
 			display: inline-block;
-			// background-image: url('../img/logo.png');
-			// background-position: $grid-gutter-small;
-			// background-repeat: no-repeat;
 			background: url('../img/logo.png') no-repeat $grid-gutter-small;
 		}
 	}
 }
 
 nav {
+	h2 {
+		display: none;
+	}
+
+	abbr[title] {
+		border-bottom: none;
+	}
+
 	ul {
 		list-style: none;
 		display: -webkit-flex;
@@ -137,13 +142,18 @@ nav {
 				display: none;
 				position: absolute;
 				top: $header-height;
-				right: $grid-gutter-small+56px;
+				right: $grid-gutter-small*2;
 				background-color: $bg-lo-colour-opaque;
 				margin: 0;
 				padding: .5em;
 
+				&.toggle {
+					display: inline-block;
+				}
+
 				> li {
 					margin: 0;
+					padding: .5em;
 					display: block;
 				}
 			}
@@ -154,12 +164,7 @@ nav {
 .carousel {
 	width: 100%;
 	height: 0;
-	// min-height: $header-height*4;
 	padding-top: 66.66%;
-	// background-repeat: no-repeat;
-	// background-position: center bottom;
-	// background-image: url('../img/carousel/carousel-1.jpg');
-	// background-repeat: no-repeat;
 	background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
 	background-size: cover;
 	overflow: hidden;
@@ -223,8 +228,6 @@ nav {
 		}
 
 		li {
-			// background-color: $logo-colour;
-			// background-position: center;
 			background: $logo-colour center;
 			background-size: cover;
 			height: $section-height;
@@ -263,6 +266,8 @@ nav {
 	}
 }
 
+.thanks main,
+.contact main,
 .text main {
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -281,6 +286,51 @@ nav {
 	section h2 {
 		color: $logo-colour;
 		font-size: 3em;
+		line-height: 1em;
+	}
+}
+
+.thanks,
+.contact {
+	label {
+		@include box-reset;
+		display: block;
+		text-transform: uppercase;
+	}
+
+	.required:after {
+		content: "*";
+		color: $logo-colour;
+	}
+
+	.field,
+	.field-inline {
+		margin-bottom: 1em;
+	}
+
+	.field-inline {
+		display: inline-block;
+		margin-right: 1em;
+	}
+
+	input:not([type='image']),
+	textarea {
+		border: 1px solid $logo-colour;
+		padding: .5em;
+		width: 16em;
+	}
+
+	textarea {
+		height: 5em;
+	}
+
+	button {
+		border: 0;
+		background-color: $logo-colour;
+		display: inline-block;
+		color: $bg-colour;
+		padding: .5em 1em;
+		text-transform: uppercase;
 	}
 }
 
@@ -346,9 +396,14 @@ footer {
 				background-color: transparent;
 				padding: 0;
 
+				&.toggle {
+					display: inline-block;
+				}
+
 				> li {
 					display: inline-block;
 					margin-right: 4vw;
+					padding: 0;
 
 					&:last-child {
 						margin-right: 0;
@@ -376,9 +431,6 @@ footer {
 			@include box-reset;
 			display: block;
 			height: 51px;
-			// background-repeat: no-repeat;
-			// background-image: url('../img/heading.png');
-			// background-position: center top;
 			background: url('../img/heading.png') no-repeat center top;
 			background-size: 419px 100%;
 		}
@@ -392,15 +444,21 @@ footer {
 		}
 	}
 
+	.thanks main,
+	.contact main,
 	.text main,
 	.carousel-content {
 		margin: $grid-gutter-medium;
 	}
 
+	.thanks,
+	.contact {
+		textarea {
+			width: 34.4em;
+		}
+	}
+
 	.testimonial {
-		// background-repeat: no-repeat;
-		// background-position: center right;
-		// background-image: url('../img/crab.png');
 		background: url('../img/crab.png') no-repeat center right;
 		-webkit-justify-content: flex-end;
 		-ms-flex-pack: end;
@@ -441,6 +499,8 @@ footer {
 		margin-right: $grid-gutter-large;
 	}
 
+	.thanks main,
+	.contact main,
 	.text main,
 	.carousel-content {
 		margin: $grid-gutter-large;
@@ -457,6 +517,8 @@ footer {
 		}
 	}
 
+	.thanks main,
+	.contact main,
 	.text main {
 		section {
 			-webkit-flex-basis: 25%;
