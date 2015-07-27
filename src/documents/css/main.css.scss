@@ -203,11 +203,32 @@ nav {
 	}
 }
 
-.testimonial p {
-	color: $bg-colour;
-	background-color: $logo-colour;
-	padding: $grid-gutter-medium;
-	text-align: left;
+.testimonial {
+	background: url('../img/crab.png') no-repeat bottom right;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	padding-bottom: 4em;
+
+	p {
+		color: $bg-colour;
+		background-color: $logo-colour;
+		padding: $grid-gutter-medium;
+		text-align: left;
+		position: relative;
+
+		&:after {
+			content: "";
+			display: block; /* reduce the damage in FF3.0 */
+			position: absolute;
+			bottom: -15px;
+			right: 50px;
+			width: 0;
+			border-width: 15px 15px 0;
+			border-color: $logo-colour transparent;
+			border-style: solid;
+		}
+	}
 }
 
 .home {
@@ -497,28 +518,26 @@ footer {
 	}
 
 	.testimonial {
-		background: url('../img/crab.png') no-repeat center right;
 		-webkit-justify-content: flex-end;
 		-ms-flex-pack: end;
 		justify-content: flex-end;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-position: center right;
+		padding-bottom: 0;
 
 		p {
-			margin-left: $grid-gutter-medium;
-			margin-right: 319px + $grid-gutter-medium*2;
+			margin: 0 319px+$grid-gutter-medium*2 0 $grid-gutter-medium;
 			padding: $grid-gutter-medium;
 			max-width: 600px;
-			position: relative;
 
 			&:after {
 				content: "";
-				display: block; /* reduce the damage in FF3.0 */
-				position: absolute;
 				bottom: 10px;
 				right: -50px;
-				width: 0;
 				border-width: 10px 0 10px 50px;
 				border-color: transparent $logo-colour;
-				border-style: solid;
 			}
 		}
 	}
