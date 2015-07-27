@@ -19,6 +19,8 @@ if(isset($_POST['email'])) {
 	$name = $_POST['name']; // required
 	$email_from = $_POST['email']; // required
 	$telephone = $_POST['phone']; // not required
+	$date = $_POST['date']; // not required
+	$venue = $_POST['venue']; // not required
 	$comments = $_POST['message']; // required
 
 	$error_message = "";
@@ -46,6 +48,8 @@ if(isset($_POST['email'])) {
 	$email_message .= "Name: ".clean_string($name)."\n";
 	$email_message .= "Email: ".clean_string($email_from)."\n";
 	$email_message .= "Telephone: ".clean_string($telephone)."\n";
+	$email_message .= "Date: ".clean_string($date)."\n";
+	$email_message .= "Venue: ".clean_string($venue)."\n";
 	$email_message .= "Comments: ".clean_string($comments)."\n";
 
 	// Create email headers

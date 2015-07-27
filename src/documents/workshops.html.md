@@ -1,8 +1,7 @@
 ---
-title: Learn
+title: Workshops
 layout: text
 ignored: false
-outFilename: learn.html
 
 isPage: true
 pageOrder: 3

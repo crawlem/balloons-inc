@@ -25,18 +25,19 @@ $(document).ready(function() {
     function switchImg() {
     	var cNext = i<cArr.length-1?++i:(i=0,i);
 	    $('.carousel')
+	    	// .animate({left: '200px'}, 1000, 'linear')
 	    	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
-	        .css('opacity', 0.5)
-	        .animate({
-	            opacity: 0.7
-	        }, {
-	            duration: duration
-	        })
-	        .animate({
-	            opacity: 0.7
-	        }, {
-	            duration: duration
-	        })
+	        // .css('opacity', 0.5)
+	        // .animate({
+	        //     opacity: 1
+	        // }, {
+	        //     duration: duration
+	        // })
+	        // .animate({
+	        //     opacity: 1
+	        // }, {
+	        //     duration: duration
+	        // })
 	        .promise()
 	        .done(function () {
 	            setTimeout(switchImg, interval);

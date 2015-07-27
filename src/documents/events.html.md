@@ -1,8 +1,7 @@
 ---
-title: Hire
+title: Events
 layout: text
 ignored: false
-outFilename: hire.html
 
 isPage: true
 pageOrder: 2

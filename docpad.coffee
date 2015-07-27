@@ -25,11 +25,11 @@ docpadConfig = {
 
     collections:
         pages: ->
-            @getCollection("html").findAllLive({ignored: false, isPage: true}, [{pageOrder: 1}])
+            @getCollection("html").findAll({ignored: false, isPage: true}, [{pageOrder: 1}])
         mainMenu: ->
-            @getCollection("html").findAllLive({ignored: false, isMainMenu: true}, [{pageOrder: 1}])
+            @getCollection("html").findAll({ignored: false, isMainMenu: true}, [{pageOrder: 1}])
         footerMenu: ->
-            @getCollection("html").findAllLive({ignored: false, isFooterMenu: true}, [{pageOrder: 1}])
+            @getCollection("html").findAll({ignored: false, isFooterMenu: true}, [{pageOrder: 1}])
 
     plugins:
         sitemap:

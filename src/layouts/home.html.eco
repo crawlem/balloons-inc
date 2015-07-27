@@ -9,8 +9,20 @@ layout: default
 <section class="services">
 	<h1>Balloon Model Services</h1>
 	<ul>
-		<li><a href="hire.html"><h2>Hire</h2></a></li>
-		<li><a href="learn.html"><h2>Learn</h2></a></li>
-		<li><a href="book.html"><h2>Book</h2></a></li>
+		<li>
+			<a href="events.html">
+				<h2><%=@getFile({outFilename: 'events.html'}).toJSON().title %></h2>
+			</a>
+		</li>
+		<li>
+			<a href="workshops.html">
+				<h2><%=@getFile({outFilename: 'workshops.html'}).toJSON().title %></h2>
+			</a>
+		</li>
+		<li>
+			<a href="contact.html">
+				<h2><%=@getFile({outFilename: 'contact.html'}).toJSON().title %></h2>
+			</a>
+		</li>
 	</ul>
 </section>

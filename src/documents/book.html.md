@@ -1,8 +1,7 @@
 ---
 title: Book
 layout: text
-ignored: false
-outFilename: book.html
+ignored: true
 
 isPage: true
 pageOrder: 4

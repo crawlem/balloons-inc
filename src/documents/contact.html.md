@@ -1,8 +1,7 @@
 ---
-title: Contact
+title: Book Now
 layout: contact
 ignored: false
-outFilename: contact.html
 
 isPage: true
 pageOrder: 5

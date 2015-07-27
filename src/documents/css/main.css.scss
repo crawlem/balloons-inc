@@ -19,9 +19,10 @@ $max-width: 1600px;
 $footer-trail: 2em;
 
 // ---Content----------
-$carousel-height: 40vh;
-$section-height: 30vh;
-$section-max-height: 12em;
+$carousel-height: 45vh;
+$section-height: 40vh;
+$section-min-height: 16em;
+$section-max-height: 20em;
 
 
 // FUNCTIONS
@@ -131,6 +132,7 @@ nav {
 				@include hide-text;
 				width: 28px;
 				background-image: url('../img/twitter.png');
+				margin-right: $grid-gutter-small;
 			}
 
 			&:last-child {
@@ -169,6 +171,7 @@ nav {
 	background-size: cover;
 	overflow: hidden;
 	position: relative;
+	transition: background 0.5s ease-in-out;
 
 	h2,
 	p {
@@ -178,8 +181,8 @@ nav {
 
 .content,
 .testimonial {
-	min-height: $section-height;
-	max-height: $section-max-height;
+	min-height: $section-min-height;
+	max-height: $section-height;
 	text-align: center;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -219,43 +222,73 @@ nav {
 			display: -webkit-flex;
 			display: -ms-flexbox;
 			display: flex;
-			-webkit-flex-wrap: wrap;
-			-ms-flex-wrap: wrap;
-			flex-wrap: wrap;
 			-webkit-align-items: stretch;
 			-ms-flex-align: stretch;
 			align-items: stretch;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		li {
 			background: $logo-colour center;
 			background-size: cover;
-			height: $section-height;
-			max-height: $section-max-height;
-			text-align: center;
+			position: relative;
 			-webkit-flex: 1 1 200px;
 			-ms-flex: 1 1 200px;
 			flex: 1 1 200px;
 			
 			a {
-				display: inline-block;
+				display: block;
 				width: 100%;
 				height: 100%;
 				text-decoration: none;
-			}
-
-			h2 {
-				@include box-reset;
-				text-transform: uppercase;
+				position: absolute;
+				top: 0;
+				left: 0;
 				color: $bg-colour;
-				font-size: 1.5em;
-				position: relative;
-				top: 50%;
-				-webkit-transform: translateY(-50%);
-				transform: translateY(-50%);
+				text-align: center;
+
+				h2 {
+					@include box-reset;
+					display: block;
+					vertical-align: middle;
+					text-transform: uppercase;
+					font-size: 1.5em;
+					position: relative;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+				}
+
+				p {
+					display: none;
+				}
+
+				&:hover {
+					h2 {
+				// 		position: static;
+				// 		-webkit-transform: none;
+				// 		transform: none;
+				// 		padding: $grid-gutter-small;
+						text-decoration: underline;
+					}
+
+				// 	p {
+				// 		display: inline-block;
+				// 		font-size: .8em;
+				// 		font-weight: 300;
+				// 		margin: 0;
+				// 		padding: $grid-gutter-small;
+
+				// 		strong {
+				// 			font-weight: 300;
+				// 		}
+				// 	}
+				}
 			}
 
-			&:nth-child(1) {
+			&:nth-child(2) {
 				background-image: url('../img/hire.jpg');
 
 				a {
@@ -285,8 +318,9 @@ nav {
 
 	section h2 {
 		color: $logo-colour;
-		font-size: 3em;
+		font-size: 4em;
 		line-height: 1em;
+		font-family: 'Love Ya Like A Sister', 'Lato', sans-serif;
 	}
 }
 
@@ -352,6 +386,10 @@ footer {
 		text-decoration: none;
 	}
 
+	a:hover {
+		text-decoration: underline;
+	}
+
 	ul {
 		@include box-reset;
 		list-style: none;
@@ -371,8 +409,11 @@ footer {
 		width: sum(60px, $grid-gutter-medium);
 	}
 
-	nav > ul > li:last-child {
-		margin-right: $grid-gutter-medium;
+	nav > ul > li {
+		&:nth-last-child(-n+2),
+		&:last-child {
+			margin-right: $grid-gutter-medium;
+		}
 	}
 
 	footer {
@@ -414,34 +455,31 @@ footer {
 	}
 
 	.carousel {
-		padding-top: 0;
-		height: $carousel-height;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-align-items: center;
-		-ms-flex-align: center;
-		align-items: center;
-		-webkit-justify-content: flex-end;
-		-ms-flex-pack: end;
-		justify-content: flex-end;
-
 		h2 {
 			@include hide-text;
 			@include box-reset;
 			display: block;
 			height: 51px;
-			background: url('../img/heading.png') no-repeat center top;
-			background-size: 419px 100%;
+			background: url('../img/heading.png') no-repeat right top;
 		}
 
 		p {
 			display: inline-block;
 			color: #fff;
 			font-size: .9em;
-			text-align: center;
 			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			margin-left: 60%;
+			text-align: right;
 		}
+	}
+
+	.carousel-content {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		right: $grid-gutter-medium;
+		width: 100%;
 	}
 
 	.thanks main,
@@ -466,7 +504,7 @@ footer {
 
 		p {
 			margin-left: $grid-gutter-medium;
-			margin-right: 319px + $grid-gutter-medium;
+			margin-right: 319px + $grid-gutter-medium*2;
 			padding: $grid-gutter-medium;
 			max-width: 600px;
 			position: relative;
@@ -484,6 +522,19 @@ footer {
 			}
 		}
 	}
+
+	.home .services {
+		ul {
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+		}
+
+		li {
+			height: 0;
+			padding-bottom: 30%;
+		}
+	}
 }
 
 
@@ -495,8 +546,11 @@ footer {
 		width: sum(60px, $grid-gutter-large);
 	}
 
-	nav > ul > li:last-child {
-		margin-right: $grid-gutter-large;
+	nav > ul > li {
+		&:nth-last-child(-n+2),
+		&:last-child {
+			margin-right: $grid-gutter-large;
+		}
 	}
 
 	.thanks main,
@@ -504,17 +558,6 @@ footer {
 	.text main,
 	.carousel-content {
 		margin: $grid-gutter-large;
-	}
-
-	.carousel {
-		h2 {
-			background-position: right top;
-		}
-
-		p {
-			margin-left: 60%;
-			text-align: right;
-		}
 	}
 
 	.thanks main,

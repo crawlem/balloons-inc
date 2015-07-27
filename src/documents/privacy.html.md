@@ -2,7 +2,6 @@
 title: Privacy & Cookies
 layout: text
 ignored: false
-outFilename: privacy.html
 
 isPage: true
 pageOrder: 7
