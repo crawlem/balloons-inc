@@ -17,7 +17,9 @@ $(document).ready(function() {
 	$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
 
 	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!';
+	var testimonalLinks = '||https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767';
 	var tArr = testimonials.split('|');
+	var lArr = testimonalLinks.split('|');
 
 	// Start the rotation
     setTimeout(switchImg, interval);   
@@ -25,29 +27,22 @@ $(document).ready(function() {
     function switchImg() {
     	var cNext = i<cArr.length-1?++i:(i=0,i);
 	    $('.carousel')
-	    	// .animate({left: '200px'}, 1000, 'linear')
 	    	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
-	        // .css('opacity', 0.5)
-	        // .animate({
-	        //     opacity: 1
-	        // }, {
-	        //     duration: duration
-	        // })
-	        // .animate({
-	        //     opacity: 1
-	        // }, {
-	        //     duration: duration
-	        // })
 	        .promise()
 	        .done(function () {
 	            setTimeout(switchImg, interval);
 	        })
 	    ;
 
+		// Update the testimonial
 	    var tNext = j<tArr.length-1?++j:(j=0,j);
-	    $('.testimonial p').text('"' + tArr[tNext] + '"');
-
-	    // console.log('C'+cNext+' T'+tNext);
+	    var text = '"' + tArr[tNext] + '"';
+	    // If the testimonial has a link, append it
+	    if (lArr[tNext] != null && lArr[tNext] != '') {
+	    	$('.testimonial p').text(text).append(' ').append($('<a/>', { html: 'View', href: lArr[tNext] }))
+	    } else {
+		    $('.testimonial p').text(text);
+		}
     }
 
     // Contact form validation

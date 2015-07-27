@@ -229,6 +229,12 @@ nav {
 			border-style: solid;
 		}
 	}
+
+	a,
+	a:active,
+	a:visited {
+		color: $bg-colour;
+	}
 }
 
 .home {
@@ -485,11 +491,10 @@ footer {
 		}
 
 		p {
-			display: inline-block;
-			color: #fff;
-			font-size: .9em;
+			display: block;
+			color: $bg-colour;
 			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-			margin-left: 60%;
+			margin-left: 30%;
 			text-align: right;
 		}
 	}
