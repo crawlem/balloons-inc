@@ -42,7 +42,7 @@ outFilename: layout-default.html
 				</nav>
 			</header>
 
-			<div class="carousel">
+			<div class="carousel"<% if @document.carouselImg: %> style="background-image: url('img/carousel/<%= @document.carouselImg %>')"<% end %>>
 				<div class="carousel-content">
 					<h2>About <%=@site.title%></h2>
 					<%-@partial("strapline-index.html")%>

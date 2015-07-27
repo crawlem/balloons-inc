@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     function switchImg() {
     	var cNext = i<cArr.length-1?++i:(i=0,i);
-	    $('.carousel')
+	    $('.home .carousel')
 	    	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
 	        .promise()
 	        .done(function () {

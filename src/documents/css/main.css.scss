@@ -15,14 +15,13 @@ $grid-gutter-small: 5px;
 $grid-gutter-medium: 10px;
 $grid-gutter-large: 20px;
 $header-height: 60px;
-$max-width: 1600px;
+$max-width: 1500px;
 $footer-trail: 2em;
 
 // ---Content----------
 $carousel-height: 45vh;
 $section-height: 40vh;
 $section-min-height: 16em;
-$section-max-height: 20em;
 
 
 // FUNCTIONS
@@ -132,7 +131,7 @@ nav {
 				@include hide-text;
 				width: 28px;
 				background-image: url('../img/twitter.png');
-				margin-right: $grid-gutter-small;
+				// margin-right: $grid-gutter-small;
 			}
 
 			&:last-child {
@@ -166,8 +165,8 @@ nav {
 .carousel {
 	width: 100%;
 	height: 0;
-	padding-top: 66.66%;
-	background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
+	padding-top: 41.66%; /* img height / img width * 100 */
+	background: url('../img/carousel/thin/thin-1.jpg') no-repeat center bottom;
 	background-size: cover;
 	overflow: hidden;
 	position: relative;
@@ -193,13 +192,12 @@ nav {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 
 	h1 {
 		display: none;
-	}
-
-	p {
-		width: 75%;
 	}
 }
 
@@ -208,9 +206,13 @@ nav {
 	-webkit-align-items: flex-start;
 	-ms-flex-align: start;
 	align-items: flex-start;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	padding-bottom: 4em;
 
 	p {
+		width: 75%;
 		color: $bg-colour;
 		background-color: $logo-colour;
 		padding: $grid-gutter-medium;
@@ -238,6 +240,12 @@ nav {
 }
 
 .home {
+	.carousel {
+		padding-top: 66.66%;
+		background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
+		background-size: cover;
+	}
+
 	.services {
 		h1 {
 			display: none;
@@ -437,10 +445,14 @@ footer {
 	}
 
 	nav > ul > li {
-		&:nth-last-child(-n+2),
+		// &:nth-last-child(-n+2),
 		&:last-child {
 			margin-right: $grid-gutter-medium;
 		}
+	}
+
+	.content p {
+		width: 75%;
 	}
 
 	footer {
@@ -486,7 +498,7 @@ footer {
 			@include hide-text;
 			@include box-reset;
 			display: block;
-			height: 51px;
+			height: 67px;
 			background: url('../img/heading.png') no-repeat right top;
 		}
 
@@ -504,7 +516,7 @@ footer {
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		right: $grid-gutter-medium;
+		right: 0;
 		width: 100%;
 	}
 
