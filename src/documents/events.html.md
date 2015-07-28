@@ -7,6 +7,7 @@ isPage: true
 pageOrder: 2
 isMainMenu: true
 
+gallery: true
 testimonials: true
 ---
 Make your event one that will be remembered by hiring Rich’s balloon twisting skills.

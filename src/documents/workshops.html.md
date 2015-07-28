@@ -8,6 +8,7 @@ pageOrder: 3
 isMainMenu: true
 
 carouselImg: thin/thin-2.jpg
+gallery: true
 testimonials: true
 ---
 Whether you’re looking to entertain a group of young people or run a corporate team building event, learning to twist balloons into wonderful creations is a whole bunch of fun.

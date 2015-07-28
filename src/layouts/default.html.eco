@@ -7,7 +7,7 @@ outFilename: layout-default.html
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-		<title><%=@site.title%> | <%=@document.title%></title>
+		<title><%= @site.title %> | <%= @document.title %></title>
 
 		<meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="<%=@document.description%>">
@@ -19,7 +19,7 @@ outFilename: layout-default.html
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-	<body id="<%=@document.id%>"<%-if @document.layout != "default" then ' class="' + @document.layout + '"'%>>
+	<body id="<%= @document.id %>" class="<%= @document.layout %>">
 		<div class="container">
 			<header>
 				<h1><a href="index.html"><%= @site.title %></a></h1>
@@ -44,14 +44,20 @@ outFilename: layout-default.html
 
 			<div class="carousel"<% if @document.carouselImg: %> style="background-image: url('img/carousel/<%= @document.carouselImg %>')"<% end %>>
 				<div class="carousel-content">
-					<h2>About <%=@site.title%></h2>
-					<%-@partial("strapline-index.html")%>
+					<h2>About <%= @site.title %></h2>
+					<%- @partial("strapline-index.html") %>
 				</div>
 			</div>
 
 			<main>
-				<%-@content%>
+				<%- @content %>
 			</main>
+
+			<% if @document.gallery == true: %>
+				<section class="gallery">
+					<h2>Gallery</h2>
+				</section>
+			<% end %>
 
 			<% if @document.testimonials == true: %>
 				<section class="testimonial">
@@ -74,6 +80,7 @@ outFilename: layout-default.html
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.pkgd.min.js"></script>
 
         <!-- //-beg- concat_js -->
         <script src="js/main.js"></script>

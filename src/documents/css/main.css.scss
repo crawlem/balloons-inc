@@ -201,6 +201,113 @@ nav {
 	}
 }
 
+.gallery {
+	h2 {
+		display: none;
+	}
+
+	.main-gallery {
+		@include box-reset;
+		list-style: none;
+		position: relative;
+		max-width: $max-width;
+		overflow: hidden;
+		margin-bottom: 10px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.gallery-cell {
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 70%;
+		position: relative;
+
+		// Make the height the same as the width (square)
+		&:before {
+			content: '';
+			float: left;
+			padding-top: 100%;
+		}
+	}
+
+	.flickity-page-dots {
+		position: absolute;
+		bottom: 0;
+		list-style: none;
+		width: 100%;
+		@include box-reset;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		z-index: 999;
+		
+		.dot {
+			-webkit-flex: 0 0 12px;
+			-ms-flex: 0 0 12px;
+			flex: 0 0 12px;
+			-webkit-flex-flow: row nowrap;
+			-ms-flex-flow: row nowrap;
+			flex-flow: row nowrap;
+			height: 12px;
+			opacity: 1;
+			background: $bg-lo-colour;
+			border: 2px solid $bg-colour;
+			border-radius: 12px;
+			margin: 12px;
+		}
+
+		.dot.is-selected {
+			background: $logo-colour;
+		}
+	}
+
+	.flickity-prev-next-button {
+		position: absolute;
+		top: 0;
+		width: 15%;
+		height: 100%;
+		background: $bg-lo-colour-opaque;
+		outline: none;
+		border: 0;
+
+		&.previous {
+			left: 0;
+		}
+
+		&.next {
+			right: 0;
+		}
+
+		.arrow {
+			fill: $bg-colour;
+		}
+
+		svg {
+			width: 50px;
+			height: 75px;
+		}
+
+		&.no-svg {
+			color: $bg-colour;
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+		}
+		
+		&:disabled {
+			display: none;
+		}
+	}
+}
+
 .testimonial {
 	background: url('../img/crab.png') no-repeat bottom right;
 	-webkit-align-items: flex-start;
@@ -247,6 +354,8 @@ nav {
 	}
 
 	.services {
+		margin-bottom: 10px;
+		
 		h1 {
 			display: none;
 		}
@@ -287,7 +396,7 @@ nav {
 				h2 {
 					@include box-reset;
 					display: block;
-					vertical-align: middle;
+					// vertical-align: middle;
 					text-transform: uppercase;
 					font-size: 1.5em;
 					position: relative;
@@ -455,6 +564,16 @@ footer {
 		width: 75%;
 	}
 
+	.gallery {
+		.gallery-cell {
+			width: 50%;
+		}
+
+		.flickity-prev-next-button {
+			width: 25%;
+		}
+	}
+
 	footer {
 		padding: $grid-gutter-medium $grid-gutter-medium $footer-trail $grid-gutter-medium;
 	}
@@ -534,6 +653,31 @@ footer {
 		}
 	}
 
+	// .gallery ul li {
+	// 	// -webkit-flex-basis: 150px;
+	// 	// -ms-flex-preferred-size: 150px;
+	// 	// flex-basis: 150px;
+
+	// 	&:first-child:after,
+	// 	&:nth-child(3):after {
+	// 		content: "\2039";
+	// 		color: $bg-colour;
+	// 		font-size: 3em;
+	// 		text-align: center;
+	// 		position: absolute;
+	// 		top: 0;
+	// 		left: 0;
+	// 		bottom: 0;
+	// 		right: 0;
+	// 		margin: auto;
+	// 		background-color: $bg-lo-colour-opaque;
+	// 	}
+
+	// 	&:nth-child(n+4) {
+	// 	    display: none;
+	// 	}
+	// }
+
 	.testimonial {
 		-webkit-justify-content: flex-end;
 		-ms-flex-pack: end;
@@ -610,6 +754,16 @@ footer {
 			-webkit-flex-basis: 65%;
 			-ms-flex-preferred-size: 65%;
 			flex-basis: 65%;
+		}
+	}
+
+	.gallery {
+		.gallery-cell {
+			width: 40%;
+		}
+
+		.flickity-prev-next-button {
+			width: 30%;
 		}
 	}
 
