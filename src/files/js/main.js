@@ -55,7 +55,7 @@ $(document).ready(function() {
     			// console.log(val.url_m);
     			photos.push('<li class="gallery-cell" style="background-image: url(' + val.url_m + ')"></li>');
     		});
-    		$('<ul/>', {html: photos.join(''), class: 'main-gallery'}).appendTo('.gallery');
+    		$('<ul/>', {html: photos.join(''), 'class': 'main-gallery'}).appendTo('.gallery');
     		$('.main-gallery').flickity({wrapAround: true});
     	});
     }
