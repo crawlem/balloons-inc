@@ -15,13 +15,13 @@ layout: default
 			</a>
 		</li>
 		<li>
-			<a href="workshops.html">
-				<h2><%=@getFile({outFilename: 'workshops.html'}).toJSON().title %></h2>
+			<a href="parties.html">
+				<h2><%=@getFile({outFilename: 'parties.html'}).toJSON().title %></h2>
 			</a>
 		</li>
 		<li>
-			<a href="contact.html">
-				<h2><%=@getFile({outFilename: 'contact.html'}).toJSON().title %></h2>
+			<a href="workshops.html">
+				<h2><%=@getFile({outFilename: 'workshops.html'}).toJSON().title %></h2>
 			</a>
 		</li>
 	</ul>

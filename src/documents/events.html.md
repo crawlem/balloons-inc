@@ -7,30 +7,16 @@ isPage: true
 pageOrder: 2
 isMainMenu: true
 
+carouselImg: thin/thin-2.jpg
 gallery: true
 testimonials: true
 ---
-Make your event one that will be remembered by hiring Rich’s balloon twisting skills.
+The Balloons Inc. stall will make any event, truly an occasion to remember. From cute balloon animals to extravagant balloon hats, the high quality balloon modelling enhances the whole atmosphere of events and celebrations adding vibrancy, with a riot of colours and shapes.
 
-Rich caters to every style and size of event or gathering imaginable, adding colour and flair, and creating magic moments that will last. Whether it’s a children’s party or a corporate event, he’ll mingle among your guests and to their absolute amazement, create a fun array of extravagant balloon art that will delight and surprise. With his colourful palette of latex balloons and cheeky humour, this enthralling spectacle is enjoyed by people of all ages.
+Having the Balloon stall at your event will not only create a buzz of colour and excitement, it’s also a great way to raise some extra money for your charity.
 
-Each creation is a bespoke original, and it creates awe and wonder for both the recipient and the watching guests. From discreet and elegant jewellery to outrageous animals and characters, these balloons are the ultimate photo-opportunity and ice-breaker; a group who may not know each other will soon be talking like old friends.
+### Balloons Inc. Stall Rates
 
-Clients book Balloons Inc. year on year for their events large and small, knowing their guests will have a unique and original experience.
-
-- Birthday parties (for children and adults) 
-- Weddings
-- Corporate events
-- Hospital visits
-- Charity events
-
-### Balloons Inc. Standard Rates
-
-Includes 15-20 balloon models per hour + a larger gift for a special person
-
-£75 for the first hour  
-£50 for every hour after that
-
-Travel is included within 10 miles of Exeter, and 40p per mile for anywhere further than that. 
+Free to attend an event. Guests are charged per model - ranging from £1.50 to £3 - and a donation of 20% of the takings is made to the organisers.
 
 [Get in touch](contact.html) to check availability or ask a question.

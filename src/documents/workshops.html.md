@@ -4,10 +4,10 @@ layout: text
 ignored: false
 
 isPage: true
-pageOrder: 3
+pageOrder: 4
 isMainMenu: true
 
-carouselImg: thin/thin-2.jpg
+carouselImg: thin/thin-3.jpg
 gallery: true
 testimonials: true
 ---
