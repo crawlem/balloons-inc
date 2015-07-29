@@ -123,15 +123,14 @@ nav {
 	> ul {
 		> li {
 			&:first-child {
-				font-size: 28px;
-				margin-right: 0;
+				font-size: 38px;
+				margin: -4px 0 0 0;
 			}
 
 			&:nth-last-child(-n+2) {
 				@include hide-text;
 				width: 28px;
 				background-image: url('../img/twitter.png');
-				// margin-right: $grid-gutter-small;
 			}
 
 			&:last-child {
@@ -245,7 +244,7 @@ nav {
 		-webkit-justify-content: center;
 		-ms-flex-pack: center;
 		justify-content: center;
-		z-index: 999;
+		z-index: 998;
 		
 		.dot {
 			-webkit-flex: 0 0 12px;
@@ -352,6 +351,12 @@ nav {
 		padding-top: 66.66%;
 		background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
 		background-size: cover;
+	}
+
+	.content {
+		height: auto;
+		max-height: none;
+		min-height: none;
 	}
 
 	.services {
@@ -463,7 +468,7 @@ nav {
 
 	section h2 {
 		color: $logo-colour;
-		font-size: 4em;
+		font-size: 3.5em;
 		line-height: 1em;
 		font-family: 'Love Ya Like A Sister', 'Lato', sans-serif;
 		word-wrap: break-word;
@@ -560,6 +565,11 @@ footer {
 		&:last-child {
 			margin-right: $grid-gutter-medium;
 		}
+	}
+
+	.home .content {
+		min-height: $section-min-height;
+		max-height: $section-height;
 	}
 
 	.content p {
