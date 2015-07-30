@@ -32,7 +32,7 @@ $(document).ready(function() {
 	    // 	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
 	    //     .promise()
 	    //     .done(function () {
-	    //         setTimeout(switchImg, interval);
+	            // setTimeout(switchImg, interval);
 	    //     })
 	    // ;
 
@@ -45,6 +45,8 @@ $(document).ready(function() {
 	    } else {
 		    $('.testimonial p').text(text);
 		}
+
+		setTimeout(switchImg, interval);
     }
 
     if ($('.gallery').length > 0) {
@@ -56,7 +58,7 @@ $(document).ready(function() {
     			photos.push('<li class="gallery-cell" style="background-image: url(' + val.url_m + ')"></li>');
     		});
     		$('<ul/>', {html: photos.join(''), 'class': 'main-gallery'}).appendTo('.gallery');
-    		$('.main-gallery').flickity({wrapAround: true});
+    		$('.main-gallery').flickity({wrapAround: true, pageDots: false});
     	});
     }
 
