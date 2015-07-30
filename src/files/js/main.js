@@ -14,12 +14,12 @@ $(document).ready(function() {
     var images = 'carousel-1 carousel-2 carousel-3 carousel-4 carousel-5';
 	var cArr = images.split(' ');
 	// Preload the images on the homepage, gives better performance
-	if ($('body.home').length > 0) {
-		$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
-	}
+	// if ($('body.home').length > 0) {
+	// 	$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
+	// }
 
-	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!';
-	var testimonalLinks = '||https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767';
+	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!|Balloons Inc. was amazing!!! Would highly recommend! Fun for all ages including the Grandparents! #nevertooold|A very happy birthday boy with his "birthday man" .massive thank you !';
+	var testimonalLinks = '||https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767|https://www.facebook.com/photo.php?fbid=10153469550205140&set=o.145159662317828&type=1|https://www.facebook.com/photo.php?fbid=10155791617915461&amp;set=o.145159662317828&amp;type=1';
 	var tArr = testimonials.split('|');
 	var lArr = testimonalLinks.split('|');
 
@@ -28,13 +28,13 @@ $(document).ready(function() {
 
     function switchImg() {
     	var cNext = i<cArr.length-1?++i:(i=0,i);
-	    $('.home .carousel')
-	    	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
-	        .promise()
-	        .done(function () {
-	            setTimeout(switchImg, interval);
-	        })
-	    ;
+	    // $('.home .carousel')
+	    // 	.css('background-image', 'url("img/carousel/' + cArr[cNext] + '.jpg")')
+	    //     .promise()
+	    //     .done(function () {
+	    //         setTimeout(switchImg, interval);
+	    //     })
+	    // ;
 
 		// Update the testimonial
 	    var tNext = j<tArr.length-1?++j:(j=0,j);
