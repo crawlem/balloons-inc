@@ -233,38 +233,39 @@ nav {
 	}
 
 	.flickity-page-dots {
-		position: absolute;
-		bottom: 0;
-		list-style: none;
-		width: 100%;
-		@include box-reset;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-justify-content: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-		z-index: 998;
+		display: none;
+		// position: absolute;
+		// bottom: 0;
+		// list-style: none;
+		// width: 100%;
+		// @include box-reset;
+		// display: -webkit-flex;
+		// display: -ms-flexbox;
+		// display: flex;
+		// -webkit-justify-content: center;
+		// -ms-flex-pack: center;
+		// justify-content: center;
+		// z-index: 998;
 		
-		.dot {
-			-webkit-flex: 0 0 12px;
-			-ms-flex: 0 0 12px;
-			flex: 0 0 12px;
-			-webkit-flex-flow: row nowrap;
-			-ms-flex-flow: row nowrap;
-			flex-flow: row nowrap;
-			height: 12px;
-			opacity: 1;
-			background: $bg-lo-colour;
-			border: 2px solid $bg-colour;
-			border-radius: 12px;
-			margin: 12px;
-		}
+		// .dot {
+		// 	-webkit-flex: 0 0 12px;
+		// 	-ms-flex: 0 0 12px;
+		// 	flex: 0 0 12px;
+		// 	-webkit-flex-flow: row nowrap;
+		// 	-ms-flex-flow: row nowrap;
+		// 	flex-flow: row nowrap;
+		// 	height: 12px;
+		// 	opacity: 1;
+		// 	background: $bg-lo-colour;
+		// 	border: 2px solid $bg-colour;
+		// 	border-radius: 12px;
+		// 	margin: 12px;
+		// }
 
-		.dot.is-selected {
-			background: $bg-colour;
-			border-color: $logo-colour;
-		}
+		// .dot.is-selected {
+		// 	background: $bg-colour;
+		// 	border-color: $logo-colour;
+		// }
 	}
 
 	.flickity-prev-next-button {
@@ -552,6 +553,28 @@ footer {
 }
 
 
+// SITE CSS - RETINA
+// =================================================
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+	header h1 a {
+		background-image: url('../img/logo@2x.png');
+		background-size: 45px 42px;
+	}
+
+	nav > ul > li {
+		&:nth-last-child(-n+2) {
+			background-image: url('../img/twitter@2x.png');
+			background-size: 28px 28px;
+		}
+
+		&:last-child {
+			background-image: url('../img/facebook@2x.png');
+			background-size: 28px 28px;
+		}
+	}
+}
+
+
 // SITE CSS - MEDIUM
 // =================================================
 @media screen and (min-width: 481px) {
@@ -703,6 +726,16 @@ footer {
 			padding-top: 100%;
 		}
 	}
+}
+
+
+// SITE CSS - MEDIUM + RETINA
+// =================================================
+@media screen and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    .carousel h2 {
+    	background-image: url('../img/heading@2x.png');
+    	background-size: 560px 67px;
+    }
 }
 
 
