@@ -13,7 +13,7 @@ galleryPrefix: 7215765
 galleryId: 6685458051
 testimonials: true
 ---
-Make your party one that will be remembered. Whether you're throwing a party for your 5 year old daughter or a Ruby wedding anniversary for your parents, Rich's creations are equally enthralling to all age groups. Small children love the colours and shapes, the balloon art goes down a storm with teenagers and you'll always find a circle of adults enchanted by the models being produce.
+Make your party one that will be remembered. Whether you're throwing a party for your 5 year old daughter or a Ruby wedding anniversary for your parents, Rich's creations are equally enthralling to all age groups. Small children love the colours and shapes, the balloon art goes down a storm with teenagers and you'll always find a circle of adults enchanted by the models being produced.
 
 At parties Rich mingles among your guests creating a fun array of balloon art that will delight and surprise. Each model is a bespoke original that will put a smile on the face of the onlookers and get everyone talking. As an extra treat Rich will bring along a large pre-made gift for the birthday boy or girl which always creates excitement.
 
