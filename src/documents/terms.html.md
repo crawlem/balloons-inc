@@ -14,7 +14,7 @@ testimonials: false
 The engagement agreement is sent in response to the client submitting the booking form. The engagement agreement is sent to the client as an offer of acceptance of the booking.
 By completing the agreement, the client is agreeing to the terms set out therein.
 
-The engagement offer will be reserved for a period of no more than 7 days and will only be confirmed upon receipt of completed agreement and deposit if applicable. (Usually 50% of the total fee) The balance is due by cash at the event or by bank transfer no later than the day before the event.
+The engagement offer will be reserved for a period of no more than 7 days and will only be confirmed upon receipt of completed agreement and deposit if applicable (usually 50% of the total fee). The balance is due by cash at the event or by bank transfer no later than the day before the event.
 
 ### Cancellation Clauses
 
@@ -34,7 +34,7 @@ If the client cancels the booking due to weather conditions before the artiste h
 
 Twisting is not done as a stage show but rather as an interactive, entertaining spectacle either in mix and mingle style or in a fixed location. If the client does not express a preference, the artiste will judge at the event, the best format to use.
 
-At public and large events, it is not possible to provide a balloon for everyone. Rich will try to judge the demand and choose the sophistication of the sculptures in accordance and allowing for the time constraint of the booking. Despite this, lengthy queues do often occur as Rich’s balloon models are so desirable.
+At public and large events, it is not possible to provide a balloon for everyone. Rich will try to judge the demand and choose the sophistication of the sculptures in accordance and allowing for the time constraint of the booking. Despite this, lengthy queues do often occur as Rich's balloon models are so desirable.
 
 At parties / smaller events, if a balloon model is required for every guest, it is imperative that the client and artiste have agreed on how many people are in attendance. This is necessary to fulfil everyone within the specified time and to provide the best service.
 
@@ -50,4 +50,4 @@ The artiste is obliged to advice the following health and safety information
 
 "Warning! Children under eight years can choke or suffocate on uninflated or broken balloons. Adult supervision required. Keep uninflated balloons away from children. Discard broken balloons at once."
 
-Allergy Advice – Balloons are made from Pure Latex
+Allergy Advice - Balloons are made from Pure Latex

@@ -12,16 +12,19 @@ layout: default
 		<li>
 			<a href="events.html">
 				<h2><%=@getFile({outFilename: 'events.html'}).toJSON().title %></h2>
+				<%- @partial("strapline-events.html") %>
 			</a>
 		</li>
 		<li>
 			<a href="parties.html">
 				<h2><%=@getFile({outFilename: 'parties.html'}).toJSON().title %></h2>
+				<%- @partial("strapline-parties.html") %>
 			</a>
 		</li>
 		<li>
 			<a href="workshops.html">
 				<h2><%=@getFile({outFilename: 'workshops.html'}).toJSON().title %></h2>
+				<%- @partial("strapline-workshops.html") %>
 			</a>
 		</li>
 	</ul>

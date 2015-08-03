@@ -56,7 +56,7 @@ outFilename: layout-default.html
 			</main>
 
 			<% if @document.gallery == true: %>
-				<section class="gallery-<%=@document.galleryPrefix%><%=@document.galleryId%> gallery">
+				<section class="gallery-<%= @document.galleryPrefix %><%= @document.galleryId %> gallery">
 					<h2>Gallery</h2>
 				</section>
 			<% end %>

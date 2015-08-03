@@ -55,6 +55,10 @@ body {
 	overflow-x: hidden;
 }
 
+a {
+	color: $logo-colour;
+}
+
 .container {
 	max-width: $max-width;
 	margin: auto;
@@ -116,6 +120,10 @@ nav {
 				color: $bg-colour;
 				vertical-align: middle;
 				height: 28px;
+
+				// &:hover {
+				// 	color: $logo-colour;
+				// }
 			}
 		}
 	}
@@ -232,42 +240,6 @@ nav {
 		}
 	}
 
-	// .flickity-page-dots {
-	// 	display: none;
-		// position: absolute;
-		// bottom: 0;
-		// list-style: none;
-		// width: 100%;
-		// @include box-reset;
-		// display: -webkit-flex;
-		// display: -ms-flexbox;
-		// display: flex;
-		// -webkit-justify-content: center;
-		// -ms-flex-pack: center;
-		// justify-content: center;
-		// z-index: 998;
-		
-		// .dot {
-		// 	-webkit-flex: 0 0 12px;
-		// 	-ms-flex: 0 0 12px;
-		// 	flex: 0 0 12px;
-		// 	-webkit-flex-flow: row nowrap;
-		// 	-ms-flex-flow: row nowrap;
-		// 	flex-flow: row nowrap;
-		// 	height: 12px;
-		// 	opacity: 1;
-		// 	background: $bg-lo-colour;
-		// 	border: 2px solid $bg-colour;
-		// 	border-radius: 12px;
-		// 	margin: 12px;
-		// }
-
-		// .dot.is-selected {
-		// 	background: $bg-colour;
-		// 	border-color: $logo-colour;
-		// }
-	// }
-
 	.flickity-prev-next-button {
 		@include box-reset;
 		position: absolute;
@@ -354,12 +326,6 @@ nav {
 		background-size: cover;
 	}
 
-	// .content {
-	// 	height: auto;
-	// 	max-height: none;
-	// 	min-height: 40vh;
-	// }
-
 	.services {
 		margin-bottom: 10px;
 
@@ -414,28 +380,6 @@ nav {
 
 				p {
 					display: none;
-				}
-
-				&:hover {
-					h2 {
-				// 		position: static;
-				// 		-webkit-transform: none;
-				// 		transform: none;
-				// 		padding: $grid-gutter-small;
-						text-decoration: underline;
-					}
-
-				// 	p {
-				// 		display: inline-block;
-				// 		font-size: .8em;
-				// 		font-weight: 300;
-				// 		margin: 0;
-				// 		padding: $grid-gutter-small;
-
-				// 		strong {
-				// 			font-weight: 300;
-				// 		}
-				// 	}
 				}
 			}
 
@@ -528,6 +472,7 @@ footer {
 	padding: $grid-gutter-small $grid-gutter-small $footer-trail $grid-gutter-small;
 	background-color: $bg-lo-colour;
 	color: $fg-lo-colour;
+	position: relative;
 
 	strong {
 		font-weight: 400;
@@ -585,17 +530,9 @@ footer {
 		width: sum(60px, $grid-gutter-medium);
 	}
 
-	nav > ul > li {
-		// &:nth-last-child(-n+2),
-		&:last-child {
-			margin-right: $grid-gutter-medium;
-		}
+	nav > ul > li:last-child {
+		margin-right: $grid-gutter-medium;
 	}
-
-	// .home .content {
-	// 	min-height: $section-min-height;
-	// 	max-height: $section-height;
-	// }
 
 	.content p {
 		width: 75%;
@@ -661,19 +598,23 @@ footer {
 		p {
 			display: block;
 			color: $bg-colour;
-			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-			margin-left: 30%;
+			// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			// margin-left: 30%;
+			margin-bottom: 0;
 			text-align: right;
 		}
 	}
 
 	.carousel-content {
 		position: absolute;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
+		// top: 50%;
+		// -webkit-transform: translateY(-50%);
+		// transform: translateY(-50%);
+		bottom: 0;
 		right: 0;
-		width: 100%;
+		width: 560px;
+		background-color: $bg-lo-colour-opaque;
+		padding: $grid-gutter-medium;
 	}
 
 	.thanks main,
@@ -722,11 +663,19 @@ footer {
 			flex-direction: row;
 		}
 
-		li:before {
-			content: '';
-			float: left;
-			padding-top: 100%;
+		li {
+			&:before {
+				content: '';
+				float: left;
+				padding-top: 100%;
+			}
 		}
+	}
+
+	footer ul li:last-child {
+		position: absolute;
+		right: $grid-gutter-medium;
+		top: $grid-gutter-medium;
 	}
 }
 
@@ -761,6 +710,31 @@ footer {
 	.text main,
 	.carousel-content {
 		margin: $grid-gutter-large;
+	}
+
+	.carousel-content {
+		padding: $grid-gutter-large;
+	}
+
+	.home .services a:hover {
+		h2 {
+			display: none;
+		}
+
+		p {
+			margin: 0;
+			padding: $grid-gutter-large;
+			// font-size: .9em;
+			display: block;
+			position: relative;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+
+			strong {
+				font-weight: 400;
+			}
+		}
 	}
 
 	.thanks main,
@@ -801,5 +775,22 @@ footer {
 
 	footer {
 		padding: $grid-gutter-large $grid-gutter-large $footer-trail $grid-gutter-large;
+
+		ul li:last-child {
+			right: $grid-gutter-large;
+			top: $grid-gutter-large;
+		}
+	}
+}
+
+// SITE CSS - SUPER WIDE
+// =================================================
+@media screen and (min-width: $max-width) {
+	.thanks main,
+	.contact main,
+	.text main {
+		section h2 {
+			font-size: 5em;
+		}
 	}
 }

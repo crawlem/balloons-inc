@@ -32,7 +32,7 @@ We may collect and process the following data about you:
 
 We may collect information about your computer, including, where available, your IP address, operating system and browser type, for system administration [and to report aggregate information to our advertisers]. This is statistical data about our users' browsing actions and patterns, and does not identify any individual.
 
-For the same reason, we may obtain information about your general internet usage by using a cookie file which is stored on the hard drive of your computer. Cookies contain information that is transferred to your computer's hard drive. They help us to improve our site and to deliver a better and more personalised service. They enable us:
+For the same reason, we may obtain information about your general Internet usage by using a cookie file which is stored on the hard drive of your computer. Cookies contain information that is transferred to your computer's hard drive. They help us to improve our site and to deliver a better and more personalised service. They enable us:
 
 - To estimate our audience size and usage pattern.
 - To store information about your preferences, and so allow us to customise our site according to your individual interests.
@@ -45,7 +45,7 @@ You may refuse to accept cookies by activating the setting on your browser which
 
 The data that we collect from you may be transferred to, and stored at, a destination outside the European Economic Area ("EEA"). By submitting your personal data, you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this privacy policy.
 
-Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.
+Unfortunately, the transmission of information via the Internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.
 
 ### Uses made of this information
 
