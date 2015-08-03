@@ -52,13 +52,13 @@ $(document).ready(function() {
     if ($('.gallery').length > 0) {
     	var galleryId = '72157656406710962';
     	var gallery = $('.gallery');
-    	if (gallery.attr('class').startsWith('gallery-')) {
+    	// if (gallery.attr('class').startsWith('gallery-')) {
     		galleryId = gallery.attr('class').split('-')[1];
     		if (galleryId.indexOf(' ')) {
     			galleryId = galleryId.split(' ')[0];
     		}
     		// console.log('Read gallery ID ' + galleryId);
-    	}
+    	// }
 
     	$.ajax({
     		url: 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=fe876b65f02d2193dd0dde6833f185b0&extras=url_m&format=json',
