@@ -1,1 +1,1 @@
-**Bring the buzz of the Balloons Inc. stall to your event. Rich will pitch up to your school fete, community event or festival, and sell balloons direct to the crowd.**
+**Give your party an extra sprinkling of colour and fun by booking Rich’s creative balloon talent, creating wonder and awe for both the recipient and the watching guests.**

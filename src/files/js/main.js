@@ -50,9 +50,27 @@ $(document).ready(function() {
     }
 
     if ($('.gallery').length > 0) {
-    	$.getJSON('https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=fe876b65f02d2193dd0dde6833f185b0&photoset_id=72157656406710962&user_id=135058920%40N04&extras=url_m&format=json&jsoncallback=?').done(function(data) {
+    	var galleryId = '72157656406710962';
+    	var gallery = $('.gallery');
+    	if (gallery.attr('class').startsWith('gallery-')) {
+    		galleryId = gallery.attr('class').split('-')[1];
+    		if (galleryId.indexOf(' ')) {
+    			galleryId = galleryId.split(' ')[0];
+    		}
+    		// console.log('Read gallery ID ' + galleryId);
+    	}
+
+    	$.ajax({
+    		url: 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=fe876b65f02d2193dd0dde6833f185b0&extras=url_m&format=json',
+    		data: {
+    			photoset_id: galleryId
+    		},
+    		dataType: 'jsonp',
+    		jsonp: 'jsoncallback',
+    		cache: true
+    	}).done(function(data) {
     		var photos = [];
-    		// console.log(data.photoset.photo);
+    		// console.log(data);
     		$.each(data.photoset.photo, function(key, val) {
     			// console.log(val.url_m);
     			photos.push('<li class="gallery-cell" style="background-image: url(' + val.url_m + ')"></li>');

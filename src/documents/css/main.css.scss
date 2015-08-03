@@ -179,8 +179,8 @@ nav {
 
 .content,
 .testimonial {
-	min-height: $section-min-height;
-	max-height: $section-height;
+	min-height: $section-height;
+	// max-height: $section-height;
 	text-align: center;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -354,11 +354,11 @@ nav {
 		background-size: cover;
 	}
 
-	.content {
-		height: auto;
-		max-height: none;
-		min-height: none;
-	}
+	// .content {
+	// 	height: auto;
+	// 	max-height: none;
+	// 	min-height: 40vh;
+	// }
 
 	.services {
 		margin-bottom: 10px;
@@ -509,15 +509,17 @@ nav {
 	textarea {
 		height: 5em;
 	}
+}
 
-	button {
-		border: 0;
-		background-color: $logo-colour;
-		display: inline-block;
-		color: $bg-colour;
-		padding: .5em 1em;
-		text-transform: uppercase;
-	}
+button,
+.button {
+	border: 0;
+	background-color: $logo-colour;
+	display: inline-block;
+	color: $bg-colour;
+	padding: .5em 1em;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 footer {
@@ -590,10 +592,10 @@ footer {
 		}
 	}
 
-	.home .content {
-		min-height: $section-min-height;
-		max-height: $section-height;
-	}
+	// .home .content {
+	// 	min-height: $section-min-height;
+	// 	max-height: $section-height;
+	// }
 
 	.content p {
 		width: 75%;
@@ -771,7 +773,7 @@ footer {
 			text-align: center;
 
 			h2 {
-				font-size: 5.9vw;
+				font-size: 5.4vw;
 			}
 		}
 
