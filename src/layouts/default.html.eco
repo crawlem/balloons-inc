@@ -46,8 +46,7 @@ outFilename: layout-default.html
 
 			<div class="carousel"<% if @document.carouselImg: %> style="background-image: url('img/carousel/<%= @document.carouselImg %>')"<% end %>>
 				<div class="carousel-content">
-					<h2>About <%= @site.title %></h2>
-					<%- @partial("strapline-index.html") %>
+					<div class="carousel-logo"></div>
 				</div>
 			</div>
 
@@ -75,7 +74,7 @@ outFilename: layout-default.html
 				            <a href="<%= @getUrl(page.url) %>"><%= page.title %></a>
 				        </li>
 				    <% end %>
-					<li><strong>&copy; balloonsinc <%= @formatDate(@site.date, 'YYYY') %></strong></li>
+					<li>&copy; balloonsinc <%= @formatDate(@site.date, 'YYYY') %></li>
 				</ul>
 			</footer>
 		</div>
