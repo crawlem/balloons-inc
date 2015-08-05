@@ -2,7 +2,7 @@
 outFilename: layout-text.html
 layout: default
 ---
-<section class="text-heading">
+<section>
 	<h2><%=@document.title%></h2>
 	<%-@partial("strapline-" + @document.name)%>
 </section>
