@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// Add burger menu href event handler
-	$('.burger').click(function(){
+	$('.burger').click(function() {
 		$('header nav ul > li > ul').toggleClass('toggle');
 		return false;
 	});
@@ -18,7 +18,7 @@ $(document).ready(function() {
 	// 	$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
 	// }
 
-	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!|Balloons Inc. was amazing!!! Would highly recommend! Fun for all ages including the Grandparents! #nevertooold|A very happy birthday boy with his "birthday man" .massive thank you !';
+	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!|Balloons Inc. was amazing!!! Would highly recommend! Fun for all ages including the Grandparents! #nevertooold|A very happy birthday boy with his "birthday man". Massive thank you !';
 	var testimonalLinks = '||https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767|https://www.facebook.com/photo.php?fbid=10153469550205140&set=o.145159662317828&type=1|https://www.facebook.com/photo.php?fbid=10155791617915461&amp;set=o.145159662317828&amp;type=1';
 	var tArr = testimonials.split('|');
 	var lArr = testimonalLinks.split('|');
@@ -81,32 +81,29 @@ $(document).ready(function() {
     }
 
     // Contact form validation
-  //   jQuery.validator.messages.required = "";
-  //   jQuery.validator.messages.email = "";
-  //   $(".contact-form form").validate({
-		// rules :{
-		//     name: {
-		//         required: true
-		//     },
-		//     email: {
-		//     	required: true,
-		//     	email: true
-		//     },
-		//     message: {
-		//     	required: true
-		//     }
-		// },
-		// invalidHandler: function(e, validator) {
-		// 	var errors = validator.numberOfInvalids();
-		// 	if (errors) {
-		// 		var message = errors == 1
-		// 			? 'You missed 1 field. It has been highlighted below.'
-		// 			: 'You missed ' + errors + ' fields.  They have been highlighted below.';
-		// 		$("div.error").html(message);
-		// 		$("div.error").show();
-		// 	} else {
-		// 		$("div.error").hide();
-		// 	}
-		// }
-  //   });
+    $("form.contact-form").submit(function() {
+    	var hasErrors = false;
+
+    	if ($('#fld-name').val() == '') {
+    		hasErrors = true;
+    		$('#fld-name').addClass('invalid');
+    	} else {
+    		$('#fld-name').removeClass('invalid');
+    	}
+
+    	var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    	if ($('#fld-email').val() == '' || !filter.test($('#fld-email').val())) {
+    		hasErrors = true;
+    		$('#fld-email').addClass('invalid');
+    	} else {
+    		$('#fld-email').removeClass('invalid');
+    	}
+
+    	if (hasErrors) {
+    		$('.message').text('One or more required fields have not been filled in correctly and are highlighted below.').show();
+    		return false;
+    	} else {
+    		$('.message').hide();
+    	}
+    });
 });
