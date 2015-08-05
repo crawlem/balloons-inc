@@ -763,11 +763,6 @@ footer {
 		}
 	}
 
-	.testimonial p {
-		margin-left: $grid-gutter-large;
-		padding: $grid-gutter-large;
-	}
-
 	footer {
 		padding: $grid-gutter-large $grid-gutter-large $footer-trail $grid-gutter-large;
 
@@ -777,6 +772,23 @@ footer {
 		}
 	}
 }
+
+
+// SITE CSS - WIDER
+// =================================================
+@media screen and (min-width: 900px) {
+	.testimonial {
+		background-image: url('../img/crab@2x.png');
+		background-size: 579px;
+		max-width: 579px*2;
+
+		p {
+			padding: $grid-gutter-large;
+			margin-right: 579px+$grid-gutter-large;
+		}
+	}
+}
+
 
 // SITE CSS - SUPER WIDE
 // =================================================
