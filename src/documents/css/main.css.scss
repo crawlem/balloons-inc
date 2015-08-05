@@ -175,20 +175,13 @@ nav {
 
 	.carousel-content {
 		position: absolute;
-		top: 52.5%;
+		top: 73.5%;
 		right: 0;
 		width: 41%;
 		background-color: $bg-lo-colour-opaque;
 
-		&:before {
-			content: '';
-			float: left;
-			padding-top: 15%;
-		}
-
 		.carousel-logo {
-			display: block;
-			padding-top: 15%;
+			padding-top: 14%;
 			margin: $grid-gutter-medium;
 			background: url('../img/heading.png') no-repeat left center;
 			background-size: contain;
@@ -299,7 +292,8 @@ nav {
 	-webkit-flex-direction: row;
 	-ms-flex-direction: row;
 	flex-direction: row;
-	padding-bottom: 1em;
+	margin-bottom: $grid-gutter-large;
+	background: url('../img/crab.png') no-repeat bottom center;
 
 	p {
 		width: 75%;
@@ -308,13 +302,14 @@ nav {
 		padding: $grid-gutter-medium;
 		text-align: left;
 		position: relative;
+		margin-bottom: 186px+$grid-gutter-medium;
 
 		&:after {
 			content: "";
 			display: block; /* reduce the damage in FF3.0 */
 			position: absolute;
 			bottom: -15px;
-			right: 50px;
+			right: 40%;
 			width: 0;
 			border-width: 15px 15px 0;
 			border-color: $logo-colour transparent;
@@ -334,6 +329,10 @@ nav {
 		padding-top: 66.66%;
 		background: url('../img/carousel/carousel-1.jpg') no-repeat center bottom;
 		background-size: cover;
+
+		.carousel-content {
+			top: 52.5%;
+		}
 	}
 
 	.services {
@@ -627,9 +626,8 @@ footer {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
-		background: url('../img/crab.png') no-repeat center right;
-		padding-bottom: 0;
-		max-width: 386px*2;
+		background-position: center right;
+		max-width: 386px*2.5;
 		margin: auto;
 
 		p {
