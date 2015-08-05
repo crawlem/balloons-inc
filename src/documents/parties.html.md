@@ -17,7 +17,7 @@ Make your party one that will be remembered. Whether you're throwing a party for
 
 At parties Rich mingles among your guests creating a fun array of balloon art that will delight and surprise. Each model is a bespoke original that will put a smile on the face of the onlookers and get everyone talking. As an extra treat Rich will bring along a large pre-made gift for the birthday boy or girl which always creates excitement.
 
-### Balloons Inc. party rates
+### Party rates
 
 Includes 15-20 balloon models per hour + a larger gift for a special person.
 
