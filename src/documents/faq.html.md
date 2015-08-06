@@ -15,7 +15,7 @@ Go to the [book now](contact.html) page get in touch with Rich with the date you
 
 ### How much is it to hire Rich?
 
-It depends on what you're after, how long and where. All of his services have a rates section at the bottom of the page.
+It depends on what you're after, how long and where. All of his services have a rates section at the bottom of the relevant page.
 
 ### Where is Rich based and how far does he travel?
 
@@ -41,7 +41,7 @@ At parties / smaller events, if a balloon model is required for every guest, it 
 
 ### Does Balloons Inc. make "adult" (rude) balloon models?
 
-No, Rich is very much a family orientated entertainer and as such will only make balloon art that is family friendly. In any case, adults just love the stuff she makes, so there is no need!
+No, Rich is very much a family orientated entertainer and as such will only make balloon art that is family friendly. In any case, adults just love the stuff he makes, so there is no need!
 
 ### Are latex balloons bio-degradable?
 
