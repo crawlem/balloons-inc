@@ -18,8 +18,24 @@ $(document).ready(function() {
 	// 	$(cArr).each(function(){$("<img/>")[0].src="img/carousel/"+this+".jpg"});
 	// }
 
-	var testimonials = 'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.|Rich was brilliant at my daughter\'s birthday party, she loved her amazing Elsa balloon!|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!|Balloons Inc. was amazing!!! Would highly recommend! Fun for all ages including the Grandparents! #nevertooold|A very happy birthday boy with his "birthday man". Massive thank you!';
-	var testimonalLinks = '||https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767|https://www.facebook.com/photo.php?fbid=10153469550205140&set=o.145159662317828&type=1|https://www.facebook.com/photo.php?fbid=10155791617915461&amp;set=o.145159662317828&amp;type=1';
+	var testimonials = 
+        'I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat.' +
+        '|I would definitely recommend Rich for your wedding, the parents will thank you for it and you end up with some very creative wedding pictures!' +
+        '|Rich came to my daughter\'s 4th birthday party and he was brilliant! The balloons were so original, the kids (and adults!) loved them!' + 
+        '|Thanks for a super balloon making session yesterday at my son\'s party, he loved his Thomas!' +
+        '|Had the pleasure of working alongside Rich from Balloons Inc. at the weekend - I have to say, he is superb!' +
+        '|Balloons Inc. was amazing!!! Would highly recommend! Fun for all ages including the Grandparents! #nevertooold' +
+        '|A very happy birthday boy with his "birthday man". Massive thank you!'
+    ;
+	var testimonalLinks = 
+        '' +
+        '|https://www.facebook.com/amystock/activity/10155803089735386' +
+        '|https://www.facebook.com/jo.crawley.37/activity/10100621576854662' +
+        '|https://www.facebook.com/photo.php?fbid=10153338046748179&amp;set=o.145159662317828&amp;type=1' +
+        '|https://www.facebook.com/miss.sparklesEX8/posts/1125898514102767' +
+        '|https://www.facebook.com/photo.php?fbid=10153469550205140&set=o.145159662317828&type=1' +
+        '|https://www.facebook.com/photo.php?fbid=10155791617915461&amp;set=o.145159662317828&amp;type=1'
+    ;
 	var tArr = testimonials.split('|');
 	var lArr = testimonalLinks.split('|');
 
