@@ -63,7 +63,7 @@ outFilename: layout-default.html
 			<% if @document.testimonials == true: %>
 				<section class="testimonial">
 					<h1>Testimonials</h1>
-					<p>"I made an excellent choice in choosing Rich to provide entertainment for our event. It created a lasting impression and is definitely one to repeat."</p>
+					<p>"I would definitely recommend Rich for your wedding, the parents will thank you for it and you end up with some very creative wedding pictures!" <a href="https://www.facebook.com/amystock/activity/10155803089735386">View</a></p>
 				</section>
 			<% end %>
 
