@@ -20,6 +20,7 @@ if(isset($_POST['email'])) {
 	$email_from = $_POST['email']; // required
 	$telephone = $_POST['phone']; // not required
 	$date = $_POST['date']; // not required
+	$time = $_POST['time']; // not required
 	$venue = $_POST['venue']; // not required
 	$comments = $_POST['message']; // required
 
@@ -49,6 +50,7 @@ if(isset($_POST['email'])) {
 	$email_message .= "Email: ".clean_string($email_from)."\n";
 	$email_message .= "Telephone: ".clean_string($telephone)."\n";
 	$email_message .= "Date: ".clean_string($date)."\n";
+	$email_message .= "Time: ".clean_string($time)."\n";
 	$email_message .= "Venue: ".clean_string($venue)."\n";
 	$email_message .= "Comments: ".clean_string($comments)."\n";
 
@@ -56,7 +58,7 @@ if(isset($_POST['email'])) {
 	$headers = 'From: '.$email_from."\r\n".
 	'Reply-To: '.$email_from."\r\n" .
 	'X-Mailer: PHP/' . phpversion();
-	@mail($email_to, $email_subject, $email_message, $headers);  
+	@mail($email_to, $email_subject, $email_message, $headers);
 
 	// Redirect to thank you page
 	header('Location: thanks.html');
