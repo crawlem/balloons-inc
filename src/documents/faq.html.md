@@ -15,7 +15,7 @@ Go to the [book now](contact.html) page get in touch with Rich with the date you
 
 ### How much is it to hire Rich?
 
-It depends on what you're after, how long and where. All of his services have a rates section at the bottom of the relevant page.
+It depends on what you're after, how long and where. All of his services have a rates section at the bottom of the relevant page, or you can check out the [prices](prices.html) page.
 
 ### Where is Rich based and how far does he travel?
 

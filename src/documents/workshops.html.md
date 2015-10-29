@@ -19,7 +19,7 @@ During the balloon twisting workshop delegates will learn some of the balloon ba
 
 ### Workshop rates
 
-£95 for 1 hour balloon workshop - up to 12 people  
-£135 for 1.5 hour balloon workshop - up to 20 people
+£85 for 1 hour balloon workshop - up to 12 people  
+£125 for 1.5 hour balloon workshop - up to 20 people
 
 <a href="contact.html" class="button">Book now</a>

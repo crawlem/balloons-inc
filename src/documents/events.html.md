@@ -25,7 +25,7 @@ Make your event one that will be remembered by hiring Rich's balloon twisting sk
 
 ### Event rates
 
-£75 for the first hour  
+£65 for the first hour  
 £50 for every hour after that
 
 Travel is included within 10 miles of Exeter, and 40p per mile for anywhere further than that.

@@ -4,7 +4,7 @@ layout: text
 ignored: false
 
 isPage: true
-pageOrder: 8
+pageOrder: 9
 isFooterMenu: true
 
 testimonials: false
