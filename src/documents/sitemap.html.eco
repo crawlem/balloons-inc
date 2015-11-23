@@ -4,7 +4,7 @@ layout: text
 ignored: false
 
 isFooterMenu: true
-pageOrder: 9
+pageOrder: 10
 
 carouselImg: thin/thin-4.jpg
 testimonials: false
