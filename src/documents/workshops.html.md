@@ -7,7 +7,7 @@ isPage: true
 pageOrder: 4
 isMainMenu: true
 
-carouselImg: thin/thin-4.jpg
+carouselImg: thin/thin-6.jpg
 gallery: true
 galleryPrefix: 7215765
 galleryId: 6663465802
