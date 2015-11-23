@@ -7,6 +7,7 @@ isPage: true
 pageOrder: 8
 isFooterMenu: true
 
+carouselImg: thin/thin-4.jpg
 testimonials: false
 ---
 ### Privacy policy

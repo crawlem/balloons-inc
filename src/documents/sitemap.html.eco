@@ -6,6 +6,7 @@ ignored: false
 isFooterMenu: true
 pageOrder: 9
 
+carouselImg: thin/thin-4.jpg
 testimonials: false
 ---
 <p>Each page available on this website is listed below.</p>
