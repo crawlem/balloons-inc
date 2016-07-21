@@ -55,10 +55,10 @@ if(isset($_POST['email'])) {
 	$email_message .= "Comments: ".clean_string($comments)."\n";
 
 	// Create email headers
-	$headers = 'From: '.$email_from."\r\n".
-	'Reply-To: '.$email_from."\r\n" .
-	'X-Mailer: PHP/' . phpversion();
-	@mail($email_to, $email_subject, $email_message, $headers);
+	// $headers = 'From: '.$email_from."\r\n".
+	// 'Reply-To: '.$email_from."\r\n" .
+	// 'X-Mailer: PHP/' . phpversion();
+	@mail($email_to, $email_subject, $email_message);//, $headers);
 
 	// Redirect to thank you page
 	header('Location: thanks.html');
