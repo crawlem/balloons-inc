@@ -11,12 +11,12 @@ testimonials: false
 ---
 ### Party & event rates
 
-£65 for the first hour  
+£75 for the first hour  
 £50 for every hour after that
 
 Travel is included within 10 miles of Exeter, and 40p per mile for anywhere further than that.
 
-### Charity rates
+### Balloons Inc. stall rates
 
 Free to attend an event.
 

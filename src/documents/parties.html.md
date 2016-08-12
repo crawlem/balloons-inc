@@ -21,7 +21,7 @@ At parties Rich mingles among your guests creating a fun array of balloon art th
 
 Includes 15-20 balloon models per hour + a larger gift for a special person.
 
-£65 for the first hour  
+£75 for the first hour  
 £50 for every hour after that
 
 Travel is included within 10 miles of Exeter, and 40p per mile for anywhere further than that.
