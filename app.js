@@ -127,7 +127,9 @@ app.get('/contact.html', function (req, res) {
 });
 
 // Bind HTTP server to port
-var port = Number(process.env.PORT || 3000)
-app.listen(3000, function () {
-	console.log('Example app listening on port ' + port);
+var ipAddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+// var port = Number(process.env.PORT || 3000)
+app.listen(port, ipAddress, function () {
+	console.log('Example app listening on ' + ipAddress + ' port ' + port);
 });
