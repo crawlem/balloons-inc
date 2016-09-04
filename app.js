@@ -4,7 +4,12 @@ var	express 		= require('express'),
  	handlebars 		= require('handlebars'),
  	marked 			= require('marked'),
 	sassMiddleware	= require('node-sass-middleware'),
-	path 			= require('path');
+	path 			= require('path'),
+	SaveStatic 		= require('save-static');
+ 
+// initialize with the root path for saving to disk 
+var staticPath = __dirname + '/public'; // <= for example 
+var saveStatic = new SaveStatic(staticPath);
 
 handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
     if (arguments.length < 3)
@@ -61,7 +66,7 @@ function loadContent() {
 		pages.items.forEach(function(entry) {
 			app.get('/' + entry.fields.alias + '.html', function (req, res) {
 				loadContent();
-				res.render('text', { page: entry, mainMenu: mainMenu, footerMenu: footerMenu});
+				res.render('text', { page: entry, mainMenu: mainMenu, footerMenu: footerMenu}, saveStatic(res));
 			});
 		});
 	});
@@ -74,22 +79,23 @@ function loadContent() {
 	client.getEntries({'content_type': 'testimonial'}).then(function(entries) {
 		testimonials = entries;
 		app.get('/js/testimonials.js', function (req, res) {
-			var output = 'var testimonials = ';
-			testimonials.items.forEach(function(entry) {
-				output += "'" + entry.fields.quote.replace("'", "\\'") + "'";
-			});
-			output = output.replace("''", "' + '|");
-			output += ';\n'
+			// var output = 'var testimonials = ';
+			// testimonials.items.forEach(function(entry) {
+			// 	output += "'" + entry.fields.quote.replace("'", "\\'") + "'";
+			// });
+			// output = output.replace("''", "' + '|");
+			// output += ';\n'
 
-			output += 'var testimonalLinks = ';
-			testimonials.items.forEach(function(entry) {
-				output += "'" + entry.fields.link + "'";
-			});
-			output = output.replace("''", "' + '|");
-			output += ';'
+			// output += 'var testimonalLinks = ';
+			// testimonials.items.forEach(function(entry) {
+			// 	output += "'" + entry.fields.link + "'";
+			// });
+			// output = output.replace("''", "' + '|");
+			// output += ';'
 
 			res.set('Content-Type', 'application/javascript');
-			res.send(output);
+			res.render('testimonials', { layout: 'js', testimonials: testimonials }, saveStatic(res));
+			// res.send(output);
 		});
 	});
 }
@@ -111,19 +117,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Serve pages
 app.get('/', function (req, res) {
 	loadContent();
-	res.render('index', { page: home, mainMenu: mainMenu, footerMenu: footerMenu});
+	res.render('index', { page: home, mainMenu: mainMenu, footerMenu: footerMenu}, saveStatic(res));
 });
 app.get('/index.html', function (req, res) {
 	loadContent();
-	res.render('index', { page: home, mainMenu: mainMenu, footerMenu: footerMenu});
+	res.render('index', { page: home, mainMenu: mainMenu, footerMenu: footerMenu}, saveStatic(res));
 });
 app.get('/sitemap.html', function (req, res) {
 	loadContent();
-	res.render('sitemap', { page: sitemap, mainMenu: mainMenu, footerMenu: footerMenu});
+	res.render('sitemap', { page: sitemap, mainMenu: mainMenu, footerMenu: footerMenu}, saveStatic(res));
 });
 app.get('/contact.html', function (req, res) {
 	loadContent();
-	res.render('contact', { page: contact, mainMenu: mainMenu, footerMenu: footerMenu});
+	res.render('contact', { page: contact, mainMenu: mainMenu, footerMenu: footerMenu}, saveStatic(res));
 });
 
 // Bind HTTP server to port
