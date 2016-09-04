@@ -129,6 +129,9 @@ app.get('/contact.html', function (req, res) {
 // Bind HTTP server to port
 var port = process.env.VCAP_APP_PORT || 3000;
 console.log('Attempting to bind to port ' + port);
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});
 app.listen(port, function () {
 	console.log('App listening on port ' + port);
 });
