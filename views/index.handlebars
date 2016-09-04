@@ -1,0 +1,18 @@
+<section class="content">
+	{{#md page.fields.intro }}{{/md}}
+	{{#md page.fields.body }}{{/md}}
+</section>
+
+<section class="services">
+	<h2>Balloon Model Services</h2>
+	<ul>
+		{{#each page.fields.tiles}}
+		<li>
+			<a href="{{fields.alias}}.html">
+				<h2>{{fields.title}}</h2>
+				{{#md fields.intro}}{{/md}}
+			</a>
+		</li>
+		{{/each}}
+	</ul>
+</section>

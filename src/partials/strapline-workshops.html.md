@@ -1,1 +1,0 @@
-**Whether you’re after a unique team building activity or just want to learn a new skill, the balloon twisting workshop is a huge amount of fun for young and old.**

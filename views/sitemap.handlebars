@@ -1,0 +1,15 @@
+<section>
+	<h2>{{page.fields.title}}</h2>
+	{{#md page.fields.intro }}{{/md}}
+</section>
+
+<article>
+	{{#md page.fields.body }}{{/md}}
+	<ul>
+		{{#each page.fields.items}}
+			<li>
+				<a href="{{fields.alias}}.html">{{fields.title}}</a>
+			</li>
+		{{/each}}
+	</ul>
+</article>

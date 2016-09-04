@@ -1,18 +1,9 @@
-balloonsinc.co.uk
-=================
+# balloonsinc.co.uk
 
 Website files for balloonsinc.co.uk. 
 
-The site is created using [Docpad](https://docpad.org/) to perform pre-processing and content management. This project stores the NodeJs application.
+The site stores content in the [Contentful](https://contentful.com) Content Management System (CMS). Content is loaded at startup, then served over HTTP using NodeJS via an [Express](https://expressjs.com) server.
 
-The hosted site at balloonsinc.co.uk is mainly a static web server, as Docpad outputs static files.
+Images, CSS and JavaScript are stored in this project, along with functions to convert CMS content from [Markdown](https://en.wikipedia.org/wiki/Markdown) to HTML. A PHP file is present to handle contact form submissions.
 
-To build the site files run:
-
-	docpad generate --env static
-
-Static HTML, CSS etc. is generated and output into a folder called **out**. This content is not quite ready to publish as it is not optimised. Then run:
-
-	ant -f out/build/build.xml
-
-That will output a folder called *publish* which contains optimised website content files to publish to the live website.
+The site could be run live in Production, using suitable hosting for the NodeJS application. However given the mainly static nature of the site it is recommended that the site be flattened to static files and deployed to a static web server. This also allows optimisation of the output, for example minification of CSS files.

@@ -1,1 +1,0 @@
-**Give your party an extra splash of colour and fun by booking Rich’s creative balloon talent, creating wonder and awe for both the recipient and your guests.**
