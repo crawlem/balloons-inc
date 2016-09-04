@@ -4,7 +4,6 @@
   "description": "The main website of Balloons Inc.",
   "main": "app.js",
   "dependencies": {
-    "cfenv": "^1.0.3",
     "contentful": "^3.5.0",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
