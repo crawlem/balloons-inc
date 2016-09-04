@@ -5,7 +5,8 @@ var	express 		= require('express'),
  	marked 			= require('marked'),
 	sassMiddleware	= require('node-sass-middleware'),
 	path 			= require('path'),
-	SaveStatic 		= require('save-static');
+	SaveStatic 		= require('save-static'),
+	apicache 		= require('apicache').options({ debug: true }).middleware;
  
 // initialize with the root path for saving to disk 
 var staticPath = __dirname + '/out'; // <= for example 
@@ -56,7 +57,7 @@ var client = contentful.createClient({
 });
 
 // Serve pages
-app.get(['/', '/index.html'], function(req, res) {
+app.get(['/', '/index.html'], apicache('30 seconds'), function(req, res) {
 	console.log('Loading ' + req.originalUrl);
 	client.getEntries({'content_type': 'home'}).then(function(entries) {
 		var entry = entries.items[0];
@@ -71,7 +72,7 @@ app.get(['/', '/index.html'], function(req, res) {
 	});
 });
 
-app.get('/sitemap.html', function(req, res) {
+app.get('/sitemap.html', apicache('30 seconds'), function(req, res) {
 	console.log('Loading ' + req.originalUrl);
 	client.getEntries({'content_type': 'sitemap'}).then(function(entries) {
 		var entry = entries.items[0];
@@ -86,7 +87,7 @@ app.get('/sitemap.html', function(req, res) {
 	});
 });
 
-app.get('/contact.html', function(req, res) {
+app.get('/contact.html', apicache('30 seconds'), function(req, res) {
 	console.log('Loading ' + req.originalUrl);
 	client.getEntries({'content_type': 'contact'}).then(function(entries) {
 		var entry = entries.items[0];
@@ -101,7 +102,7 @@ app.get('/contact.html', function(req, res) {
 	});
 });
 
-app.get('/js/testimonials.js', function(req, res) {
+app.get('/js/testimonials.js', apicache('30 seconds'), function(req, res) {
 	console.log('Loading ' + req.originalUrl);
 	client.getEntries({'content_type': 'testimonial'}).then(function(entries) {
 		res.set('Content-Type', 'application/javascript');
@@ -113,7 +114,7 @@ app.get('/js/testimonials.js', function(req, res) {
 client.getEntries({'content_type': 'page'}).then(function(pages) {
 	pages.items.forEach(function(entry) {
 		console.log('Setting up GET address for ' + entry.fields.alias);
-		app.get('/' + entry.fields.alias + '.html', function(req, res) {
+		app.get('/' + entry.fields.alias + '.html', apicache('30 seconds'), function(req, res) {
 			console.log('Loading ' + req.originalUrl);
 			client.getEntries({'content_type': 'page', 'fields.alias': entry.fields.alias}).then(function(page) {
 				client.getEntries({'content_type': 'menu', 'fields.alias': 'main-menu'}).then(function(mainMenus) {
