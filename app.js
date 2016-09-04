@@ -4,7 +4,8 @@ var	express 		= require('express'),
  	handlebars 		= require('handlebars'),
  	marked 			= require('marked'),
 	sassMiddleware	= require('node-sass-middleware'),
-	path 			= require('path');
+	path 			= require('path'),
+	cfenv 			= require('cfenv');
 
 handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
     if (arguments.length < 3)
@@ -127,7 +128,9 @@ app.get('/contact.html', function (req, res) {
 });
 
 // Bind HTTP server to port
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-	console.log('Example app listening on port ' + port);
+var appEnv = cfenv.getAppEnv();
+var ip = appEnv.bind || '127.0.0.1';
+var port = appEnv.port || 3000;
+app.listen(port, ip, function () {
+	console.log('Example app listening on ' + ip + ' port ' + port);
 });
