@@ -3,37 +3,22 @@ outFilename: layout-contact.html
 layout: text
 ---
 <%-@content%>
-<div class="message invalid"></div>
-<form action="mail.php" method="post" class="contact-form">
-	<div class="field field-inline">
-		<label for="fld-name" class="required">Name</label>
-		<input name="name" id="fld-name" required>
-	</div>
-	<div class="field field-inline">
-		<label for="fld-email" class="required">Email</label>
-		<input name="email" type="email" id="fld-email" required>
-	</div>
-	<div class="field field-inline">
-		<label for="fld-phone">Phone</label>
-		<input name="phone" id="fld-phone">
-	</div>
-	<div class="field field-inline">
-		<label for="fld-venue">Venue</label>
-		<input name="venue" id="fld-venue">
-	</div>
-	<div class="field field-inline">
-		<label for="fld-date">Date</label>
-		<input name="date" type="date" id="fld-date">
-	</div>
-	<div class="field field-inline">
-		<label for="fld-time">Time</label>
-		<input name="time" type="time" id="fld-time">
-	</div>
-	<div class="field">
-		<label for="fld-message">Message</label>
-		<textarea name="message" id="fld-message"></textarea>
-	</div>
-	<div class="buttons">
-		<button type="submit">Send</button>
-	</div>
-</form>
+<div id="wufoo-z153dv060hxo0z6">
+Fill out my <a href="https://balloonsinc.wufoo.com/forms/z153dv060hxo0z6">online form</a>.
+</div>
+<script type="text/javascript">var z153dv060hxo0z6;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'balloonsinc',
+'formHash':'z153dv060hxo0z6',
+'autoResize':true,
+'height':'737',
+'async':true,
+'host':'wufoo.com',
+'header':'show',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { z153dv060hxo0z6 = new WufooForm();z153dv060hxo0z6.initialize(options);z153dv060hxo0z6.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
