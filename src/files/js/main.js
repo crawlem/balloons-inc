@@ -97,4 +97,31 @@ $(document).ready(function() {
     		$('.main-gallery').flickity({wrapAround: true, pageDots: false});
     	});
     }
+
+    // Contact form validation
+    $("form.contact-form").submit(function() {
+        var hasErrors = false;
+
+        if ($('#fld-name').val() == '') {
+            hasErrors = true;
+            $('#fld-name').addClass('invalid');
+        } else {
+            $('#fld-name').removeClass('invalid');
+        }
+
+        var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if ($('#fld-email').val() == '' || !filter.test($('#fld-email').val())) {
+            hasErrors = true;
+            $('#fld-email').addClass('invalid');
+        } else {
+            $('#fld-email').removeClass('invalid');
+        }
+
+        if (hasErrors) {
+            $('.message').text('One or more required fields have not been filled in correctly and are highlighted below.').show();
+            return false;
+        } else {
+            $('.message').hide();
+        }
+    });
 });
