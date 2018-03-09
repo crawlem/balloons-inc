@@ -1,9 +1,7 @@
 ---
 title: Frequently Asked Questions
 layout: page
-ignored: false
 
-isPage: true
 pageOrder: 6
 isFooterMenu: true
 
