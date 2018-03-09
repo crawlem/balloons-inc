@@ -38,6 +38,7 @@ exclude:
   - assets
   - README.md
   - feed.xml
+  - buildspec.yml
 
 sass:
   style: compressed
