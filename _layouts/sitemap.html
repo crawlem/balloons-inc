@@ -1,0 +1,13 @@
+---
+layout: page
+---
+{{ content }}
+
+<ul>
+	{% assign sitemap = site.pages | sort: "pageOrder" %}
+    {% for item in sitemap %}
+    	{% if item.pageOrder and item.url != page.url %}
+        	<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+	    {% endif %}
+    {% endfor %}
+</ul>

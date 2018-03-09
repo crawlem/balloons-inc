@@ -407,7 +407,8 @@ nav {
 
 .thanks main,
 .contact main,
-.page main {
+.page main,
+.sitemap main {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -610,7 +611,8 @@ footer {
 
 	.thanks main,
 	.contact main,
-	.page main {
+	.page main,
+	.sitemap main {
 		margin: $grid-gutter-medium;
 	}
 
@@ -692,7 +694,8 @@ footer {
 
 	.thanks main,
 	.contact main,
-	.page main {
+	.page main,
+	.sitemap main {
 		margin: $grid-gutter-large;
 	}
 
@@ -718,7 +721,8 @@ footer {
 
 	.thanks main,
 	.contact main,
-	.page main {
+	.page main,
+	.sitemap main {
 		section {
 			-webkit-flex-basis: 30%;
 			-ms-flex-preferred-size: 30%;
@@ -797,7 +801,8 @@ footer {
 @media screen and (min-width: $max-width) {
 	.thanks main,
 	.contact main,
-	.page main {
+	.page main,
+	.sitemap main {
 		section h2 {
 			font-size: 5em;
 		}
