@@ -1,0 +1,99 @@
+---
+layout: compress
+---
+<!doctype html>
+<html class="no-js" lang="{{ page.lang | default: site.lang | default: "en" }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<title>{{ site.title }} | {{ page.title }}</title>
+
+		<meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="{{ page.description }}">
+		<meta name="keywords" content="{{ page.keywords }}">
+		<meta name="author" content="{{ site.author }}">
+
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body id="{{ page.id }}" class="{{ page.layout }}">
+		<div class="container">
+			<header>
+				<h1><a href="index.html">{{ site.title }}</a></h1>
+				<nav>
+					<h2>Main Menu</h2>
+					<ul>
+						<li class="burger"><a href="sitemap.html"><abbr title="All menu items">&#x2261;</abbr></a></li>
+						<li>
+							<ul>
+								{% assign main_menu = site.pages | where: "isMainMenu", true | sort: "pageOrder" %}
+								{% for item in main_menu %}
+							        <li{% if item.url == page.url %} class="current"{% endif %}>
+							            <a href="{{ item.url }}">{{ item.title }}</a>
+							        </li>
+							    {% endfor %}
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/balloonsinc">Twitter</a></li>
+						<li><a href="https://www.facebook.com/balloonsinc">Facebook</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="carousel"{% if page.carouselImg: %} style="background-image: url('img/carousel/{{ page.carouselImg }}')"{% endif %}
+				<div class="carousel-content">
+					<div class="carousel-logo"></div>
+				</div>
+			</div>
+
+			<main>
+				{{ content }}
+			</main>
+
+			{% if page.gallery %}
+				<section class="gallery-{{ page.galleryPrefix }}{{ page.galleryId }} gallery">
+					<h2>Gallery</h2>
+				</section>
+			{% endif %}
+
+			{% if page.testimonials %}
+				<section class="testimonial">
+					<h1>Testimonials</h1>
+					<p>"I would definitely recommend Rich for your wedding, the parents will thank you for it and you end up with some very creative wedding pictures!" <a href="https://www.facebook.com/amystock/activity/10155803089735386">View</a></p>
+				</section>
+			{% endif %}
+
+			<footer>
+				<ul>
+					{% assign footer_menu = site.pages | where: "isFooterMenu", true | sort: "pageOrder" %}
+					{% for item in footer_menu %}
+				        <li{% if item.url == page.url %} class="current"{% endif %}>
+				            <a href="{{ item.url }}">{{ item.title }}</a>
+				        </li>
+				    {% endfor %}
+					<li>&copy; balloonsinc {{ 'now' | date: "%Y" }}</li>
+				</ul>
+			</footer>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.1.0/flickity.pkgd.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-39475717-1','auto');ga('send','pageview');
+        </script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<section class="content">
+	{{ content }}
+</section>
+
+<section class="services">
+	<h1>Balloon Model Services</h1>
+	<ul>
+		{% assign links = site.pages | where: "isHomePageLink", true | sort: "pageOrder" %}
+		{% for link in links %}
+		<li>
+			<a href="{{ link.url }}">
+				<h2>{{ link.title }}</h2>
+				<p><strong>{{ link.strapline }}</strong></p>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+</section>

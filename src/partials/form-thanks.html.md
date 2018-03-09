@@ -1,1 +1,0 @@
-Thank you for getting in touch. Rich will reply to your enquiry shortly.
