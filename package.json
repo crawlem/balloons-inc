@@ -11,7 +11,7 @@
     "docpad-plugin-eco": "~2.2.1",
     "docpad-plugin-marked": "~2.4.0",
     "docpad-plugin-moment": "~2.0.2",
-    "docpad-plugin-partials": "~2.11.0",
+    "docpad-plugin-partials": "~2.12.0",
     "docpad-plugin-php": "~2.0.2",
     "docpad-plugin-ruby": "~2.0.2",
     "docpad-plugin-sass": "~2.8.0",
