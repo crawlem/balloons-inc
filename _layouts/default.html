@@ -10,7 +10,7 @@ layout: compress
 		<title>{{ site.title }} | {{ page.title }}</title>
 
 		<meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta name="description" content="{{ page.description }}">
+		<meta name="description" content="{{ page.strapline }}">
 		<meta name="keywords" content="{{ page.keywords }}">
 		<meta name="author" content="{{ site.author }}">
 
@@ -45,7 +45,7 @@ layout: compress
 				</nav>
 			</header>
 
-			<div class="carousel"{% if page.carouselImg: %} style="background-image: url('img/carousel/{{ page.carouselImg }}')"{% endif %}
+			<div class="carousel"{% if page.carouselImg %} style="background-image: url('img/carousel/{{ page.carouselImg }}')"{% endif %}
 				<div class="carousel-content">
 					<div class="carousel-logo"></div>
 				</div>
