@@ -3,9 +3,11 @@ layout: default
 ---
 <section>
 	<h2>{{ page.title | escape }}</h2>
-	{% if page.layout != "contact" %}<p><strong>{% endif %}
-	{{ page.strapline }}
-	{% if page.layout != "contact" %}</strong></p>{% endif %}
+	{% if page.strapline %}
+		{% if page.layout != "contact" %}<p><strong>{% endif %}
+			{{ page.strapline }}
+		{% if page.layout != "contact" %}</strong></p>{% endif %}
+	{% endif %}
 </section>
 
 <article>
