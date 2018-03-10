@@ -8,4 +8,4 @@ pageOrder: 10
 carouselImg: thin/thin-4.jpg
 testimonials: false
 ---
-Each page available on this website is listed below.
+Each page of this website is listed below.
