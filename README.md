@@ -3,16 +3,28 @@ balloonsinc.co.uk
 
 Website files for balloonsinc.co.uk. 
 
-The site is created using [Docpad](https://docpad.org/) to perform pre-processing and content management. This project stores the NodeJs application.
+The site is created using [Jekyll](https://jekyllrb.com), a neat static website creator. This project stores the templates and content which get processed by Jekyll into flat files.
 
-The hosted site at balloonsinc.co.uk is mainly a static web server, as Docpad outputs static files.
+Running locally
+---------------
+
+Install Jekyll.
 
 To build the site files run:
 
-	docpad generate --env static
+	jekyll build
 
-Static HTML, CSS etc. is generated and output into a folder called **out**. This content is not quite ready to publish as it is not optimised. Then run:
+Static HTML, CSS etc. is generated and output into a folder called **_site_**.
 
-	ant -f out/build/build.xml
+To test the site locally run:
 
-That will output a folder called *publish* which contains optimised website content files to publish to the live website.
+    jekyll serve
+
+Then view the site in your browser at http://localhost:4000/.
+
+Deploying
+---------
+
+The site is deployed on AWS in an S3 bucket. buildspec.yml defines the build and deployment steps needed.
+
+Check-ins to GitHub deploy the site automatically.
