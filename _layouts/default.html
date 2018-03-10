@@ -10,9 +10,9 @@ layout: compress
 		<title>{{ site.title }} | {{ page.title }}</title>
 
 		<meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta name="description" content="{{ page.strapline }}">
-		<meta name="keywords" content="{{ page.keywords }}">
-		<meta name="author" content="{{ site.author }}">
+		<meta name="description" content="{{ page.strapline | escape }}">
+		<meta name="keywords" content="{{ page.keywords | escape }}">
+		<meta name="author" content="{{ site.author | escape }}">
 
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		
@@ -21,7 +21,7 @@ layout: compress
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-	<body id="{{ page.id }}" class="{{ page.layout }}">
+	<body id="{{ page.id }}" class="{{ page.layout | escape }}">
 		<div class="container">
 			<header>
 				<h1><a href="index.html">{{ site.title }}</a></h1>
