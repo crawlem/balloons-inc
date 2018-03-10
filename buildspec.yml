@@ -10,5 +10,4 @@ phases:
       - echo "******** Building Jekyll site ********"
       - jekyll build
       - echo "******** Uploading to S3 ********"
-      - aws s3 sync _site/ s3://balloons-inc --exclude "*" --include "*.html" --cache-control max-age=3600
-      - aws s3 sync _site/ s3://balloons-inc --exclude "*.html" --exclude ".htaccess"
+      - aws s3 sync _site/ s3://balloons-inc --exclude ".htaccess"
