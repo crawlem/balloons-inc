@@ -37,6 +37,7 @@ exclude:
   - vendor/ruby/
   - assets
   - README.md
+  - LICENSE
   - feed.xml
   - buildspec.yml
 
