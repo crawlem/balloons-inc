@@ -9,3 +9,7 @@ results
 node_modules
 
 htdocs
+
+_site
+
+.sass-cache
