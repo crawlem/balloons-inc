@@ -21,7 +21,7 @@ layout: compress
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-	<body id="{{ page.id }}" class="{{ page.layout | escape }}">
+	<body{% if page.id %} id="{{ page.id }}"{% endif %} class="{{ page.layout | escape }}">
 		<div class="container">
 			<header>
 				<h1><a href="index.html">{{ site.title }}</a></h1>
