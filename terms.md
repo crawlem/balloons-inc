@@ -44,7 +44,7 @@ A responsible adult must be in attendance at all times, the artiste is not liabl
 
 Balloons are not recommended for children under 3.
 
-The artiste is obliged to advice the following health and safety information
+The artiste is obliged to advise the following health and safety information:
 
 "Warning! Children under eight years can choke or suffocate on uninflated or broken balloons. Adult supervision required. Keep uninflated balloons away from children. Discard broken balloons at once."
 
