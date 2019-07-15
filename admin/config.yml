@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: crawlem/balloons-inc
+  branch: master
+  base_url: https://api.netlify.com
+  site_domain: frosty-snyder-294dbc.netlify.com
+  auth_endpoint: auth
+
+media_folder: "img/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "."
+    create: false
+    slug: "{{slug}}"
+    fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Strapline", name: "strapline", widget: "text"}
+        - {label: "Template", name: "layout", widget: "text", default: "page"}
+        - {label: "Show on main menu?", name: "isMainMenu", widget: "boolean"}
+        - {label: "Show gallery?", name: "gallery", widget: "boolean"}
