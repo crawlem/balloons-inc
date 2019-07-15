@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: crawlem/balloons-inc
-  branch: master
+  branch: netlify-cms
   base_url: https://api.netlify.com
   site_domain: frosty-snyder-294dbc.netlify.com
   auth_endpoint: auth
