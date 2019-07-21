@@ -51,4 +51,4 @@ Rich's performance is not done as a stage show but rather as an interactive, ent
 
 ### Can Balloons Inc. recommend other entertainers?
 
-Yes! If you're looking for an excellent face painter he'd recommend [Miss Sparkles](http://www.miss-sparkles.com/face-painting-exmouth.html). If you're after a bouncy castle he'd recommend [LJ's Kidz](http://www.ljskidz.co.uk).
+Yes! If you're looking for an excellent face painter he'd recommend [Miss Sparkles](http://www.miss-sparkles.com/face-painting-exmouth.html).
