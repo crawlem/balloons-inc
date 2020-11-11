@@ -12,13 +12,14 @@ Install Jekyll.
 
 To build the site files run:
 
-	jekyll build
+	bundle install
+    bundle exec jekyll build
 
 Static HTML, CSS etc. is generated and output into a folder called **_site_**.
 
 To test the site locally run:
 
-    jekyll serve
+    bundle exec jekyll serve
 
 Then view the site in your browser at http://localhost:4000/.
 
