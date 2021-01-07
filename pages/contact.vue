@@ -5,7 +5,7 @@
       <section>
         <h2>{{ page.fields.title }}</h2>
         <p v-if="page.fields.intro">
-          <strong>{{ page.fields.intro }}</strong>
+          <strong v-html="$md.render(page.fields.intro)" />
         </p>
       </section>
       <article>

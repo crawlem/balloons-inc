@@ -41,12 +41,13 @@ export default {
       const galleryId = page.items[0].fields.gallery.fields.prefix.toString() + page.items[0].fields.gallery.fields.id.toString()
       const photoResponse = await $flickr.get('?method=flickr.photosets.getPhotos&extras=url_m&photoset_id=' + galleryId + '&format=json&api_key=' + $config.FLK_API_KEY + '&nojsoncallback=1')
       photos = await photoResponse.json()
+      photos = photos.photoset.photo
     }
 
     return {
       page: page.items[0],
       testimonials: testimonials.items,
-      photos: photos.photoset.photo
+      photos
     }
   },
   head () {

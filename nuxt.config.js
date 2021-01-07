@@ -46,7 +46,7 @@ export default {
 
   markdownit: {
     injected: true,
-    linkify: false
+    linkify: true
   },
 
   // render: {

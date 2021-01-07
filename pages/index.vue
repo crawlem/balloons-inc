@@ -4,7 +4,7 @@
     <main>
       <section class="content">
         <p>{{ page.fields.intro }}</p>
-        <div v-html="$md.render(page.fields.body)" />
+        <span v-html="$md.render(page.fields.body)" />
       </section>
       <section class="services">
         <h1>Balloon Model Services</h1>
