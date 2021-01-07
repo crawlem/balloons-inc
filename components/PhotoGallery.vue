@@ -1,9 +1,10 @@
 <template>
   <section class="gallery">
     <h2>Gallery</h2>
+    <!-- Based on https://vue-horizontal.fuxing.dev/recipes/carousel/ -->
     <vue-horizontal class="horizontal" :button-between="false">
       <div v-for="(photo) in photos" :key="photo.id" class="horizontal-item">
-        <img :src="photo.url_m" />
+        <img :src="photo.url_m" :width="photo.width_m" :height="photo.height_m">
       </div>
     </vue-horizontal>
   </section>
