@@ -9,12 +9,12 @@
       <h2>Main Menu</h2>
       <ul>
         <li class="burger">
-          <NuxtLink to="/sitemap">
+          <a href="/sitemap" @click.prevent="toggleBurger()">
             <abbr title="All menu items">&#x2261;</abbr>
-          </NuxtLink>
+          </a>
         </li>
         <li>
-          <ul>
+          <ul :class="burgerClass">
             <!-- TODO Active class needs to be set to 'current' -->
             <li v-for="item in menuItems" :key="item.sys.id">
               <NuxtLink :to="item.fields.alias">
@@ -40,6 +40,22 @@ export default {
         return []
       },
       required: true
+    }
+  },
+  data () {
+    return {
+      burgerActive: false
+    }
+  },
+  computed: {
+    burgerClass () {
+      return (this.burgerActive) ? 'toggle' : ''
+    }
+  },
+  methods: {
+    toggleBurger (e) {
+      this.burgerActive = !this.burgerActive
+      return false
     }
   }
 }

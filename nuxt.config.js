@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/contentful'
+    '~/plugins/contentful',
+    '~/plugins/flickr'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -39,7 +40,8 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxt/http'
   ],
 
   markdownit: {
@@ -47,15 +49,54 @@ export default {
     linkify: false
   },
 
+  // render: {
+  //   // We don't need JS injected
+  //   injectScripts: false,
+  //   resourceHints: false
+  // },
+
+  // hooks: {
+  //   // JS tags remain in static files https://github.com/nuxt/nuxt.js/issues/8178
+  //   'generate:page': page => {
+  //     const $ = require("cheerio")
+  //     const doc = $.load(page.html);
+
+  //     doc("link[rel=preload]").remove();
+  //     doc("html script").remove();
+
+  //     // Clean Vue attributes because we don't have client-side JS
+  //     doc("*").each((i, node) => {
+  //       Object.keys(node.attribs).forEach((attr) => {
+  //         if (["data-n-head-ssr", "data-n-head", "data-hid"].indexOf(attr) >= 0 || attr.startsWith("data-v")) {
+  //           $(node).removeAttr(attr)
+  //         }
+  //       })
+  //     })
+
+  //     // Remove comments
+  //     doc("*")
+  //       .contents()
+  //       .filter(function() { return this.type === 'comment'; })
+  //       .remove();
+
+  //     page.html = doc.html();
+  //   },
+  // },
+  
   publicRuntimeConfig: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+
     CTF_CONTENT_TYPE_PAGE: process.env.CTF_CONTENT_TYPE_PAGE || 'page',
     CTF_CONTENT_TYPE_HOME: process.env.CTF_CONTENT_TYPE_HOME || 'home',
     CTF_CONTENT_TYPE_MENU: process.env.CTF_CONTENT_TYPE_MENU || 'menu',
+    CTF_CONTENT_TYPE_CONTACT: process.env.CTF_CONTENT_TYPE_CONTACT || 'contact',
     CTF_CONTENT_TYPE_TESTIMONIAL: process.env.CTF_CONTENT_TYPE_TESTIMONIAL || 'testimonial',
     CTF_CONTENT_ID_MAIN_MENU: process.env.CTF_CONTENT_ID_MAIN_MENU || 'main-menu',
-    CTF_CONTENT_ID_FOOTER_MENU: process.env.CTF_CONTENT_ID_FOOTER_MENU || 'footer-menu'
+    CTF_CONTENT_ID_FOOTER_MENU: process.env.CTF_CONTENT_ID_FOOTER_MENU || 'footer-menu',
+
+    FLK_BASE_URL: process.env.FLK_BASE_URL || 'https://api.flickr.com/services/rest',
+    FLK_API_KEY: process.env.FLK_API_KEY
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

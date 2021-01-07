@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <Carousel :img="page.fields.headerImage.fields.file.url" />
     <main>
       <section>
@@ -11,11 +11,13 @@
       <article>
         <div v-html="$md.render(page.fields.body)" />
         <p>
-          <NuxtLink to="/contact" class="button">Book now</NuxtLink>
+          <NuxtLink to="/contact" class="button">
+            Book now
+          </NuxtLink>
         </p>
       </article>
     </main>
-    <PhotoGallery v-if="page.fields.gallery" :galleryId="page.fields.gallery.fields.id" :galleryPrefix="page.fields.gallery.fields.prefix" />
+    <PhotoGallery v-if="photos.length > 0" :photos="photos" />
     <Testimonials v-if="page.fields.showTestimonials" :testimonials="testimonials" />
   </div>
 </template>
@@ -30,29 +32,22 @@ export default {
     PhotoGallery,
     Testimonials
   },
-  asyncData ({ $config, $contentful, route }) {
-    console.log('asyncdata ' + route.path)
-    return Promise.all([
-      $contentful.getEntries({
-        content_type: $config.CTF_CONTENT_TYPE_PAGE,
-        'fields.alias[match]': route.path
-      })
-    ]).then(([page]) => {
-      return {
-        page: page.items[0]
-      }
-    }).catch(console.error)
-  },
-  computed: {
-    bodyClass () {
-      return this.page.fields.alias.replace(/^\/|\/$/g, '')
+  async asyncData ({ $config, $contentful, $flickr, route }) {
+    const page = await $contentful.getEntries({ content_type: $config.CTF_CONTENT_TYPE_PAGE, 'fields.alias[match]': route.path })
+    const testimonials = await $contentful.getEntries({ content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL })
+
+    let photos = []
+    if (page.items[0].fields.gallery) {
+      const galleryId = page.items[0].fields.gallery.fields.prefix.toString() + page.items[0].fields.gallery.fields.id.toString()
+      const photoResponse = await $flickr.get('?method=flickr.photosets.getPhotos&extras=url_m&photoset_id=' + galleryId + '&format=json&api_key=' + $config.FLK_API_KEY + '&nojsoncallback=1')
+      photos = await photoResponse.json()
     }
-  },
-  mounted () {
-    document.body.classList.add('page')
-  },
-  destroyed () {
-    document.body.classList.remove('page')
+
+    return {
+      page: page.items[0],
+      testimonials: testimonials.items,
+      photos: photos.photoset.photo
+    }
   },
   head () {
     return {

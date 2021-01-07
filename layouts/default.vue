@@ -23,21 +23,17 @@ export default {
       this.$contentful.getEntries({
         content_type: this.$config.CTF_CONTENT_TYPE_MENU,
         'fields.alias[match]': this.$config.CTF_CONTENT_ID_FOOTER_MENU
-      }),
-      this.$contentful.getEntries({
-        content_type: this.$config.CTF_CONTENT_TYPE_TESTIMONIAL
       })
-    ]).then(([mainMenu, footerMenu, testimonials]) => {
+    ]).then(([mainMenu, footerMenu]) => {
       this.mainMenu = mainMenu.items[0]
       this.footerMenu = footerMenu.items[0]
-      this.testimonials = testimonials
+    // eslint-disable-next-line
     }).catch(console.error)
   },
   data () {
     return {
       mainMenu: [],
-      footerMenu: [],
-      testimonials: []
+      footerMenu: []
     }
   }
 }

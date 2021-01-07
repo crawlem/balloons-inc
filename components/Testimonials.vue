@@ -2,8 +2,8 @@
   <section class="testimonial">
     <h1>Testimonials</h1>
     <p>
-      "Dummy text"
-      <a href="https://www.facebook.com/amystock/activity/10155803089735386">View</a>
+      {{ filteredItems[randomIndex].fields.quote }}
+      <a :href="filteredItems[randomIndex].fields.link">View</a>
     </p>
   </section>
 </template>
@@ -13,9 +13,9 @@ export default {
   name: 'Testimonials',
   props: {
     testimonials: {
-      type: Object,
+      type: Array,
       default () {
-        return {}
+        return []
       },
       required: true
     }
@@ -23,6 +23,9 @@ export default {
   computed: {
     filteredItems () {
       return this.testimonials.filter(this.isNotEmpty)
+    },
+    randomIndex () {
+      return this.filteredItems.length * Math.random() | 0
     }
   },
   methods: {

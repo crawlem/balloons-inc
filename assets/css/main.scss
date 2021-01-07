@@ -212,79 +212,6 @@ nav {
 	}
 }
 
-.gallery {
-	h2 {
-		display: none;
-	}
-
-	.main-gallery {
-		@include box-reset;
-		list-style: none;
-		position: relative;
-		max-width: $max-width;
-		overflow: hidden;
-		margin-bottom: 10px;
-
-		&:focus {
-			outline: none;
-		}
-	}
-
-	.gallery-cell {
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 70%;
-		position: relative;
-
-		// Make the height the same as the width (square)
-		&:before {
-			content: '';
-			float: left;
-			padding-top: 100%;
-		}
-	}
-
-	.flickity-prev-next-button {
-		@include box-reset;
-		position: absolute;
-		top: 0;
-		width: 15%;
-		height: 100%;
-		background: $bg-lo-colour-opaque;
-		outline: none;
-
-		&.previous {
-			left: 0;
-		}
-
-		&.next {
-			right: 0;
-		}
-
-		.arrow {
-			fill: $bg-colour;
-		}
-
-		svg {
-			width: 50px;
-			height: 75px;
-		}
-
-		&.no-svg {
-			color: $bg-colour;
-		}
-
-		&:active,
-		&:focus {
-			outline: none;
-		}
-		
-		&:disabled {
-			display: none;
-		}
-	}
-}
-
 .testimonial {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
@@ -520,6 +447,12 @@ footer {
 	}
 }
 
+.gallery {
+	h2 {
+		display: none;
+	}
+}
+
 
 // SITE CSS - RETINA
 // =================================================
@@ -557,16 +490,6 @@ footer {
 
 	.content p {
 		width: 75%;
-	}
-
-	.gallery {
-		.gallery-cell {
-			width: 50%;
-		}
-
-		.flickity-prev-next-button {
-			width: 25%;
-		}
 	}
 
 	footer {
@@ -754,16 +677,6 @@ footer {
 		.label {
 			width: 3em;
 			text-align: right;
-		}
-	}
-
-	.gallery {
-		.gallery-cell {
-			width: 33.33%;
-		}
-
-		.flickity-prev-next-button {
-			width: 33.33%;
 		}
 	}
 

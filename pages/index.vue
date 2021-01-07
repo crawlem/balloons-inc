@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="home">
     <Carousel />
     <main>
       <section class="content">
         <p>{{ page.fields.intro }}</p>
-        <p>{{ page.fields.body }}</p>
+        <div v-html="$md.render(page.fields.body)" />
       </section>
       <section class="services">
         <h1>Balloon Model Services</h1>
@@ -31,23 +31,21 @@ export default {
     Testimonials
   },
   asyncData ({ $config, $contentful, route }) {
-    console.log('asyncdata ' + route.path)
     return Promise.all([
       $contentful.getEntries({
         content_type: $config.CTF_CONTENT_TYPE_HOME,
         'fields.alias[match]': route.path
+      }),
+      $contentful.getEntries({
+        content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL
       })
-    ]).then(([page]) => {
+    ]).then(([page, testimonials]) => {
       return {
-        page: page.items[0]
+        page: page.items[0],
+        testimonials: testimonials.items
       }
+    // eslint-disable-next-line
     }).catch(console.error)
-  },
-  mounted () {
-    document.body.classList.add('home')
-  },
-  destroyed () {
-    document.body.classList.remove('home')
   }
 }
 </script>
