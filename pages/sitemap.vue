@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sitemap">
     <Carousel :img="'/img/carousel/thin/thin-4.jpg'" />
     <main>
       <section>
@@ -61,12 +61,6 @@ export default {
     return {
       sitemap
     }
-  },
-  mounted () {
-    document.body.classList.add('sitemap')
-  },
-  destroyed () {
-    document.body.classList.remove('sitemap')
   },
   head () {
     return {
