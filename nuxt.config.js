@@ -35,7 +35,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -43,6 +44,10 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxt/http'
   ],
+
+  googleAnalytics: {
+    id: 'UA-39475717-1'
+  },
 
   markdownit: {
     injected: true,
@@ -96,7 +101,11 @@ export default {
     CTF_CONTENT_ID_FOOTER_MENU: process.env.CTF_CONTENT_ID_FOOTER_MENU || 'footer-menu',
 
     FLK_BASE_URL: process.env.FLK_BASE_URL || 'https://api.flickr.com/services/rest',
-    FLK_API_KEY: process.env.FLK_API_KEY
+    FLK_API_KEY: process.env.FLK_API_KEY,
+
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID || 'UA-39475717-1'
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
