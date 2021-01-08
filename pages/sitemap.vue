@@ -9,7 +9,7 @@
         Each page of this website is listed below.
         <ul>
           <li v-for="page in sitemap" :key="page.sys.id">
-            <NuxtLink to="page.fields.alias">
+            <NuxtLink :to="page.fields.alias">
               {{ page.fields.title }}
             </NuxtLink>
           </li>
