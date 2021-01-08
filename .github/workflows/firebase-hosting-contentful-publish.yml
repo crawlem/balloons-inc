@@ -15,5 +15,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BALLOONS_INC }}'
           channelId: live
           projectId: balloons-inc
+          ref: rewrite-nuxt
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
