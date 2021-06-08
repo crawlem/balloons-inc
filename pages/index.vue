@@ -46,6 +46,11 @@ export default {
       }
     // eslint-disable-next-line
     }).catch(console.error)
+  },
+  head () {
+    return {
+      title: 'Balloons Inc. | ' + this.page.fields.title
+    }
   }
 }
 </script>
