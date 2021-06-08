@@ -1,7 +1,8 @@
 const contentful = require("contentful")
 const client = contentful.createClient({
   space: process.env.CTF_SPACE_ID,
-  accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+  host: process.env.CTF_API_URL
 })
 
 export default {
@@ -116,6 +117,7 @@ export default {
   publicRuntimeConfig: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+    CTF_API_URL: process.env.CTF_API_URL || 'cdn.contentful.com',
 
     CTF_CONTENT_TYPE_PAGE: process.env.CTF_CONTENT_TYPE_PAGE || 'page',
     CTF_CONTENT_TYPE_HOME: process.env.CTF_CONTENT_TYPE_HOME || 'home',

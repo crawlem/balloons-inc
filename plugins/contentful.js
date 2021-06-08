@@ -4,7 +4,8 @@ export default function ({ $config }, inject) {
   // these will be set via `env` property in nuxt.config.js
   const setup = {
     space: $config.CTF_SPACE_ID,
-    accessToken: $config.CTF_CDA_ACCESS_TOKEN
+    accessToken: $config.CTF_CDA_ACCESS_TOKEN,
+    host: $config.CTF_API_URL
   }
 
   // export `createClient` to use it in page components
