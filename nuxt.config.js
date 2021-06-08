@@ -92,11 +92,18 @@ export default {
         .filter(function() { return this.type === 'comment' })
         .remove()
       
-      // Fix internal links to add .html
+      // Add .html to internal absolute links
       doc("a[href^='/']").each((i, node) => {
         const oldUrl = doc(node).attr('href')
-        // Filter out "//" as these are actually external links
-        if (!oldUrl.startsWith('//') && !oldUrl.endsWith('.html')) {
+        // Filter out links we don't want to add .html to
+        if (
+          // "//" are actually external links
+          !oldUrl.startsWith('//') && 
+          // Anything that already has .html doesn't need it again
+          !oldUrl.endsWith('.html') &&
+          // Ignore the root path
+          oldUrl !== '/'
+        ) {
           const newUrl = oldUrl + '.html'
           doc(node).attr('href', newUrl)
         }
