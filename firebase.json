@@ -5,48 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "redirects": [ 
-      {
-        "source": "/events.html",
-        "destination": "/events",
-        "type": 301
-      },
-      {
-        "source": "/contact.html",
-        "destination": "/contact",
-        "type": 301
-      },
-      {
-        "source": "/faq.html",
-        "destination": "/faq",
-        "type": 301
-      },
-      {
-        "source": "/parties.html",
-        "destination": "/parties",
-        "type": 301
-      },
-      {
-        "source": "/privacy.html",
-        "destination": "/privacy",
-        "type": 301
-      },
-      {
-        "source": "/terms.html",
-        "destination": "/terms",
-        "type": 301
-      },
-      {
-        "source": "/sitemap.html",
-        "destination": "/sitemap",
-        "type": 301
-      },
-      {
-        "source": "/prices.html",
-        "destination": "/prices",
-        "type": 301
-      }
     ]
   }
 }
