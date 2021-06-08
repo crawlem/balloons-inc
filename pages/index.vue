@@ -30,22 +30,19 @@ export default {
     Carousel,
     Testimonials
   },
-  asyncData ({ $config, $contentful, route }) {
-    return Promise.all([
-      $contentful.getEntries({
-        content_type: $config.CTF_CONTENT_TYPE_HOME,
-        'fields.alias[match]': route.path
-      }),
-      $contentful.getEntries({
-        content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL
-      })
-    ]).then(([page, testimonials]) => {
-      return {
-        page: page.items[0],
-        testimonials: testimonials.items
-      }
-    // eslint-disable-next-line
-    }).catch(console.error)
+  async asyncData ({ $config, $contentful, route }) {
+    const page = await $contentful.getEntries({
+      content_type: $config.CTF_CONTENT_TYPE_HOME,
+      'fields.alias[match]': route.path
+    })
+    const testimonials = await $contentful.getEntries({
+      content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL
+    })
+
+    return {
+      page: page.items[0],
+      testimonials: testimonials.items
+    }
   },
   head () {
     return {

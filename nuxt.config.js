@@ -1,3 +1,9 @@
+const contentful = require("contentful")
+const client = contentful.createClient({
+  space: process.env.CTF_SPACE_ID,
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+})
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -65,33 +71,40 @@ export default {
     resourceHints: false
   },
 
-  // hooks: {
-  //   // JS tags remain in static files https://github.com/nuxt/nuxt.js/issues/8178
-  //   'generate:page': page => {
-  //     const $ = require("cheerio")
-  //     const doc = $.load(page.html);
+  hooks: {
+    // JS tags remain in static files https://github.com/nuxt/nuxt.js/issues/8178
+    'generate:page': page => {
+      const $ = require('cheerio')
+      const doc = $.load(page.html)
 
-  //     doc("link[rel=preload]").remove();
-  //     doc("html script").remove();
+      // Clean Vue data- attributes because we don't use client-side JS
+      doc('*').each((i, node) => {
+        Object.keys(node.attribs).forEach((attr) => {
+          if (['data-n-head-ssr', 'data-n-head', 'data-hid', 'data-server-rendered', 'data-fetch-key'].indexOf(attr) >= 0 || attr.startsWith('data-v')) {
+            doc(node).removeAttr(attr)
+          }
+        })
+      })
 
-  //     // Clean Vue attributes because we don't have client-side JS
-  //     doc("*").each((i, node) => {
-  //       Object.keys(node.attribs).forEach((attr) => {
-  //         if (["data-n-head-ssr", "data-n-head", "data-hid"].indexOf(attr) >= 0 || attr.startsWith("data-v")) {
-  //           $(node).removeAttr(attr)
-  //         }
-  //       })
-  //     })
+      // Remove comments
+      doc('*')
+        .contents()
+        .filter(function() { return this.type === 'comment' })
+        .remove()
+      
+      // Fix internal links to add .html
+      doc("a[href^='/']").each((i, node) => {
+        const oldUrl = doc(node).attr('href')
+        // Filter out "//" as these are actually external links
+        if (!oldUrl.startsWith('//') && !oldUrl.endsWith('.html')) {
+          const newUrl = oldUrl + '.html'
+          doc(node).attr('href', newUrl)
+        }
+      })
 
-  //     // Remove comments
-  //     doc("*")
-  //       .contents()
-  //       .filter(function() { return this.type === 'comment'; })
-  //       .remove();
-
-  //     page.html = doc.html();
-  //   },
-  // },
+      page.html = doc.html()
+    },
+  },
   
   publicRuntimeConfig: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
@@ -120,5 +133,22 @@ export default {
 
   router: {
     linkExactActiveClass: 'current'
+  },
+
+  // Force generation of our routes from Contentful
+  generate: {
+    subFolders: false,
+    crawler: false,
+    fallback: '404.html',
+
+    routes () {
+      return Promise.all([
+        client.getEntries({
+          content_type: 'page'
+        })
+      ]).then(([blogEntries]) => {
+        return [...blogEntries.items.map(entry => entry.fields.alias.replace('.html', ''))];
+      });
+    }
   }
 }

@@ -68,23 +68,24 @@ export default {
     Carousel,
     Testimonials
   },
-  asyncData ({ $config, $contentful, route }) {
-    return Promise.all([
-      $contentful.getEntries({
-        content_type: $config.CTF_CONTENT_TYPE_CONTACT,
-        'fields.alias[match]': route.path
-      }),
-      $contentful.getEntries({
-        content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL
-      })
-    ]).then(([page, testimonials]) => {
-      return {
-        page: page.items[0],
-        testimonials: testimonials.items
-      }
-    // eslint-disable-next-line
-    }).catch(console.error)
+  async asyncData ({ $config, $contentful, route }) {
+    const slug = route.path.replace('.html', '').replace('/', '')
+
+    const page = await $contentful.getEntries({
+      content_type: $config.CTF_CONTENT_TYPE_CONTACT,
+      'fields.alias[match]': slug
+    })
+
+    const testimonials = await $contentful.getEntries({
+      content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL
+    })
+
+    return {
+      page: page.items[0],
+      testimonials: testimonials.items
+    }
   },
+
   head () {
     return {
       title: 'Balloons Inc. | ' + this.page.fields.title

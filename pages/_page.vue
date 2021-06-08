@@ -11,7 +11,7 @@
       <article>
         <div v-html="$md.render(page.fields.body)" />
         <p>
-          <NuxtLink to="/contact" class="button">
+          <NuxtLink to="/contact.html" class="button">
             Book now
           </NuxtLink>
         </p>
@@ -33,11 +33,13 @@ export default {
     Testimonials
   },
   async asyncData ({ $config, $contentful, $flickr, route }) {
-    const page = await $contentful.getEntries({ content_type: $config.CTF_CONTENT_TYPE_PAGE, 'fields.alias[match]': route.path })
+    const slug = route.path.replace('.html', '').replace('/', '')
+
+    const page = await $contentful.getEntries({ content_type: $config.CTF_CONTENT_TYPE_PAGE, 'fields.alias[match]': slug })
     const testimonials = await $contentful.getEntries({ content_type: $config.CTF_CONTENT_TYPE_TESTIMONIAL })
 
     let photos = []
-    if (page.items[0].fields.gallery) {
+    if (page.items && page.items.length && page.items[0].fields.gallery) {
       const galleryId = page.items[0].fields.gallery.fields.prefix.toString() + page.items[0].fields.gallery.fields.id.toString()
       const photoResponse = await $flickr.get('?method=flickr.photosets.getPhotos&extras=url_m&photoset_id=' + galleryId + '&format=json&api_key=' + $config.FLK_API_KEY + '&nojsoncallback=1')
       photos = await photoResponse.json()
