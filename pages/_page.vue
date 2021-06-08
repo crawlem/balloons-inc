@@ -54,7 +54,10 @@ export default {
   },
   head () {
     return {
-      title: 'Balloons Inc. | ' + this.page.fields.title
+      title: 'Balloons Inc. | ' + this.page.fields.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.page.fields.intro }
+      ]
     }
   }
 }
