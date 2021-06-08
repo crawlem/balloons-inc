@@ -4,11 +4,16 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Balloons Inc.',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { 'http-equiv': 'x-ua-compatible', content: 'ie-edge' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no' },
+      { hid: 'description', name: 'description', content: 'Rich is Exeter\'s premium balloon specialist, injecting colour and fun into parties and events all over the city and beyond.' },
+      { name: 'author', content: 'Mark Crawley' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -54,11 +59,11 @@ export default {
     linkify: true
   },
 
-  // render: {
-  //   // We don't need JS injected
-  //   injectScripts: false,
-  //   resourceHints: false
-  // },
+  render: {
+    // We don't need JS injected
+    injectScripts: false,
+    resourceHints: false
+  },
 
   // hooks: {
   //   // JS tags remain in static files https://github.com/nuxt/nuxt.js/issues/8178
