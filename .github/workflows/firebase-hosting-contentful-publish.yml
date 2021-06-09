@@ -8,11 +8,23 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
           ref: rewrite-nuxt
-      - run: npm ci && CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} FLK_API_KEY=${{ secrets.FLK_API_KEY }} npm run generate
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache-
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate site files
+        run: CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} FLK_API_KEY=${{ secrets.FLK_API_KEY }} npm run generate
+      - name: Deploy to hosting environment
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BALLOONS_INC }}'
