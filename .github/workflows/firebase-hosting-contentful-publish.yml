@@ -6,6 +6,7 @@ name: Deploy to Firebase Hosting on Contentful publish event
       - ctf-publish
 jobs:
   build_and_deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,7 +24,7 @@ jobs:
         run: npm ci
       - name: Generate site files
         run: CTF_SPACE_ID=${{ secrets.CTF_SPACE_ID }} CTF_CDA_ACCESS_TOKEN=${{ secrets.CTF_CDA_ACCESS_TOKEN }} FLK_API_KEY=${{ secrets.FLK_API_KEY }} npm run generate
-      - name: Deploy to hosting environment
+      - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
