@@ -1,5 +1,6 @@
 name: Deploy to Firebase Hosting on Contentful publish event
 'on':
+  workflow_dispatch:
   repository_dispatch:
     types: 
       - ctf-publish
